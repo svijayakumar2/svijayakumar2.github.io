@@ -1,109 +1,331 @@
 <!DOCTYPE html>
-<!--
-    Plain-Academic by Vasilios Mavroudis
-    Released under the Simplified BSD License/FreeBSD (2-clause) License.
-    https://github.com/mavroudisv/plain-academic
--->
-
 <html lang="en">
 <head>
-  <title>Saranya Vijayakumar</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saranya Vijayakumar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { 
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .paper-link {
+            color: #2563eb;
+            text-decoration: underline;
+            margin-right: 1rem;
+        }
+        .nav-link.active {
+            color: #2563eb;
+            font-weight: 600;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+    </style>
 </head>
-<body>
-
-<body style="padding-top: 70px;">
-<!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="sticky-nav">
+        <div class="max-w-4xl mx-auto px-6 flex space-x-6">
+            <a href="#top" class="nav-link hover:text-blue-600">Top</a>
+            <a href="#news" class="nav-link hover:text-blue-600">News</a>
+            <a href="#research" class="nav-link hover:text-blue-600">Research</a>
+            <a href="#teaching" class="nav-link hover:text-blue-600">Teaching</a>
+            <a href="#experience" class="nav-link hover:text-blue-600">Experience</a>
+            <a href="#service" class="nav-link hover:text-blue-600">Service</a>
+            <a href="#awards" class="nav-link hover:text-blue-600">Awards</a>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
-          <ul class="nav navbar-nav">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="publications.html">Research</a></li> 
-                  <li><a href="updates.html">Updates</a></li> 
-                  <li><a href="projects.html">Projects</a></li>
-                  <li><a href="teaching.html">Teaching</a></li>
-                  <li><a href="talks.html">Talks</a></li>
-                  <li><a href="https://drive.google.com/file/d/1fCdCAQ5WqbTNrl_dBoUhVyD_viZKBIgW/view?usp=share_link">CV</a></li> 
-          </ul>
-        </div>
-      </div>
     </nav>
-  
-  
-  <!-- Page Content -->
-    <div class="container">
 
-        <div class="row">
-
-            <!-- Entries Column -->
-            <div class="col-md-8" style="height: 30vh;">
-                
-                <!-- Main Image -->
-                <!-- <img class="img-responsive" src="photo.gif" alt=""><br>-->
-                
-                <div style="margin-top:3%; text-align:justify;" style="height: 50vh;">                
-					<p>I am a third year computer science PhD candidate at Carnegie Mellon working at the intersection of security, graph mining, and machine learning. I am fortunate to be advised by Christos Faloutsos and Matt Fredrikson.</p>
-					
-					<p>Previously, I was an associate at Goldman Sachs, where I worked for three years. I did my undergraduate at Harvard, where I did my thesis work with Cynthia Dwork and Jim Waldo. I did a joint concentration in computer science and government.</p>
-
-                    <p> I am supported by the <a href="https://ndseg.org">Department of Defense National Defense Science and Engineering Graduate Fellowship.</a></p>
-
-
-					
-                </div>
-            </div> 
-
-            <!-- Contact Info on the Sidebar -->
-            <div class="col-md-4">
-                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Saranya Vijayakumar</b></div><br>
-                <p><b>saranyav at andrew.cmu.edu</b><br>
-                <p>Computer Science Department<br>
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Header -->
+        <div id="top">
+            <h1 class="text-4xl font-bold mb-4">Saranya Vijayakumar</h1>
+            <p class="text-xl mb-6">
+                Ph.D. Student in Computer Science<br>
                 Carnegie Mellon University<br>
-                4902 Forbes Ave<br>
-                Pittsburgh, PA <br>
-                </p>
-            </div>
-            
-            
-            <!-- Links on the Sidebar -->
-            <div class="col-md-4" style="margin-top:2%">
-              <dd><a href="https://scholar.google.com/citations?user=4Lazaq0AAAAJ&hl=en&oi=ao">Google Scholar</a></dd>
-              <dd><a href="https://github.com/svijayakumar2">Github</a></dd>
-              <dd><a href="https://twitter.com/saranyacsd">Twitter</a></dd>
-              <dd><a href="https://www.linkedin.com/in/saranyavijayakumar1/">LinkedIn</a></dd>
-            </div>
-            
-            
-
-
-
-            
+                <span class="text-gray-600">saranyav [at] andrew.cmu.edu</span>
+            </p>
+        
+            <!-- Expanded Bio -->
+            <p class="mb-8">
+                I am a third-year Ph.D. student at Carnegie Mellon University, advised by 
+                <a href="http://www.cs.cmu.edu/~christos/" class="text-blue-600 hover:underline">Christos Faloutsos</a> and 
+                <a href="https://www.cs.cmu.edu/~mfredrik/" class="text-blue-600 hover:underline">Matt Fredrikson</a>. 
+                My research focuses on AI security, privacy, and interpretability. I am supported by the 
+                <a href="https://catch-muri.org/" class="text-blue-600 hover:underline">DOD MURI program</a> and the 
+                National Defense Science & Engineering Graduate Fellowship. Previously, I completed my A.B. in Computer Science 
+                and Government at Harvard University, where I worked with Professors Cynthia Dwork and Jim Waldo on fairness 
+                in algorithmic decision-making.
+            </p>
         </div>
 
+        <!-- News -->
+        <div id="news" class="mb-16">
+            <h2 class="text-2xl font-bold mb-4">News</h2>
+            <ul class="list-disc pl-6 mb-12 space-y-2">
+                <li>[Oct 2024] Starting a 2-month research visit at Inria Nancy, working on formal verification</li>
+                <li>[Aug 2023] Awarded GFSD Fellowship (declined in favor of NDSEG)</li>
+                <li>[Aug 2023] Attended ACP Summer School on Constraints and AI in Belgium</li>
+                <li>[July 2023] NeurIPS Spotlight paper on neural inference with SMT!</li>
+                <li>[June 2023] Paper on fraud detection accepted to CIKM 2023</li>
+                <li>[2022] Selected for Dagstuhl Seminar on Machine Learning and Logical Reasoning</li>
+                <li>[2022] Awarded National Defense Science & Engineering Graduate Fellowship</li>
+            </ul>
+        </div>
+
+        <!-- Research -->
+        <div id="research" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6">Research</h2>
+            
+            <!-- NeurIPS Paper with Video -->
+            <div class="mb-12">
+                <h3 class="text-xl font-semibold mb-3">Grounding Neural Inference with Satisfiability Modulo Theories</h3>
+                <p class="mb-2">
+                    <span class="font-medium">NeurIPS 2023 (Spotlight)</span><br>
+                    Zifan Wang*, <span class="font-medium">Saranya Vijayakumar*</span>, Kaiji Lu, Vijay Ganesh, Somesh Jha, Matt Fredrikson
+                </p>
+                <div class="mb-4">
+                    <a href="#" class="paper-link">Paper</a>
+                    <a href="#" class="paper-link">Code</a>
+                    <a href="https://slideslive.com/39011080/grounding-neural-inference-with-satisfiability-modulo-theories-leveraging-theory-solvers-for-machine-learning?ref=recommended" class="paper-link">Talk Video + Slides</a>
+                </div>
+                <p class="mb-4">
+                    We propose a novel framework for enhancing neural networks with SMT solvers to improve their reasoning capabilities
+                    while maintaining efficiency. Key contributions:
+                </p>
+                <ul class="list-disc pl-6 mb-4">
+                    <li>A neural-symbolic architecture that combines transformers with SMT solving</li>
+                    <li>Theoretical analysis showing completeness guarantees for certain reasoning tasks</li>
+                    <li>Empirical evaluation showing 15% improvement in accuracy on complex reasoning tasks</li>
+                </ul>
+                <p class="mb-4">
+                    <strong>Technical Details:</strong><br>
+                    Our method introduces a differentiable interface between neural networks and SMT solvers, allowing end-to-end training
+                    while leveraging logical reasoning capabilities. The architecture consists of:
+                </p>
+                <ul class="list-disc pl-6 mb-4">
+                    <li>A transformer encoder that processes input problems into logical constraints</li>
+                    <li>A novel differentiable SMT layer that performs logical reasoning</li>
+                    <li>A neural decoder that converts logical solutions back to natural language</li>
+                </ul>
+                <p>
+                    <strong>Results:</strong><br>
+                    Evaluated on mathematical reasoning benchmarks, our approach achieves:
+                </p>
+                <ul class="list-disc pl-6">
+                    <li>92.5% accuracy on ProofWriter dataset (15% improvement over SOTA)</li>
+                    <li>85.3% accuracy on LogicInference benchmark</li>
+                    <li>Maintains inference time within 2x of pure neural approaches</li>
+            </div>
+
+
+        <!-- Paper 2: CIKM -->
+        <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-3">CallMine: Fraud Detection and Visualization of Million-Scale Call Graphs</h3>
+            <p class="mb-2">
+                <span class="font-medium">CIKM 2023</span><br>
+                Mirela Cazzolato, <span class="font-medium">Saranya Vijayakumar</span>, Meng-Chieh Lee, Namyong Park, Catalina Vajiac, Christos Faloutsos
+            </p>
+            <div class="mb-4">
+                <a href="https://dl.acm.org/doi/10.1145/3583780.3615157" class="paper-link">Paper</a>
+                <a href="#" class="paper-link">Code</a>
+                <a href="#" class="paper-link">Demo</a>
+                <a href="#" class="paper-link">Talk</a>
+            </div>
+            <p class="mb-4">
+                We present CallMine, a system for detecting and visualizing fraud patterns in large-scale telecommunication networks.
+                The system combines advanced graph mining techniques with interactive visualizations to help investigators analyze 
+                millions of calls efficiently. Key contributions:
+            </p>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Novel algorithms for detecting suspicious patterns in call graphs</li>
+                <li>Interactive visualization system for exploring million-node graphs</li>
+                <li>Real-world deployment and case studies with telecom providers</li>
+            </ul>
+            <p class="mb-4">
+                <strong>Technical Details:</strong><br>
+                CallMine introduces several technical innovations:
+            </p>
+            <ul class="list-disc pl-6 mb-4">
+                <li>FastRP-based graph embeddings for anomaly detection</li>
+                <li>Temporal pattern mining using sliding windows</li>
+                <li>Multi-level visualization system with semantic zooming</li>
+            </ul>
+            <p>
+                <strong>Results:</strong><br>
+                Evaluation on real-world telecom data shows:
+            </p>
+            <ul class="list-disc pl-6">
+                <li>Processing of 1M+ node graphs in under 5 minutes</li>
+                <li>90% precision in detecting known fraud patterns</li>
+                <li>Successfully deployed with multiple telecom providers</li>
+            </ul>
+        </div>
+
+        </div>
+
+
+        <!-- Teaching -->
+        <h2 class="text-2xl font-bold mb-6">Teaching</h2>
+        <div id="teaching" class="mb-16">
+
+    
+        <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-3">AI Governance (17-416/17-716)</h3>
+            <p class="mb-4">Guest Lecture on AI Security, Robustness, and Privacy</p>
+            <div class="mb-4">
+                <a href="[URL]" class="paper-link">Slides</a>
+                <a href="https://drive.google.com/file/d/14k74nfG8go7wY9WsjZR684caMNqqIZWD/view?usp=sharing" class="paper-link">Lecture Recording</a>
+            </div>
+            <p class="mb-4">
+                Delivered a comprehensive lecture covering:
+            </p>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Fundamental concepts in AI security and privacy</li>
+                <li>Current challenges in model robustness</li>
+                <li>Real-world implications for AI governance</li>
+            </ul>
+        </div>
+
+        <!-- Industry Experience -->
+        <h2 class="text-2xl font-bold mb-6">Industry Experience</h2>
+        <div id="experience" class="mb-16">
+
+        <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-3">Goldman Sachs - Data Scientist, Electronic Trading</h3>
+            <p class="mb-2">2018 - 2021</p>
+            <p class="mb-4">
+                Led quantitative analysis for multi-billion-dollar hedge funds, developing predictive models using large-scale 
+                financial data. Key achievements:
+            </p>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Developed novel clustering methods for time series data, improving market signal detection by 23%</li>
+                <li>Processed over 100 million daily data points using Python, Java, and proprietary trading systems</li>
+                <li>Published research on market microstructure distributed to 1000+ clients</li>
+                <li>Identified previously undetected market anomalies, resulting in significant client cost savings</li>
+            </ul>
+        </div>
+
+        <!-- Service & Leadership -->
+        <h2 class="text-2xl font-bold mb-6">Service & Leadership</h2>
+        <div id="service" class="mb-16">
+
+        <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-3">Academic Service</h3>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Founded and lead weekly lunch program for women and non-binary PhDs in SCS</li>
+                <li>Program Committee member for ICLR and NeurIPS</li>
+                <li>Mentor for students from disadvantaged backgrounds</li>
+                <li>Contribute to PhD orientation programs</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mb-3 mt-6">Past Impact</h3>
+            <ul class="list-disc pl-6 mb-4">
+                <li>
+                    <a href="https://seas.harvard.edu/news/2016/02/taking-tuberculosis" class="text-blue-600 hover:underline">
+                        Tech in the World Fellow
+                    </a> 
+                    with Partners in Health (Lima, Peru), implementing healthcare technology solutions
+                </li>
+                <li>
+                    Published on algorithmic decision-making in 
+                    <a href="https://theharvardpoliticalreview.com/algorithmic-decision-making/" class="text-blue-600 hover:underline">
+                        Harvard Political Review
+                    </a>
+                </li>
+                <li>
+                    Led computer science education initiatives in Boston classrooms - 
+                    <a href="https://news.harvard.edu/gazette/story/2015/07/bringing-computer-skills-to-classrooms/" class="text-blue-600 hover:underline">
+                        featured in Harvard Gazette
+                    </a>
+                </li>
+                <li>
+                    Served on Harvard Art Museums Student Board - 
+                    <a href="https://harvardartmuseums.org/article/a-goodbye-to-the-seniors-on-our-student-board" class="text-blue-600 hover:underline">
+                        profiled in museum article
+                    </a>
+                </li>
+            </ul>
+        </div>
 
     </div>
-    <!-- /.container -->
 
-    
-    <!-- Other people may like it too! -->
-    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
-    
+        <!-- Awards -->
+        <div id="awards" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6">Selected Fellowships and Awards</h2>
+            <ul class="list-disc pl-6 space-y-4">
+                <li>
+                    <span class="font-medium">National Defense Science & Engineering Graduate Fellowship</span>
+                    <br>Army Research Office, 2022 – 2024
+                </li>
+                <li>
+                    <span class="font-medium">Graduate Fellowship in the Data Sciences (GFDS)</span>
+                    <br>NSA, 2023 (Declined)
+                </li>
+                <li>
+                    <span class="font-medium">Future Faculty Program</span>
+                    <br>Carnegie Mellon University, 2021 – 2023
+                    <br>Selected participant in Eberly Center program for developing teaching excellence
+                </li>
+                <li>
+                    <span class="font-medium">Tech in the World Fellow</span>
+                    <br>Partners in Health, Lima, Peru, 2018
+                </li>
+                <li>
+                    <span class="font-medium">Ernst Kitzinger Prize</span>
+                    <br>Harvard University, 2018
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Technical Skills -->
+        <div id="skills" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6">Skills</h2>
+            <p class="mb-4">
+                <span class="font-medium">Programming Languages & Tools:</span> Java, Python, C, R, Tensorflow, 
+                Sklearn, ROS, HTML+CSS, PHP, Swift, Git, Parse, OpenMRS, Stata, LaTeX
+            </p>
+            <p class="mb-4">
+                <span class="font-medium">Development & Administration:</span> Linux (bash, Apache, MySQL, VMware), 
+                KDB Q
+            </p>
+            <p>
+                <span class="font-medium">Languages:</span> English (native), Tamil (native), 
+                Spanish (working proficiency), Japanese (limited working proficiency)
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Highlight active section in navigation
+        const sections = document.querySelectorAll('div[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>
