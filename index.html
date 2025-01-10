@@ -141,20 +141,33 @@
             </div>
         </div>
 
+
         <!-- CCS Paper -->
         <div class="bg-white rounded-lg shadow-md p-6 mb-8 research-card">
             <div class="flex items-center justify-between mb-4">
-                <h4 class="text-xl font-semibold">Benchmarking AI-Generated Code Detection</h4>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Under Review CCS 2025</span>
+                <h4 class="text-xl font-semibold">MalCentroid: Tracking Malware Evolution Through Behavioral Primitive Decomposition</h4>
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Under Review CCS 2025</span>
             </div>
             <p class="text-gray-600 mb-4">
-                <span class="font-medium">Saranya Vijayakumar</span>, Matt Fredrikson, Christos Faloutsos
+                <span class="font-medium">Saranya Vijayakumar*</span>, Matt Fredrikson, Christos Faloutsos 
             </p>
+<!--             <div class="flex flex-wrap gap-2 mb-4">
+                <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/47167991e38c65a72914763c11cd8d23-Paper-Conference.pdf" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Paper</a>
+                <a href="https://github.com/cmu-transparency/smt-layer" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Code</a>
+                <a href="https://slideslive.com/39011080/" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Talk + Slides</a>
+            </div> -->
+            <img src="method_MalCentroid.png" alt="Paper visualization" class="w-full rounded-lg mb-4"/>
             <p class="mb-4">
             This paper introduces MalCentroid, a novel framework for tracking malware evolution through behavioral analysis. While existing malware detection approaches achieve high accuracy on known samples, they typically treat each sample in isolation and rely on surface features that are easily manipulated. MalCentroid addresses both limitations by decomposing malware samples into behavioral primitives extracted from control flow graphs and tracking their evolution through a centroid-based embedding space. The framework maintains multiple behavioral prototypes per malware family, enabling it to track behavioral drift over time and identify truly novel variants. Evaluation on large-scale datasets demonstrates two key advantages: the ability to track malware evolution patterns (showing families exhibiting drift rates up to 0.633 and uncovering parallel evolution across distinct families), and inherent robustness against adversarial manipulation (with most attack vectors achieving less than 5% success rate compared to 97% against image-based approaches). These results suggest that focusing on behavioral primitives rather than surface features provides both better evolution tracking and natural security benefits.            </p>
+            </p>
             <a href="MalCentroid-3.pdf" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                 PDF
             </a>
+            <div class="flex gap-2">
+                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Neural-Symbolic AI</span>
+                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Formal Methods</span>
+                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Machine Learning</span>
+            </div>
         </div>
 
         <!-- PAKDD Paper -->
