@@ -92,6 +92,24 @@
     <div id="research" class="mb-16">
         <h2 class="text-3xl font-bold mb-8">Research</h2>
 
+        <!-- AISTATS Paper -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8 research-card">
+            <div class="flex items-center justify-between mb-4">
+                <h4 class="text-xl font-semibold">Mechanistically Interpreting a Transformer-based 2-SAT Solver</h4>
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">ICML 2025</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+                Nils Palumbo, Ravi Mangal, Zifan Wang, <span class="font-medium">Saranya Vijayakumar</span>, Corina Pasareanau, Somesh Jha
+            </p>
+            <p class="mb-4">
+                In this work we present a formal framework for mechanistically interpreting neural networks, motivated by abstract interpretation from program analysis. We apply this framework to analyze a Transformer model trained to solve the 2-SAT problem. Through our analysis, we uncover that the model learns a systematic algorithm - first parsing input formulas into clause-level representations in initial layers, then evaluating satisfiability by enumerating possible Boolean variable valuations. Our work provides evidence that the extracted mechanistic interpretation satisfies our proposed formal axioms, demonstrating how the model systematically solves 2-SAT problems.
+            </p>
+            <a href="solvertransformer.pdf" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                PDF
+            </a>
+        </div>
+
+
         <!-- ICLR Paper -->
         <div class="bg-white rounded-lg shadow-md p-6 mb-8 research-card">
             <div class="flex items-center justify-between mb-4">
@@ -204,24 +222,6 @@
             </a>
         </div>
 
-     
-
-        <!-- AISTATS Paper -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-8 research-card">
-            <div class="flex items-center justify-between mb-4">
-                <h4 class="text-xl font-semibold">Mechanistically Interpreting a Transformer-based 2-SAT Solver</h4>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Under Review ICML 2025</span>
-            </div>
-            <p class="text-gray-600 mb-4">
-                Nils Palumbo, Ravi Mangal, Zifan Wang, <span class="font-medium">Saranya Vijayakumar</span>, Corina Pasareanau, Somesh Jha
-            </p>
-            <p class="mb-4">
-                In this work we present a formal framework for mechanistically interpreting neural networks, motivated by abstract interpretation from program analysis. We apply this framework to analyze a Transformer model trained to solve the 2-SAT problem. Through our analysis, we uncover that the model learns a systematic algorithm - first parsing input formulas into clause-level representations in initial layers, then evaluating satisfiability by enumerating possible Boolean variable valuations. Our work provides evidence that the extracted mechanistic interpretation satisfies our proposed formal axioms, demonstrating how the model systematically solves 2-SAT problems.
-            </p>
-            <a href="solvertransformer.pdf" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                PDF
-            </a>
-        </div>
     </div>
         <!-- Topics API Paper -->
         <div class="bg-white rounded-lg shadow-md p-6 mb-8 research-card">
