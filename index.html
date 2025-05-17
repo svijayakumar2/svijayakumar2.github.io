@@ -34,30 +34,79 @@
         .research-card:hover {
             transform: translateY(-5px);
         }
+        /* Mobile navigation menu */
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+            .menu-button {
+                display: block;
+            }
+        }
+        @media (min-width: 769px) {
+            .menu-button {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="bg-white">
     <!-- Navigation -->
     <nav class="sticky-nav">
-        <div class="max-w-4xl mx-auto px-6 flex space-x-6">
-            <a href="#top" class="nav-link hover:text-blue-600">Top</a>
-            <a href="#research" class="nav-link hover:text-blue-600">Research</a>
-            <a href="#talks" class="nav-link hover:text-blue-600">Talks</a>
-            <a href="#teaching" class="nav-link hover:text-blue-600">Teaching</a>
-             <a href="#projects" class="nav-link hover:text-blue-600">Projects</a>           
-            <a href="#service" class="nav-link hover:text-blue-600">Service</a>
-            <a href="#experience" class="nav-link hover:text-blue-600">Experience</a>
-            <a href="#awards" class="nav-link hover:text-blue-600">Awards</a>
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav hidden md:flex space-x-4 lg:space-x-6">
+                <a href="#top" class="nav-link hover:text-blue-600">Top</a>
+                <a href="#research" class="nav-link hover:text-blue-600">Research</a>
+                <a href="#talks" class="nav-link hover:text-blue-600">Talks</a>
+                <a href="#teaching" class="nav-link hover:text-blue-600">Teaching</a>
+                <a href="#projects" class="nav-link hover:text-blue-600">Projects</a>           
+                <a href="#service" class="nav-link hover:text-blue-600">Service</a>
+                <a href="#experience" class="nav-link hover:text-blue-600">Experience</a>
+                <a href="#awards" class="nav-link hover:text-blue-600">Awards</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="menu-button text-gray-700 focus:outline-none" id="menuButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            
+            <!-- Name on mobile (always visible) -->
+            <div class="md:hidden font-bold">
+                Saranya Vijayakumar
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu (hidden by default) -->
+        <div class="mobile-menu hidden bg-white py-4 px-6 shadow-md" id="mobileMenu">
+            <div class="flex flex-col space-y-4">
+                <a href="#top" class="nav-link hover:text-blue-600">Top</a>
+                <a href="#research" class="nav-link hover:text-blue-600">Research</a>
+                <a href="#talks" class="nav-link hover:text-blue-600">Talks</a>
+                <a href="#teaching" class="nav-link hover:text-blue-600">Teaching</a>
+                <a href="#projects" class="nav-link hover:text-blue-600">Projects</a>           
+                <a href="#service" class="nav-link hover:text-blue-600">Service</a>
+                <a href="#experience" class="nav-link hover:text-blue-600">Experience</a>
+                <a href="#awards" class="nav-link hover:text-blue-600">Awards</a>
+            </div>
         </div>
     </nav>
 
-    <div class="max-w-4xl mx-auto px-6 py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <!-- Header with Research Vision -->
         <div id="top" class="mb-16">
-            <div class="flex items-start gap-8">
+            <div class="flex flex-col md:flex-row md:items-start gap-8">
                 <div class="flex-1">
-                    <h1 class="text-4xl font-bold mb-4">Saranya Vijayakumar</h1>
-                    <p class="text-xl mb-6">
+                    <h1 class="text-3xl sm:text-4xl font-bold mb-4">Saranya Vijayakumar</h1>
+                    <p class="text-lg sm:text-xl mb-6">
                         Ph.D. Candidate in Computer Science<br>
                         Carnegie Mellon University<br>
                         <span class="text-gray-600">saranyav [at] andrew.cmu.edu</span>
@@ -66,11 +115,13 @@
                         Download CV
                     </a>
                 </div>
-                <img src="saranya.jpeg" alt="Saranya Vijayakumar" class="rounded-lg shadow-lg w-64"/>
+                <div class="flex justify-center">
+                    <img src="saranya.jpeg" alt="Saranya Vijayakumar" class="rounded-lg shadow-lg w-48 md:w-64"/>
+                </div>
             </div>
             
-            <div class="bg-gray-50 p-6 rounded-lg mb-8">
-                <h2 class="text-2xl font-bold mb-4">Research Vision</h2>
+            <div class="bg-gray-50 p-4 sm:p-6 rounded-lg mb-8">
+                <h2 class="text-xl sm:text-2xl font-bold mb-4">Research Vision</h2>
                 <p class="mb-4">
                     My research focuses on enhancing the security, privacy, and interpretability of AI systems through 
                     the integration of formal methods and neural approaches. I develop theoretical frameworks and practical 
@@ -82,21 +133,23 @@
                </p>
                 <p>
                     Core research areas:
-                    <span class="inline-block bg-blue-100 px-2 py-1 rounded mr-2">AI Security & Privacy</span>
-                    <span class="inline-block bg-blue-100 px-2 py-1 rounded mr-2">Neural-Symbolic Methods</span>
-                    <span class="inline-block bg-blue-100 px-2 py-1 rounded">Applied ML Systems</span>
                 </p>
+                <div class="flex flex-wrap gap-2 mt-2">
+                    <span class="inline-block bg-blue-100 px-2 py-1 rounded">AI Security & Privacy</span>
+                    <span class="inline-block bg-blue-100 px-2 py-1 rounded">Neural-Symbolic Methods</span>
+                    <span class="inline-block bg-blue-100 px-2 py-1 rounded">Applied ML Systems</span>
+                </div>
             </div>
         </div>
 
     <div id="research" class="mb-16">
-        <h2 class="text-3xl font-bold mb-8">Research</h2>
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Research</h2>
 
         <!-- AISTATS Paper -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-8 research-card">
-            <div class="flex items-center justify-between mb-4">
-                <h4 class="text-xl font-semibold">Mechanistically Interpreting a Transformer-based 2-SAT Solver</h4>
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">ICML 2025</span>
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <h4 class="text-lg sm:text-xl font-semibold">Mechanistically Interpreting a Transformer-based 2-SAT Solver</h4>
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">ICML 2025</span>
             </div>
             <p class="text-gray-600 mb-4">
                 Nils Palumbo, Ravi Mangal, Zifan Wang, <span class="font-medium">Saranya Vijayakumar</span>, Corina Pasareanau, Somesh Jha
@@ -111,10 +164,10 @@
 
 
         <!-- ICLR Paper -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-8 research-card">
-            <div class="flex items-center justify-between mb-4">
-                <h4 class="text-xl font-semibold">Aligned LLMs Are Not Aligned Browser Agents</h4>
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">ICLR 2025</span>
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <h4 class="text-lg sm:text-xl font-semibold">Aligned LLMs Are Not Aligned Browser Agents</h4>
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">ICLR 2025</span>
             </div>
             <p class="text-gray-600 mb-4">
                 Priyanshu Kumar, <span class="font-medium">Saranya Vijayakumar</span>, Elaine Lau, Tu Trinh, Zifan Wang, Matt Fredrikson
@@ -128,10 +181,10 @@
         </div>
 
         <!-- NeurIPS Paper -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-8 research-card">
-            <div class="flex items-center justify-between mb-4">
-                <h4 class="text-xl font-semibold">Grounding Neural Inference with Satisfiability Modulo Theories</h4>
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">NeurIPS 2023 Spotlight</span>
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <h4 class="text-lg sm:text-xl font-semibold">Grounding Neural Inference with Satisfiability Modulo Theories</h4>
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">NeurIPS 2023 Spotlight</span>
             </div>
             <p class="text-gray-600 mb-4">
                 Zifan Wang*, <span class="font-medium">Saranya Vijayakumar*</span>, Kaiji Lu, Vijay Ganesh, Somesh Jha, Matt Fredrikson
@@ -141,11 +194,13 @@
                 <a href="https://github.com/cmu-transparency/smt-layer" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Code</a>
                 <a href="https://slideslive.com/39011080/" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Talk + Slides</a>
             </div>
-            <img src="neuralsat.png" alt="Paper visualization" class="w-full rounded-lg mb-4"/>
+            <div class="flex justify-center">
+                <img src="neuralsat.png" alt="Paper visualization" class="w-full rounded-lg mb-4"/>
+            </div>
             <p class="mb-4">
                 A novel framework combining neural networks with SMT solvers for enhanced reasoning capabilities while maintaining computational efficiency. Achieved 15% improvement in accuracy on complex reasoning tasks.
             </p>
-            <div class="flex gap-2">
+            <div class="flex flex-wrap gap-2">
                 <span class="bg-gray-100 px-2 py-1 rounded text-sm">Neural-Symbolic AI</span>
                 <span class="bg-gray-100 px-2 py-1 rounded text-sm">Formal Methods</span>
                 <span class="bg-gray-100 px-2 py-1 rounded text-sm">Machine Learning</span>
@@ -153,10 +208,10 @@
         </div>
 
         <!-- CIKM Paper -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-8 research-card">
-            <div class="flex items-center justify-between mb-4">
-                <h4 class="text-xl font-semibold">CallMine: Fraud Detection and Visualization of Million-Scale Call Graphs</h4>
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">CIKM 2023</span>
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <h4 class="text-lg sm:text-xl font-semibold">CallMine: Fraud Detection and Visualization of Million-Scale Call Graphs</h4>
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">CIKM 2023</span>
             </div>
             <p class="text-gray-600 mb-4">
                 Mirela Cazzolato, <span class="font-medium">Saranya Vijayakumar</span>, Meng-Chieh Lee, Namyong Park, Catalina Vajiac, Christos Faloutsos
@@ -165,11 +220,13 @@
                 <a href="https://namyongpark.github.io/assets/pdf/CallMine-CIKM2023.pdf" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Paper</a>
                 <a href="https://github.com/mtcazzolato/callmine" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Code</a>
             </div>
-            <img src="callmine.png" alt="CallMine visualization" class="w-full rounded-lg mb-4"/>
+            <div class="flex justify-center">
+                <img src="callmine.png" alt="CallMine visualization" class="w-full rounded-lg mb-4"/>
+            </div>
             <p class="mb-4">
                 A system for detecting and visualizing fraud patterns in large-scale telecommunication networks, combining advanced graph mining with interactive visualizations. Successfully deployed with a Portuguese telecom provider.
             </p>
-            <div class="flex gap-2">
+            <div class="flex flex-wrap gap-2">
                 <span class="bg-gray-100 px-2 py-1 rounded text-sm">Graph Mining</span>
                 <span class="bg-gray-100 px-2 py-1 rounded text-sm">Fraud Detection</span>
                 <span class="bg-gray-100 px-2 py-1 rounded text-sm">Visualization</span>
@@ -178,38 +235,30 @@
 
 
         <!-- CCS Paper -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-8 research-card">
-            <div class="flex items-center justify-between mb-4">
-                <h4 class="text-xl font-semibold">MalCentroid: Tracking Malware Evolution Through Behavioral Primitive Decomposition</h4>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Under Review Neurips 2025</span>
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <h4 class="text-lg sm:text-xl font-semibold">MalCentroid: Tracking Malware Evolution Through Behavioral Primitive Decomposition</h4>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">Under Review Neurips 2025</span>
             </div>
             <p class="text-gray-600 mb-4">
                 <span class="font-medium">Saranya Vijayakumar*</span>, Matt Fredrikson, Christos Faloutsos 
             </p>
-<!--             <div class="flex flex-wrap gap-2 mb-4">
-                <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/47167991e38c65a72914763c11cd8d23-Paper-Conference.pdf" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Paper</a>
-                <a href="https://github.com/cmu-transparency/smt-layer" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Code</a>
-                <a href="https://slideslive.com/39011080/" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Talk + Slides</a>
-            </div> -->
-            <img src="method_MalCentroid.png" alt="Paper visualization" class="w-full rounded-lg mb-4"/>
+            <div class="flex justify-center">
+                <img src="method_MalCentroid.png" alt="Paper visualization" class="w-full rounded-lg mb-4"/>
+            </div>
             <p class="mb-4">
-            This paper introduces MalCentroid, a novel framework for tracking malware evolution through behavioral analysis. While existing malware detection approaches achieve high accuracy on known samples, they typically treat each sample in isolation and rely on surface features that are easily manipulated. MalCentroid addresses both limitations by decomposing malware samples into behavioral primitives extracted from control flow graphs and tracking their evolution through a centroid-based embedding space. The framework maintains multiple behavioral prototypes per malware family, enabling it to track behavioral drift over time and identify truly novel variants. Evaluation on large-scale datasets demonstrates two key advantages: the ability to track malware evolution patterns (showing families exhibiting drift rates up to 0.633 and uncovering parallel evolution across distinct families), and inherent robustness against adversarial manipulation (with most attack vectors achieving less than 5% success rate compared to 97% against image-based approaches). These results suggest that focusing on behavioral primitives rather than surface features provides both better evolution tracking and natural security benefits.            </p>
+            This paper introduces MalCentroid, a novel framework for tracking malware evolution through behavioral analysis. While existing malware detection approaches achieve high accuracy on known samples, they typically treat each sample in isolation and rely on surface features that are easily manipulated. MalCentroid addresses both limitations by decomposing malware samples into behavioral primitives extracted from control flow graphs and tracking their evolution through a centroid-based embedding space. The framework maintains multiple behavioral prototypes per malware family, enabling it to track behavioral drift over time and identify truly novel variants. Evaluation on large-scale datasets demonstrates two key advantages: the ability to track malware evolution patterns (showing families exhibiting drift rates up to 0.633 and uncovering parallel evolution across distinct families), and inherent robustness against adversarial manipulation (with most attack vectors achieving less than 5% success rate compared to 97% against image-based approaches). These results suggest that focusing on behavioral primitives rather than surface features provides both better evolution tracking and natural security benefits.
             </p>
             <a href="MalCentroid-3.pdf" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                 PDF
             </a>
-<!--             <div class="flex gap-2">
-                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Neural-Symbolic AI</span>
-                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Formal Methods</span>
-                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Machine Learning</span>
-            </div> -->
         </div>
 
         <!-- PAKDD Paper -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-8 research-card">
-            <div class="flex items-center justify-between mb-4">
-                <h4 class="text-xl font-semibold">Benchmarking AI-Generated Code Detection</h4>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Under Review KDD 2025</span>
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <h4 class="text-lg sm:text-xl font-semibold">Benchmarking AI-Generated Code Detection</h4>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">Under Review KDD 2025</span>
             </div>
             <p class="text-gray-600 mb-4">
                 <span class="font-medium">Saranya Vijayakumar</span>, Christos Faloutsos, Matt Fredrikson
@@ -224,19 +273,17 @@
 
     </div>
         <!-- Topics API Paper -->
-        <div class="bg-white rounded-lg shadow-md p-6 mb-8 research-card">
-            <div class="flex items-center justify-between mb-4">
-                <h4 class="text-xl font-semibold">Leveraging Large Language Models for Enhanced Membership Inference</h4>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Under Review PoPETS 2026</span>
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <h4 class="text-lg sm:text-xl font-semibold">Leveraging Large Language Models for Enhanced Membership Inference</h4>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">Under Review PoPETS 2026</span>
             </div>
             <p class="text-gray-600 mb-4">
                 <span class="font-medium">Saranya Vijayakumar</span>, Matt Fredrikson, Norman Sadeh
             </p>
         </div>
-    <!-- </div> -->
 
         <div id="talks" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8">Invited Talks & Academic Service</h2>
 
             <!-- ISPP November Talk -->
             <div class="bg-white rounded-lg shadow-md p-6 mb-8">
@@ -297,11 +344,11 @@
 
 <!-- Teaching -->
         <div id="teaching" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8">Teaching</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Teaching</h2>
             
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                <div class="flex justify-between items-start mb-6">
-                    <h3 class="text-2xl font-semibold">Teaching Philosophy</h3>
+            <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start mb-6">
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-0">Teaching Philosophy</h3>
                     <a href="teaching_statement.pdf" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                         Teaching Statement PDF
                     </a>
@@ -312,13 +359,13 @@
                     and industry challenges.
                 </p>
 
-                <h4 class="text-xl font-semibold mb-4">Teaching Experience</h4>
+                <h4 class="text-lg sm:text-xl font-semibold mb-4">Teaching Experience</h4>
                 <div class="space-y-4 mb-8">
                     <!-- Information Security Course -->
                     <div class="bg-gray-50 p-4 rounded-lg">
-                        <div class="flex justify-between items-start mb-2">
+                        <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
                             <h5 class="font-semibold">Information Security, Privacy & Policy (17-331/631)</h5>
-                            <span class="text-gray-600">Fall 2023</span>
+                            <span class="text-gray-600 mt-1 sm:mt-0">Fall 2023</span>
                         </div>
                         <p class="text-gray-600 mb-2">Teaching Assistant</p>
                         <p class="text-gray-600 mb-2">Instructors: Norman Sadeh and Hana Habib</p>
@@ -334,9 +381,9 @@
 
                     <!-- Rapid Prototyping Courses -->
                     <div class="bg-gray-50 p-4 rounded-lg">
-                        <div class="flex justify-between items-start mb-2">
+                        <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
                             <h5 class="font-semibold">Rapid Prototyping Technologies (15-294) & Intermediate Rapid Prototyping (15-394)</h5>
-                            <span class="text-gray-600">Spring 2023</span>
+                            <span class="text-gray-600 mt-1 sm:mt-0">Spring 2023</span>
                         </div>
                         <p class="text-gray-600 mb-2">Teaching Assistant</p>
                         <p class="text-gray-600 mb-2">Instructor: Dave Touretzky</p>
@@ -350,22 +397,7 @@
                         </div>
                     </div>
 
-<!--                     <!-- AI Governance Guest Lectures -->
-                    <!-- <div class="bg-gray-50 p-4 rounded-lg"> -->
-                        <!-- <div class="flex justify-between items-start mb-2"> -->
-                            <!-- <h5 class="font-semibold">AI Governance (17-416/17-716)</h5> -->
-                            <!-- <span class="text-gray-600">2023-2024</span> -->
-                        <!-- </div> -->
-                        <!-- <p class="text-gray-600 mb-2">Guest Lecturer</p> -->
-                        <!-- <ul class="list-disc pl-6"> -->
-                            <!-- <li>Delivered lectures on AI Security & Privacy</li> -->
-                            <!-- <li>Covered ML system robustness and vulnerabilities</li> -->
-                            <!-- <li>Discussed policy implications of AI security research</li> -->
-                        <!-- </ul> -->
-                    <!-- </div> -->
-                <!-- </div> --> 
-
-                <h4 class="text-xl font-semibold mb-4">Teaching Development</h4>
+                <h4 class="text-lg sm:text-xl font-semibold mb-4">Teaching Development</h4>
                 <div class="bg-blue-50 p-4 rounded-lg mb-6">
                     <h5 class="font-semibold mb-2">Eberly Center Future Faculty Program</h5>
                     <p>Selected participant in Carnegie Mellon's prestigious teaching development program</p>
@@ -399,96 +431,70 @@
                     </div>
                 </div>
 
-                <h4 class="text-xl font-semibold mb-3">Prepared to Teach</h4>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <p class="mb-2">I am prepared to teach courses at both undergraduate and graduate levels in:</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <h5 class="font-medium mb-2">Core Courses:</h5>
-                            <ul class="list-disc pl-6">
-                                <li>Machine Learning</li>
-                                <li>Computer Security</li>
-                                <li>Artificial Intelligence</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h5 class="font-medium mb-2">Specialized Topics:</h5>
-                            <ul class="list-disc pl-6">
-                                <li>Advanced Topics in AI Security</li>
-                                <li>Machine Learning Systems</li>
-                                <li>Neural-Symbolic Methods in AI</li>
-                            </ul>
+<!-- Research Projects & Impact -->
+    <div id="projects" class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Research Projects & Impact</h2>
+
+        <!-- Fraud Detection & Analysis -->
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+            <h3 class="text-xl sm:text-2xl font-semibold mb-4">Large-Scale Fraud Detection Systems</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <img src="tgrapp.png" alt="TgrApp System Demo" class="rounded-lg mb-4 w-full"/>
+                    <p class="text-gray-600">TgrApp system visualization interface</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Publications & Demonstrations</h4>
+                        <div class="space-y-1">
+                            <p>
+                                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/27062" class="text-blue-600 hover:underline">
+                                    Interactive Demo at AAAI-23
+                                </a>
+                            </p>
+                            <p>
+                                <a href="https://ieeexplore.ieee.org/abstract/document/10020898" class="text-blue-600 hover:underline">
+                                    IEEE Big Data 2022 Publication
+                                </a>
+                            </p>
                         </div>
                     </div>
+                    <p>
+                        Developed novel visualization and detection methods for analyzing million-scale fraud patterns
+                        in telecommunication networks, leading to deployed solutions with real-world impact.
+                    </p>
                 </div>
             </div>
         </div>
 
-
-    <!-- Projects -->
-            <div id="projects" class="mb-16">
-                <h2 class="text-3xl font-bold mb-8">Research Projects & Impact</h2>
-
-                <!-- Fraud Detection & Analysis -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                    <h3 class="text-2xl font-semibold mb-4">Large-Scale Fraud Detection Systems</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <!-- Formal Methods & Security -->
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+            <h3 class="text-xl sm:text-2xl font-semibold mb-4">Formal Methods in Security</h3>
+            <div class="space-y-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Research Visits & Collaborations</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <img src="tgrapp.png" alt="TgrApp System Demo" class="rounded-lg mb-4"/>
-                            <p class="text-gray-600">TgrApp system visualization interface</p>
+                            <h5 class="font-medium mb-2">Inria Nancy</h5>
+                            <p>Formal verification of the Olvid messaging protocol using ProVerif</p>
                         </div>
-                        <div class="space-y-4">
-                            <div class="bg-blue-50 p-4 rounded-lg">
-                                <h4 class="font-semibold mb-2">Publications & Demonstrations</h4>
-                                <ul class="list-disc pl-6">
-                                    <li>
-                                        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/27062" class="text-blue-600 hover:underline">
-                                            Interactive Demo at AAAI-23
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://ieeexplore.ieee.org/abstract/document/10020898" class="text-blue-600 hover:underline">
-                                            IEEE Big Data 2022 Publication
-                                        </a>
-                                    </li>
-                                </ul>
+                        <div>
+                            <h5 class="font-medium mb-2">Constraint Programming</h5>
+                            <div class="space-y-1">
+                                <p>
+                                    <a href="https://school.a4cp.org/summer2023/" class="text-blue-600 hover:underline">
+                                        ACP Summer School, Leuven
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://cmmrs.mpi-sws.org" class="text-blue-600 hover:underline">
+                                        Saarbrücken Workshop
+                                    </a>
+                                </p>
                             </div>
-                            <p>
-                                Developed novel visualization and detection methods for analyzing million-scale fraud patterns
-                                in telecommunication networks, leading to deployed solutions with real-world impact.
-                            </p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Formal Methods & Security -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                    <h3 class="text-2xl font-semibold mb-4">Formal Methods in Security</h3>
-                    <div class="space-y-6">
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-semibold mb-2">Research Visits & Collaborations</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <h5 class="font-medium mb-2">Inria Nancy</h5>
-                                    <p>Formal verification of the Olvid messaging protocol using ProVerif</p>
-                                </div>
-                                <div>
-                                    <h5 class="font-medium mb-2">Constraint Programming</h5>
-                                    <ul class="list-disc pl-6">
-                                        <li>
-                                            <a href="https://school.a4cp.org/summer2023/" class="text-blue-600 hover:underline">
-                                                ACP Summer School, Leuven
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://cmmrs.mpi-sws.org" class="text-blue-600 hover:underline">
-                                                Saarbrücken Workshop
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                         <div class="bg-gray-50 p-4 rounded-lg">
                             <h4 class="font-semibold mb-2">National Security Applications</h4>
                             <ul class="list-disc pl-6">
@@ -501,39 +507,32 @@
                                 <li>Upcoming work on AI-generated code detection (Under Review at PAKDD 2025)</li>
                             </ul>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Algorithmic Fairness -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-2xl font-semibold mb-4">Algorithmic Fairness & Ethics</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h4 class="font-medium mb-2">Public Impact & Research</h4>
-                            <p class="mb-4">
-                                Early work on fairness in algorithmic decision-making systems, combining technical analysis 
-                                with policy implications.
+
+        <!-- Algorithmic Fairness -->
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
+            <h3 class="text-xl sm:text-2xl font-semibold mb-4">Algorithmic Fairness & Ethics</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-medium mb-2">Public Impact & Research</h4>
+                    <p class="mb-4">
+                        Early work on fairness in algorithmic decision-making systems, combining technical analysis 
+                        with policy implications.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="space-y-1">
+                            <p>
+                                <a href="https://theharvardpoliticalreview.com/algorithmic-decision-making/" class="text-blue-600 hover:underline">
+                                    Featured Article in Harvard Political Review
+                                </a>
                             </p>
-                            <div class="bg-blue-50 p-4 rounded-lg">
-                                <ul class="list-disc pl-6">
-                                    <li>
-                                        <a href="https://theharvardpoliticalreview.com/algorithmic-decision-making/" class="text-blue-600 hover:underline">
-                                            Featured Article in Harvard Political Review
-                                        </a>
-                                    </li>
-                                    <li>Undergraduate Thesis on Fairness Metrics in ML</li>
-                                </ul>
-                            </div>
+                            <p>Undergraduate Thesis on Fairness Metrics in ML</p>
                         </div>
-<!--                         <div>
-                            <img src="/api/placeholder/400/300" alt="Fairness Research" class="rounded-lg"/>
-                            <p class="text-gray-600 text-sm mt-2">Visualization of fairness metrics analysis</p>
-                        </div> -->
                     </div>
                 </div>
-                
             </div>
-
+        </div>
+    </div>
 
             <!-- Privacy Technologies -->
             <div class="bg-white rounded-lg shadow-md p-6 mb-8">
@@ -573,277 +572,270 @@
                 </div>
             </div>
 
-        <!-- Service -->
-        <div id="service" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8">Service & Leadership</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-semibold mb-4">Academic Community Building</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-3">90+</span>
-                            <span>student participants; Founded and lead weekly lunch program for women and non-binary PhDs in SCS</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-3">30+</span>
-                            <span>Papers reviewed for ICLR, ICML, KDD, and NeurIPS</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-semibold mb-4">Outreach & Impact</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <img src="pih.png" alt="PIH" class="rounded" style="width: 80px; height: auto;"/>
-                            <div>
-                                <a href="https://seas.harvard.edu/news/2016/02/taking-tuberculosis" class="text-blue-600 hover:underline">Tech in the World Fellow</a>
-                                <p>Implemented healthcare technology solutions with Partners in Health, Lima, Peru</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <img src="dlp.png" alt="Harvard" class="rounded" style="width: 100px; height: auto;"/>
-                            <div>
-                                <a href="https://news.harvard.edu/gazette/story/2015/07/bringing-computer-skills-to-classrooms/" class="text-blue-600 hover:underline">CS Education Initiative Lead</a>
-                                <p>Led computer science education programs in Boston public schools</p>
-                            </div>
-                        </li>
-                    </ul>
+    <!-- Service & Leadership -->
+    <div id="service" class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Service & Leadership</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-semibold mb-4">Academic Community Building</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-3">90+</span>
+                        <span>student participants; Founded and lead weekly lunch program for women and non-binary PhDs in SCS</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-3">30+</span>
+                        <span>Papers reviewed for ICLR, ICML, KDD, and NeurIPS</span>
+                    </div>
                 </div>
             </div>
-        </div>
-<!-- Awards Timeline -->
-        <div id="awards" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8">Awards & Recognition</h2>
             
-            <div class="relative">
-                <!-- Timeline line -->
-                <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-200"></div>
-                
-                <!-- Timeline items -->
-                <div class="space-y-8 ml-12">
-                    <!-- New NDSEG Poster Award -->
-                    <div class="relative">
-                        <div class="absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
-                        <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
-                            <span class="text-blue-600 font-medium">2024</span>
-                            <h3 class="text-xl font-semibold">Best Poster Award</h3>
-                            <p class="mb-2">NDSEG Annual Fellows Conference</p>
-                            <a href="https://ndseg.org/2024-poster-winners" class="text-blue-600 hover:underline text-sm">View Award Announcement →</a>
+            <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-semibold mb-4">Outreach & Impact</h3>
+                <div class="space-y-4">
+                    <div class="flex flex-col sm:flex-row items-start gap-3">
+                        <img src="pih.png" alt="PIH" class="rounded" style="width: 80px; height: auto;"/>
+                        <div>
+                            <a href="https://seas.harvard.edu/news/2016/02/taking-tuberculosis" class="text-blue-600 hover:underline">Tech in the World Fellow</a>
+                            <p>Implemented healthcare technology solutions with Partners in Health, Lima, Peru</p>
                         </div>
                     </div>
-
-                    <div class="relative">
-                        <div class="absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
-                        <div class="bg-white rounded-lg shadow-md p-6">
-                            <span class="text-blue-600 font-medium">2023</span>
-                            <h3 class="text-xl font-semibold">Graduate Fellowship for STEM Diversity (GFSD)</h3>
-                            <p>NSA (Declined)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="relative">
-                        <div class="absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
-                        <div class="bg-white rounded-lg shadow-md p-6">
-                            <span class="text-blue-600 font-medium">2022 - 2024</span>
-                            <h3 class="text-xl font-semibold">National Defense Science & Engineering Graduate Fellowship</h3>
-                            <p>Army Research Office</p>
-                        </div>
-                    </div>
-                    
-                    <div class="relative">
-                        <div class="absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
-                        <div class="bg-white rounded-lg shadow-md p-6">
-                            <span class="text-blue-600 font-medium">2021 - 2023</span>
-                            <h3 class="text-xl font-semibold">Future Faculty Program</h3>
-                            <p>Carnegie Mellon University Eberly Center</p>
+                    <div class="flex flex-col sm:flex-row items-start gap-3">
+                        <img src="dlp.png" alt="Harvard" class="rounded" style="width: 100px; height: auto;"/>
+                        <div>
+                            <a href="https://news.harvard.edu/gazette/story/2015/07/bringing-computer-skills-to-classrooms/" class="text-blue-600 hover:underline">CS Education Initiative Lead</a>
+                            <p>Led computer science education programs in Boston public schools</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Industry Research Experience -->
-        <div id="experience" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8">Research & Industry Experience</h2>
+    <!-- Awards Timeline -->
+    <div id="awards" class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Awards & Recognition</h2>
+        
+        <div class="relative">
+            <!-- Timeline line -->
+            <div class="hidden sm:block absolute left-4 top-0 bottom-0 w-0.5 bg-blue-200"></div>
             
-            <!-- Goldman -->
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-xl font-semibold">Research Scientist, Quantitative Trading</h3>
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">2018 - 2021</span>
+            <!-- Timeline items -->
+            <div class="space-y-6 sm:space-y-8 sm:ml-12">
+                <!-- NDSEG Poster Award -->
+                <div class="relative">
+                    <div class="hidden sm:block absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
+                    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 border-l-4 border-blue-500">
+                        <span class="text-blue-600 font-medium">2024</span>
+                        <h3 class="text-lg sm:text-xl font-semibold">Best Poster Award</h3>
+                        <p class="mb-2">NDSEG Annual Fellows Conference</p>
+                        <a href="https://ndseg.org/2024-poster-winners" class="text-blue-600 hover:underline text-sm">View Award Announcement →</a>
+                    </div>
                 </div>
-                <p class="text-gray-600 mb-4">Goldman Sachs - New York, NY</p>
-                
-                <div class="mb-6">
-                    <h4 class="font-medium mb-2">Research Contributions</h4>
-                    <ul class="list-disc pl-6 space-y-3">
-                        <li>Developed novel statistical methods for analyzing market microstructure, processing 100M+ daily trading records to identify systematic patterns in algorithmic execution</li>
-                        <li>Led research initiatives on latency-sensitive distributed systems, resulting in peer-reviewed internal publications on network optimization</li>
-                        <li>Architected real-time analytics pipelines using Python and KDB/Q, implementing novel algorithms for trade execution optimization</li>
-                    </ul>
-                </div>
-                
-                <div class="mb-6">
-                    <h4 class="font-medium mb-2">Systems & Infrastructure</h4>
-                    <ul class="list-disc pl-6 space-y-3">
-                        <li>Designed distributed computing framework for processing market data streams across multiple data centers</li>
-                        <li>Implemented machine learning models for real-time trade classification and risk monitoring</li>
-                        <li>Built visualization tools for analyzing high-dimensional financial data, later adopted across multiple trading desks</li>
-                    </ul>
+
+                <div class="relative">
+                    <div class="hidden sm:block absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
+                    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
+                        <span class="text-blue-600 font-medium">2023</span>
+                        <h3 class="text-lg sm:text-xl font-semibold">Graduate Fellowship for STEM Diversity (GFSD)</h3>
+                        <p>NSA (Declined)</p>
+                    </div>
                 </div>
                 
+                <div class="relative">
+                    <div class="hidden sm:block absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
+                    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
+                        <span class="text-blue-600 font-medium">2022 - 2024</span>
+                        <h3 class="text-lg sm:text-xl font-semibold">National Defense Science & Engineering Graduate Fellowship</h3>
+                        <p>Army Research Office</p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="hidden sm:block absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
+                    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
+                        <span class="text-blue-600 font-medium">2021 - 2023</span>
+                        <h3 class="text-lg sm:text-xl font-semibold">Future Faculty Program</h3>
+                        <p>Carnegie Mellon University Eberly Center</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Industry Research Experience -->
+    <div id="experience" class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Research & Industry Experience</h2>
+        
+        <!-- Goldman -->
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <h3 class="text-lg sm:text-xl font-semibold">Research Scientist, Quantitative Trading</h3>
+                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0">2018 - 2021</span>
+            </div>
+            <p class="text-gray-600 mb-4">Goldman Sachs - New York, NY</p>
+            
+            <div class="mb-6">
+                <h4 class="font-medium mb-2">Research Contributions</h4>
+                <div class="space-y-3">
+                    <p>Developed novel statistical methods for analyzing market microstructure, processing 100M+ daily trading records to identify systematic patterns in algorithmic execution</p>
+                    <p>Led research initiatives on latency-sensitive distributed systems, resulting in peer-reviewed internal publications on network optimization</p>
+                    <p>Architected real-time analytics pipelines using Python and KDB/Q, implementing novel algorithms for trade execution optimization</p>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h4 class="font-medium mb-2">Systems & Infrastructure</h4>
+                <div class="space-y-3">
+                    <p>Designed distributed computing framework for processing market data streams across multiple data centers</p>
+                    <p>Implemented machine learning models for real-time trade classification and risk monitoring</p>
+                    <p>Built visualization tools for analyzing high-dimensional financial data, later adopted across multiple trading desks</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-100 px-2 py-1 rounded text-sm">Distributed Systems</span>
+                <span class="bg-blue-100 px-2 py-1 rounded text-sm">Machine Learning</span>
+                <span class="bg-blue-100 px-2 py-1 rounded text-sm">High-Performance Computing</span>
+                <span class="bg-blue-100 px-2 py-1 rounded text-sm">Data Visualization</span>
+            </div>
+        </div>
+        
+        <!-- Beto Campaign -->
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <h3 class="text-lg sm:text-xl font-semibold">Data Scientist</h3>
+                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0">2022</span>
+            </div>
+            <p class="text-gray-600 mb-4">Beto O'Rourke Senate Campaign</p>
+            
+            <div class="mb-6">
+                <h4 class="font-medium mb-2">Technical Leadership</h4>
+                <div class="space-y-3">
+                    <p>Developed machine learning models for voter behavior prediction using demographic data</p>
+                    <p>Helped organize grassroots campaign's efforts to set up new headquarters with Distribution Team</p>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h4 class="font-medium mb-2">Research Impact</h4>
+                <div class="space-y-3">
+                    <p>Identified key counties for high-likelihood impact</p>
+                    <p>Implemented statistical methods for voter outreach effectiveness</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-100 px-2 py-1 rounded text-sm">Privacy-Preserving ML</span>
+                <span class="bg-blue-100 px-2 py-1 rounded text-sm">Large-Scale Data Analysis</span>
+                <span class="bg-blue-100 px-2 py-1 rounded text-sm">Causal Inference</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Expertise -->
+    <div id="skills" class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Technical Expertise</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-semibold mb-4">Core Technologies</h3>
                 <div class="flex flex-wrap gap-2">
-                    <span class="bg-blue-100 px-2 py-1 rounded text-sm">Distributed Systems</span>
-                    <span class="bg-blue-100 px-2 py-1 rounded text-sm">Machine Learning</span>
-                    <span class="bg-blue-100 px-2 py-1 rounded text-sm">High-Performance Computing</span>
-                    <span class="bg-blue-100 px-2 py-1 rounded text-sm">Data Visualization</span>
+                    <span class="bg-blue-100 px-3 py-1 rounded-full text-sm">Python</span>
+                    <span class="bg-blue-100 px-3 py-1 rounded-full text-sm">Java</span>
+                    <span class="bg-blue-100 px-3 py-1 rounded-full text-sm">C</span>
+                    <span class="bg-green-100 px-3 py-1 rounded-full text-sm">TensorFlow</span>
+                    <span class="bg-green-100 px-3 py-1 rounded-full text-sm">scikit-learn</span>
+                    <span class="bg-green-100 px-3 py-1 rounded-full text-sm">PyTorch</span>
+                    <span class="bg-green-100 px-3 py-1 rounded-full text-sm">ProVerif</span>
+                    <span class="bg-green-100 px-3 py-1 rounded-full text-sm">Slang</span>
                 </div>
             </div>
             
-            <!-- Beto Campaign -->
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-xl font-semibold">Data Scientist</h3>
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">2022</span>
-                </div>
-                <p class="text-gray-600 mb-4">Beto O'Rourke Senate Campaign</p>
-                
-                <div class="mb-6">
-                    <h4 class="font-medium mb-2">Technical Leadership</h4>
-                    <ul class="list-disc pl-6 space-y-3">
-                        <li>Developed machine learning models for voter behavior prediction using demographic data</li>
-                        <li>Helped organize grassroots campaign's efforts to set up new headquarters with Distribution Team </li>
-                    </ul>
-                </div>
-                
-                <div class="mb-6">
-                    <h4 class="font-medium mb-2">Research Impact</h4>
-                    <ul class="list-disc pl-6 space-y-3">
-                        <li>Identified key counties for high-likelihood impact</li>
-                        <li>Implemented statistical methods for voter outreach effectiveness</li>
-                    </ul>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-blue-100 px-2 py-1 rounded text-sm">Privacy-Preserving ML</span>
-                    <span class="bg-blue-100 px-2 py-1 rounded text-sm">Large-Scale Data Analysis</span>
-                    <span class="bg-blue-100 px-2 py-1 rounded text-sm">Causal Inference</span>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Skills -->
-        <div id="skills" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8">Technical Expertise</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-semibold mb-4">Core Technologies</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-100 px-3 py-1 rounded-full text-sm">Python</span>
-                        <span class="bg-blue-100 px-3 py-1 rounded-full text-sm">Java</span>
-                        <span class="bg-blue-100 px-3 py-1 rounded-full text-sm">C</span>
-                        <span class="bg-green-100 px-3 py-1 rounded-full text-sm">TensorFlow</span>
-                        <span class="bg-green-100 px-3 py-1 rounded-full text-sm">scikit-learn</span>
-                        <span class="bg-green-100 px-3 py-1 rounded-full text-sm">PyTorch</span>
-                        <span class="bg-green-100 px-3 py-1 rounded-full text-sm">ProVerif</span>
-                        <span class="bg-green-100 px-3 py-1 rounded-full text-sm">Slang</span>
-
-                        <!-- <span class="bg-yellow-100 px-3 py-1 rounded-full text-sm">Git</span> -->
-                        <!-- <span class="bg-yellow-100 px-3 py-1 rounded-full text-sm">LaTeX</span> -->
+            <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-semibold mb-4">Languages</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                        <span class="font-medium w-24">English</span>
+                        <div class="flex-1 bg-gray-200 rounded-full h-2 min-w-[100px]">
+                            <div class="bg-blue-600 rounded-full h-2 w-full"></div>
+                        </div>
+                        <span class="text-sm">Native</span>
                     </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-semibold mb-4">Languages</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-2">
-                            <span class="font-medium w-24">English</span>
-                            <div class="flex-1 bg-gray-200 rounded-full h-2">
-                                <div class="bg-blue-600 rounded-full h-2 w-full"></div>
-                            </div>
-                            <span class="text-sm">Native</span>
+                    <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                        <span class="font-medium w-24">Tamil</span>
+                        <div class="flex-1 bg-gray-200 rounded-full h-2 min-w-[100px]">
+                            <div class="bg-blue-600 rounded-full h-2 w-full"></div>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="font-medium w-24">Tamil</span>
-                            <div class="flex-1 bg-gray-200 rounded-full h-2">
-                                <div class="bg-blue-600 rounded-full h-2 w-full"></div>
-                            </div>
-                            <span class="text-sm">Native</span>
+                        <span class="text-sm">Native</span>
+                    </div>
+                    <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                        <span class="font-medium w-24">Spanish</span>
+                        <div class="flex-1 bg-gray-200 rounded-full h-2 min-w-[100px]">
+                            <div class="bg-blue-600 rounded-full h-2 w-3/4"></div>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="font-medium w-24">Spanish</span>
-                            <div class="flex-1 bg-gray-200 rounded-full h-2">
-                                <div class="bg-blue-600 rounded-full h-2 w-3/4"></div>
-                            </div>
-                            <span class="text-sm">Professional</span>
+                        <span class="text-sm">Professional</span>
+                    </div>
+                    <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                        <span class="font-medium w-24">Japanese</span>
+                        <div class="flex-1 bg-gray-200 rounded-full h-2 min-w-[100px]">
+                            <div class="bg-blue-600 rounded-full h-2 w-1/2"></div>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="font-medium w-24">Japanese</span>
-                            <div class="flex-1 bg-gray-200 rounded-full h-2">
-                                <div class="bg-blue-600 rounded-full h-2 w-1/2"></div>
-                            </div>
-                            <span class="text-sm">Limited</span>
-                        </div>
+                        <span class="text-sm">Limited</span>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
+    <!-- Interests -->
+    <div id="interests" class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Interests</h2>
+        
+        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+            <div class="flex flex-col sm:flex-row justify-between items-start mb-6">
+                <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-0">Art Resume</h3>
+                <a href="saranya_art_resume.pdf" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                    Art Resume PDF
+                </a>
+            </div>
+        </div>
+    </div>
 
-
-<!-- Interests -->
-        <div id="interests" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8">Interests</h2>
-            
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                <div class="flex justify-between items-start mb-6">
-                    <h3 class="text-2xl font-semibold">Art Resume</h3>
-                    <a href="saranya_art_resume.pdf" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                        Art Resume PDF
+    <!-- Footer -->
+    <footer class="border-t pt-8 sm:pt-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
+            <div>
+                <h3 class="font-semibold mb-4">Contact</h3>
+                <p>saranyav [at] andrew.cmu.edu</p>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-4">Links</h3>
+                <div class="space-y-2">
+                    <a href="https://scholar.google.com/citations?user=4Lazaq0AAAAJ&hl=en&oi=ao" class="flex items-center gap-2 text-blue-600 hover:underline">
+                        <span>Google Scholar</span>
+                    </a>
+                    <a href="https://github.com/svijayakumar2" class="flex items-center gap-2 text-blue-600 hover:underline">
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/saranyavijayakumar1/" class="flex items-center gap-2 text-blue-600 hover:underline">
+                        <span>LinkedIn</span>
                     </a>
                 </div>
             </div>
+            <div>
+                <h3 class="font-semibold mb-4">Location</h3>
+                <p>Gates Hillman Center<br>Carnegie Mellon University<br>Pittsburgh, PA 15213</p>
+            </div>
         </div>
+        <div class="text-center text-gray-600 text-sm py-4">
+            © 2024 Saranya Vijayakumar. Last updated: May 2025
+        </div>
+    </footer>
 
 
-        <!-- Footer -->
-        <footer class="border-t pt-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="font-semibold mb-4">Contact</h3>
-                    <p>saranyav [at] andrew.cmu.edu</p>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-4">Links</h3>
-                    <div class="space-y-2">
-                        <a href="https://scholar.google.com/citations?user=4Lazaq0AAAAJ&hl=en&oi=ao" class="flex items-center gap-2 text-blue-600 hover:underline">
-                            <span>Google Scholar</span>
-                        </a>
-                        <a href="https://github.com/svijayakumar2" class="flex items-center gap-2 text-blue-600 hover:underline">
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/saranyavijayakumar1/" class="flex items-center gap-2 text-blue-600 hover:underline">
-                            <span>LinkedIn</span>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-4">Location</h3>
-                    <p>Gates Hillman Center<br>Carnegie Mellon University<br>Pittsburgh, PA 15213</p>
-                </div>
-            </div>
-            <div class="text-center text-gray-600 text-sm py-4">
-                © 2024 Saranya Vijayakumar. Last updated: December 2024
-            </div>
-        </footer>
-    </div>
 
-    <script>
-        // Navigation highlighting logic remains the same
-    </script>
-</body>
-</html>
+
+
+
