@@ -3,94 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saranya Vijayakumar - Photography</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Saranya Vijayakumar</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body { 
-            font-family: system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fff;
+            color: #222;
         }
         
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .location-overlay {
-            position: absolute;
+        /* Simple top nav */
+        .nav {
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 30px;
             display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 20px;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        .gallery-item:hover .location-overlay {
-            opacity: 1;
+        .nav a {
+            color: #222;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 14px;
+            transition: opacity 0.2s;
         }
         
-        .location-text {
-            color: white;
-            font-size: 1.2rem;
+        .nav a:hover {
+            opacity: 0.6;
+        }
+        
+        .logo {
             font-weight: 500;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            font-size: 16px;
         }
         
-        /* Masonry-style grid */
-        .gallery-grid {
+        /* Gallery container */
+        .gallery {
+            margin-top: 80px;
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Masonry grid */
+        .grid {
             columns: 1;
-            column-gap: 1rem;
+            column-gap: 15px;
         }
         
-        @media (min-width: 640px) {
-            .gallery-grid {
+        @media (min-width: 600px) {
+            .grid {
                 columns: 2;
             }
         }
         
-        @media (min-width: 768px) {
-            .gallery-grid {
+        @media (min-width: 900px) {
+            .grid {
                 columns: 3;
             }
         }
         
-        @media (min-width: 1024px) {
-            .gallery-grid {
+        @media (min-width: 1200px) {
+            .grid {
                 columns: 4;
             }
         }
         
-        .gallery-item {
+        .grid-item {
             break-inside: avoid;
-            margin-bottom: 1rem;
-            border-radius: 8px;
+            margin-bottom: 15px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
         }
         
-        /* Modal styles */
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .grid-item:hover img {
+            transform: scale(1.02);
+        }
+        
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -99,14 +110,14 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            animation: fadeIn 0.3s ease;
+            background: rgba(0,0,0,0.95);
         }
         
         .modal.active {
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
         
         .modal-content {
@@ -117,292 +128,181 @@
         
         .modal-content img {
             max-width: 100%;
-            max-height: 100%;
+            max-height: 90vh;
             object-fit: contain;
-            border-radius: 8px;
         }
         
         .modal-close {
             position: absolute;
-            top: -40px;
+            top: -50px;
             right: 0;
             color: white;
-            font-size: 2rem;
+            font-size: 30px;
             cursor: pointer;
-            z-index: 1001;
+            font-weight: 300;
         }
         
-        .modal-location {
+        .modal-close:hover {
+            opacity: 0.7;
+        }
+        
+        /* Location overlay */
+        .location {
             position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.6));
             color: white;
-            font-size: 1.2rem;
-            text-align: center;
-            white-space: nowrap;
+            padding: 20px 15px 15px;
+            font-size: 13px;
+            font-weight: 400;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .grid-item:hover .location {
+            opacity: 1;
         }
         
-        .nav-link:hover {
-            color: #2563eb;
+        @media (max-width: 600px) {
+            .nav {
+                padding: 15px 20px;
+            }
+            
+            .gallery {
+                margin-top: 60px;
+                padding: 20px 15px;
+            }
+            
+            .grid {
+                column-gap: 10px;
+            }
+            
+            .grid-item {
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-8">
-                    <a href="index.html" class="text-xl font-bold text-gray-900">Saranya Vijayakumar</a>
-                    <div class="hidden md:flex space-x-6">
-                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600">Research</a>
-                        <a href="#" class="nav-link text-blue-600 font-medium">Photography</a>
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobileMenuBtn" class="text-gray-700">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobileMenu" class="md:hidden hidden bg-white border-t">
-            <div class="px-4 py-4 space-y-4">
-                <a href="index.html" class="block text-gray-700 hover:text-blue-600">Research</a>
-                <a href="#" class="block text-blue-600 font-medium">Photography</a>
-            </div>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="logo">Saranya Vijayakumar</a>
+        <div>
+            <a href="index.html">Research</a>
         </div>
     </nav>
 
-    <!-- Header -->
-    <div class="bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Photography</h1>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    A collection of moments captured during my travels around the world. 
-                </p>
+    <div class="gallery">
+        <div class="grid">
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/kyoto-0.jpg" alt="Kyoto">
+                <div class="location">Kyoto, Japan</div>
+            </div>
+            
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/osaka-0.jpg" alt="Osaka">
+                <div class="location">Osaka, Japan</div>
+            </div>
+            
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/swiss_tmb-0.jpg" alt="Swiss Alps">
+                <div class="location">Tour du Mont Blanc</div>
+            </div>
+            
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/tmb_italy-0.jpg" alt="Italian Alps">
+                <div class="location">Tour du Mont Blanc</div>
+            </div>
+
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/mexico-0.jpg" alt="Mexico">
+                <div class="location">Tulum, Mexico</div>
+            </div>
+
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/tmb-0.jpg" alt="Mont Blanc">
+                <div class="location">Tour du Mont Blanc</div>
+            </div>
+            
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/portugal-0.jpg" alt="Portugal">
+                <div class="location">Tavira, Portugal</div>
+            </div>
+            
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/malaysia-0.jpg" alt="Malaysia">
+                <div class="location">Batu Caves, Malaysia</div>
+            </div>
+            
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/ica_dunes-0.jpg" alt="Peru Dunes">
+                <div class="location">Ica, Peru</div>
+            </div>
+            
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/peru-0.jpg" alt="Peru Mountains">
+                <div class="location">Salkantay, Peru</div>
+            </div>
+
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/ica-0.jpg" alt="Ica Desert">
+                <div class="location">Ica, Peru</div>
+            </div>
+
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/switzerland.jpg" alt="Switzerland Lake">
+                <div class="location">Champex-Lac, Switzerland</div>
+            </div>
+
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/spain-0.jpg" alt="Spain Coast">
+                <div class="location">Cadiz, Spain</div>
+            </div>
+            
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/japan_osaka-0.jpg" alt="Japan Street">
+                <div class="location">Osaka, Japan</div>
+            </div>
+
+            <div class="grid-item" onclick="openModal(this)">
+                <img src="imgs_site/converted/pittsburgh-0.jpg" alt="Pittsburgh">
+                <div class="location">Pittsburgh, PA</div>
             </div>
         </div>
     </div>
 
-    <!-- Gallery -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="gallery-grid">
-            <div class="gallery-item" data-location="Kyoto, Japan">
-                <img src="imgs_site/kyoto.png" alt="Temple in Kyoto">
-                <div class="location-overlay">
-                    <div class="location-text">Kyoto, Japan</div>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-location="Osaka">
-                <img src="imgs_site/osaka.png" alt="Osaka">
-                <div class="location-overlay">
-                    <div class="location-text">Osaka</div>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-location="Tour du Mont Blanc">
-                <img src="imgs_site/swiss_tmb.png" alt="Tour du Mont Blanc">
-                <div class="location-overlay">
-                    <div class="location-text">Tour du Mont Blanc</div>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-location="Tour du Mont Blanc">
-                <img src="imgs_site/tmb_italy.png" alt="Tour du Mont Blanc">
-                <div class="location-overlay">
-                    <div class="location-text">Tour du Mont Blanc</div>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-location="Mexico">
-                <img src="imgs_site/mexico.png" alt="Mexico">
-                <div class="location-overlay">
-                    <div class="location-text">Mangroves</div>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-location="Tour du Mont Blanc">
-                <img src="imgs_site/tmb.png" alt="Tour du Mont Blanc">
-                <div class="location-overlay">
-                    <div class="location-text">Tour du Mont Blanc</div>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-location="Portugal">
-                <img src="imgs_site/portugal.jpg" alt="Portugal">
-                <div class="location-overlay">
-                    <div class="location-text">Tavira, Portugal</div>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-location="Malaysia">
-                <img src="imgs_site/malaysia.png" alt="Batu Caves, Malaysia">
-                <div class="location-overlay">
-                    <div class="location-text">Malaysia</div>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-location="Salkantay Trek">
-                <img src="imgs_site/ica_dunes.png" alt="Salkantay Trek">
-                <div class="location-overlay">
-                    <div class="location-text">Salkantay, Peru</div>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-location="Salkantay Trek">
-                <img src="imgs_site/peru.png" alt="Salkantay Trek">
-                <div class="location-overlay">
-                    <div class="location-text">Salkantay, Peru</div>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-location="Ica Peru">
-                <img src="imgs_site/ica.png" alt="Ica">
-                <div class="location-overlay">
-                    <div class="location-text">Ica, Peru</div>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-location="Champex-Lac, Switzerland">
-                <img src="imgs_site/switzerland.png" alt="Switzerland">
-                <div class="location-overlay">
-                    <div class="location-text">Switzerland</div>
-                </div>
-            </div>
-
-
-            <div class="gallery-item" data-location="Ica Peru">
-                <img src="imgs_site/ica_dunes.png" alt="Ica">
-                <div class="location-overlay">
-                    <div class="location-text">Ica, Peru</div>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-location="Cadiz, Spain">
-                <img src="imgs_site/spain.png" alt="Cadiz, Spain">
-                <div class="location-overlay">
-                    <div class="location-text">Cadiz, Spain</div>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-location="Osaka, Japan">
-                <img src="imgs_site/osaka.png" alt="Okonomiyaki Kiji">
-                <div class="location-overlay">
-                    <div class="location-text">Osaka, Japan</div>
-                </div>
-            </div>
-            
-<!--             <div class="gallery-item" data-location="Machu Picchu, Peru">
-                <img src="img011.jpg" alt="Machu Picchu ruins">
-                <div class="location-overlay">
-                    <div class="location-text">Machu Picchu, Peru</div>
-                </div>
-            </div> -->
-
-            <div class="gallery-item" data-location="Pittsburgh">
-                <img src="imgs_site/pittsburgh.jpg" alt="Pittsburgh">
-                <div class="location-overlay">
-                    <div class="location-text">Pascal in Pittsburgh</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Modal for full-size images -->
-    <div id="imageModal" class="modal">
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
         <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <img id="modalImage" src="" alt="">
-            <div id="modalLocation" class="modal-location"></div>
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="" alt="">
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="font-semibold mb-4">Contact</h3>
-                    <p>saranyav [at] andrew.cmu.edu</p>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-4">Links</h3>
-                    <div class="space-y-2">
-                        <a href="https://scholar.google.com/citations?user=4Lazaq0AAAAJ&hl=en&oi=ao" class="block text-blue-600 hover:underline">Google Scholar</a>
-                        <a href="https://github.com/svijayakumar2" class="block text-blue-600 hover:underline">GitHub</a>
-                        <a href="https://www.linkedin.com/in/saranyavijayakumar1/" class="block text-blue-600 hover:underline">LinkedIn</a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-4">Location</h3>
-                    <p>Gates Hillman Center<br>Carnegie Mellon University<br>Pittsburgh, PA 15213</p>
-                </div>
-            </div>
-            <div class="text-center text-gray-600 text-sm py-4 mt-8 border-t">
-                © 2024 Saranya Vijayakumar. All rights reserved.
-            </div>
-        </div>
-    </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        function openModal(element) {
+            const img = element.querySelector('img');
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
-        // Modal functionality
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
-        const modalLocation = document.getElementById('modalLocation');
-        const modalClose = document.querySelector('.modal-close');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        // Open modal when clicking on gallery items
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const img = item.querySelector('img');
-                const location = item.getAttribute('data-location');
-                
-                modalImage.src = img.src;
-                modalImage.alt = img.alt;
-                modalLocation.textContent = location;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        // Close modal
-        const closeModal = () => {
+        function closeModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            
+            const modal = document.getElementById('modal');
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
-        };
+        }
 
-        modalClose.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-
-        // Close modal with escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
+        // Close with escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
                 closeModal();
             }
         });
