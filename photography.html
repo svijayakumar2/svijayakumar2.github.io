@@ -33,31 +33,37 @@
             transform: scale(1.1);
         }
         
-        .location-overlay {
+        .location-tooltip {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 20px;
-        }
-        
-        .gallery-item:hover .location-overlay {
-            opacity: 1;
-        }
-        
-        .location-text {
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
             color: white;
-            font-size: 1.2rem;
-            font-weight: 500;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 100;
+            pointer-events: none;
+        }
+        
+        .location-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .gallery-item:hover .location-tooltip {
+            opacity: 1;
+            visibility: visible;
         }
         
         /* Masonry-style grid */
@@ -189,7 +195,7 @@
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Photography</h1>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    A collection of moments captured during my travels around the world. 
+                    A collection of moments captured during my travels around the world. Each photograph tells a story of places explored and cultures encountered.
                 </p>
             </div>
         </div>
@@ -198,131 +204,251 @@
     <!-- Gallery -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="gallery-grid">
+            <!-- Your travel photos with Google Drive URLs -->
             <div class="gallery-item" data-location="Kyoto, Japan">
-                <img src="img/IMG_3684.png" alt="Temple in Kyoto">
-                <div class="location-overlay">
-                    <div class="location-text">Kyoto, Japan</div>
-                </div>
+                <img src="https://drive.google.com/uc?id=1k26ZRYHRYCUg4q0fvKA1PgJz0BUebDER" alt="Kyoto, Japan">
+                <div class="location-tooltip">Kyoto, Japan</div>
             </div>
             
-            <div class="gallery-item" data-location="Kyoto">
-                <img src="img/IMG_3762.png" alt="Kyoto">
-                <div class="location-overlay">
-                    <div class="location-text">Kyoto</div>
-                </div>
+            <div class="gallery-item" data-location="Kyoto, Japan">
+                <img src="https://drive.google.com/uc?id=157MZgz_rM72SEDE9fsoCvyaTW2K6NdJl" alt="Kyoto">
+                <div class="location-tooltip">Kyoto, Japan</div>
             </div>
             
             <div class="gallery-item" data-location="Tour du Mont Blanc">
-                <img src="img/IMG_4683.png" alt="Tour du Mont Blanc">
-                <div class="location-overlay">
-                    <div class="location-text">Tour du Mont Blanc</div>
-                </div>
+                <img src="https://drive.google.com/uc?id=1Y9ILErauMyPhBgdc2B0y9NfTIWhiBFft" alt="Tour du Mont Blanc">
+                <div class="location-tooltip">Tour du Mont Blanc</div>
             </div>
             
             <div class="gallery-item" data-location="Tour du Mont Blanc">
-                <img src="img/IMG_4684.png" alt="Tour du Mont Blanc">
-                <div class="location-overlay">
-                    <div class="location-text">Tour du Mont Blanc</div>
-                </div>
+                <img src="https://drive.google.com/uc?id=1zX9XLH-mCoaQLT409kFK-G9FccKsV3Hg" alt="Tour du Mont Blanc">
+                <div class="location-tooltip">Tour du Mont Blanc</div>
             </div>
 
-            <div class="gallery-item" data-location="Cartagena">
-                <img src="img/cartagena.png" alt="Cartagena">
-                <div class="location-overlay">
-                    <div class="location-text">Mangroves</div>
-                </div>
+            <div class="gallery-item" data-location="Cartagena, Colombia">
+                <img src="https://drive.google.com/uc?id=1YUjfu39t4MpU_7-HNUYhLNuD42DRr7s4" alt="Cartagena">
+                <div class="location-tooltip">Cartagena, Colombia</div>
             </div>
 
-            <div class="gallery-item" data-location="Tour du Mont Blanc">
-                <img src="img005.jpg" alt="Tour du Mont Blanc">
-                <div class="location-overlay">
-                    <div class="location-text">Tour du Mont Blanc</div>
-                </div>
+            <div class="gallery-item" data-location="Tavira, Portugal">
+                <img src="https://drive.google.com/uc?id=1pFd4fJsiktR2iYSavQM31B_NSs4Osb7I" alt="Portugal">
+                <div class="location-tooltip">Tavira, Portugal</div>
             </div>
             
-            <div class="gallery-item" data-location="Portugal">
-                <img src="img006.jpg" alt="Portugal">
-                <div class="location-overlay">
-                    <div class="location-text">Tavira, Portugal</div>
-                </div>
+            <div class="gallery-item" data-location="Batu Caves, Malaysia">
+                <img src="https://drive.google.com/uc?id=1m7zhJ-i42DaIP1CTVJJ_Ah84qqi2SuWu" alt="Batu Caves, Malaysia">
+                <div class="location-tooltip">Batu Caves, Malaysia</div>
             </div>
             
-            <div class="gallery-item" data-location="Malaysia">
-                <img src="img/IMG_1079.jpg" alt="Batu Caves, Malaysia">
-                <div class="location-overlay">
-                    <div class="location-text">Malaysia</div>
-                </div>
+            <div class="gallery-item" data-location="Salkantay Trek, Peru">
+                <img src="https://drive.google.com/uc?id=1qHhJRCSNwfIoXpIJuWAxvx7P8Gf0USic" alt="Salkantay Trek">
+                <div class="location-tooltip">Salkantay Trek, Peru</div>
             </div>
             
-            <div class="gallery-item" data-location="Salkantay Trek">
-                <img src="img/IMG_5377.png" alt="Salkantay Trek">
-                <div class="location-overlay">
-                    <div class="location-text">Salkantay, Peru</div>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-location="Salkantay Trek">
-                <img src="img/IMG_5404.png" alt="Salkantay Trek">
-                <div class="location-overlay">
-                    <div class="location-text">Salkantay, Peru</div>
-                </div>
+            <div class="gallery-item" data-location="Salkantay Trek, Peru">
+                <img src="https://drive.google.com/uc?id=17Szs0AEY3ajCfRWMLkuW5JJpARB_Ff4T" alt="Salkantay Trek">
+                <div class="location-tooltip">Salkantay Trek, Peru</div>
             </div>
 
-            <div class="gallery-item" data-location="Ica Peru">
-                <img src="img/IMG_6271.png" alt="Ica">
-                <div class="location-overlay">
-                    <div class="location-text">Ica, Peru</div>
-                </div>
+            <div class="gallery-item" data-location="Ica, Peru">
+                <img src="https://drive.google.com/uc?id=1c2p2LzPbDbtTUKalHO5SXkQWC2af3piE" alt="Ica">
+                <div class="location-tooltip">Ica, Peru</div>
             </div>
 
             <div class="gallery-item" data-location="Champex-Lac, Switzerland">
-                <img src="img/IMG_6492_2.png" alt="Switzerland">
-                <div class="location-overlay">
-                    <div class="location-text">Switzerland</div>
-                </div>
+                <img src="https://drive.google.com/uc?id=19pPE-ERJO68f_IQYSc7Kg_ofwOyQVS0g" alt="Switzerland">
+                <div class="location-tooltip">Champex-Lac, Switzerland</div>
             </div>
 
-
-            <div class="gallery-item" data-location="Ica Peru">
-                <img src="img/IMG_6339.png" alt="Ica">
-                <div class="location-overlay">
-                    <div class="location-text">Ica, Peru</div>
-                </div>
+            <div class="gallery-item" data-location="Ica, Peru">
+                <img src="https://drive.google.com/uc?id=1l7g5JAWMp1kcvKfHXX2cI8pD9ayT9GoE" alt="Ica">
+                <div class="location-tooltip">Ica, Peru</div>
             </div>
 
             <div class="gallery-item" data-location="Cadiz, Spain">
-                <img src="img/cadiz.png" alt="Cadiz, Spain">
-                <div class="location-overlay">
-                    <div class="location-text">Cadiz, Spain</div>
-                </div>
+                <img src="https://drive.google.com/uc?id=1PYQueSEZ2PUjv9hgzOyf8F5DMNYQrQNz" alt="Cadiz, Spain">
+                <div class="location-tooltip">Cadiz, Spain</div>
             </div>
             
             <div class="gallery-item" data-location="Osaka, Japan">
-                <img src="img/IMG_3654.png" alt="Okonomiyaki Kiji">
-                <div class="location-overlay">
-                    <div class="location-text">Osaka, Japan</div>
-                </div>
-            </div>
-            
-<!--             <div class="gallery-item" data-location="Machu Picchu, Peru">
-                <img src="img011.jpg" alt="Machu Picchu ruins">
-                <div class="location-overlay">
-                    <div class="location-text">Machu Picchu, Peru</div>
-                </div>
-            </div> -->
-
-            <div class="gallery-item" data-location="Pittsburgh">
-                <img src="img/IMG_2065.jpg" alt="Pittsburgh">
-                <div class="location-overlay">
-                    <div class="location-text">Pascal in Pittsburgh</div>
-                </div>
+                <img src="https://drive.google.com/uc?id=14M6GAPnbtVW3VxawQPFhZmiOUJHklAb0" alt="Osaka, Japan">
+                <div class="location-tooltip">Osaka, Japan</div>
             </div>
 
-            <div class="gallery-item" data-location="Mexico">
-                <img src="img/IMG_1280.jpg" alt="Tulum">
-                <div class="location-overlay">
-                    <div class="location-text">Tulum, Mexico</div>
-                </div>
+            <div class="gallery-item" data-location="Pittsburgh, USA">
+                <img src="https://drive.google.com/uc?id=1DGaBB3zxGGqrahUtOXwo-2oMDh8sFM8N" alt="Pittsburgh">
+                <div class="location-tooltip">Pittsburgh, USA</div>
+            </div>
+
+            <div class="gallery-item" data-location="Tulum, Mexico">
+                <img src="https://drive.google.com/uc?id=1QGamsAquRPS3w7jwnmZsbB_6kpaW8_w-" alt="Tulum">
+                <div class="location-tooltip">Tulum, Mexico</div>
+            </div>
+
+            <div class="gallery-item" data-location="Budapest, Hungary">
+                <img src="https://drive.google.com/uc?id=1MulT1N5mOHShsV-YDOSE1vVEkeVxu-WO" alt="Basilica Budapest">
+                <div class="location-tooltip">Budapest, Hungary</div>
+            </div>
+
+            <div class="gallery-item" data-location="Brussels, Belgium">
+                <img src="https://drive.google.com/uc?id=1MZbmE562-S6TpfwOL8XRGNOYFveTTMcZ" alt="Brussels">
+                <div class="location-tooltip">Brussels, Belgium</div>
+            </div>
+
+            <div class="gallery-item" data-location="Budapest, Hungary">
+                <img src="https://drive.google.com/uc?id=13-PlO2kpYRo22Sc014v9-8CGXVgYHzTD" alt="Budapest">
+                <div class="location-tooltip">Budapest, Hungary</div>
+            </div>
+
+            <div class="gallery-item" data-location="Leuven, Belgium">
+                <img src="https://drive.google.com/uc?id=1-M6mKZ01NPdbmHP0L98MBUyJg1QB1h9j" alt="Leuven">
+                <div class="location-tooltip">Leuven, Belgium</div>
+            </div>
+
+            <!-- Additional photos - update locations as needed -->
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=15ZthW6cb_4WVJ1sT3UUAkBr7ZQQ3GF_O" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1aRbYhJ8TJBMTt9oZ4vpiho41EL7Wa8ZX" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1mYBnQh0Ha0lGlg4XTJbQtSQXYE-2r67v" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1T5eOIIRj-gHmpb4EcMmM-HVTkE34L_EC" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1YCo1scTF0lmuU7R4hhkV3E8qC-94HXA5" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1SKkjVsV6ZOqBnB9jyYHTAPEyv6DoJ5OZ" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1O0T9Jo1Ct0qkY8HP5Zg2-KnaEFnwKjcI" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=19LdQTAQ8waqJW7Gf9XCXTTKOMTQwqEAB" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=18-Z86TckN6S6ufWVP8liAMV81QrCUPJh" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=17K7N4oM4G9VAqkDbILH-wuEqdmTna5xX" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1uNaLZ2G-YejtZoWRVvCFYel0kFHwpmfq" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1MRJZ2RJeOz_6epB9u1PGSUrQgfJsWXbg" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1h0EMXIalAPxSt1rwVjEcLfSuTmvYaZe0" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1XvnISYUc0ZfholM6b4UR1JXnrSG6OgzI" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1o9Krjv7ru2SbQQ8MYQGvk9qbimwY9LIN" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1H8XtKidG-UQv0jqSYPGJfGoo6oTam2z4" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1uRaakguGUkBzjo09DYT6TDnxq1_Ksb4t" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1ERGaWPD1fA_IIGNk9F79j4G-D_Jg6I_s" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1RHCZtoqZnGIesRxRuvSB_kAayUjaeGcA" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1HGr5pbCqgVw1Zbf1Fpk8wUxDYsJYX8wy" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1pRbautftrPdkinh_qL9hD3l-W2hPyU4a" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1KSBv4ZCJIhyeAEXipGvNTZBzgAMp12uT" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1Cif0laUzY7nuEEiHFx27s66nLO5S8Kjj" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1Kwaz4VUYafqwb7e8EQXbByO0LQJw_M-u" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1kS1xiuF8OW2ayi3e1Gba7WttYIRc8IN-" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1VwxYnZ9uw31hf0qkg165iLTKgqjEQMGj" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=10kchFMv1V5uBtbN7sAO8LpiLfY_6JaU6" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1qMJA98qlvsVICcgzvJrYgIL_GwWvjWRa" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
+            </div>
+
+            <div class="gallery-item" data-location="Location TBD">
+                <img src="https://drive.google.com/uc?id=1YuMNkedFc6hBdSD01S8lAtu3Bzi8K72t" alt="Travel photo">
+                <div class="location-tooltip">Location TBD</div>
             </div>
         </div>
     </div>
