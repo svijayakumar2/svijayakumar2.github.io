@@ -146,135 +146,137 @@
 
     <div id="research" class="mb-16">
         <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Research</h2>
-
-        <!-- IEEE MCSI Paper -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <h4 class="text-lg sm:text-xl font-semibold">Prototype-Integrated Representation Learning for Novelty Detection</h4>
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">IEEE TrustCom 2025</span>
-            </div>
-            <p class="text-gray-600 mb-4">
-                 <span class="font-medium">Saranya Vijayakumar</span>, Matt Fredrikson, Christos Faloutsos
-            </p>
-            <p class="mb-4">
-                We present CentroidEmbed, a unified framework that integrates prototype learning directly within graph neural networks for simultaneous malware family classification and zero-day threat detection. Unlike traditional cybersecurity systems that separate classification from novelty detection (leading to excessive false alarms and missed threats), our approach learns behavioral centroids for each malware family and uses specialized cosine-based triplet loss to create distinct signatures while maintaining separation from novel threats. The framework analyzes control flow graphs extracted from malware binaries through GNN architectures that capture behavioral patterns robust to obfuscation techniques.
-                
-                Evaluated on real-world datasets including BODMAS (57,000+ samples across 500+ families) and MalImg (6,748 samples across 25 families) using chronological splits that simulate operational deployment, CentroidEmbed achieves substantial improvements over existing methods with an Operational Novelty Score of 0.955 versus 0.878 for the best baseline. The system demonstrates exceptional robustness against adversarial obfuscation (0% performance degradation compared to 25.9% average drop for traditional methods) and maintains 77.2% precision with 55.6% recall for novel family detection on BODMAS, significantly reducing analyst workload while improving zero-day threat coverage in production security environments.
-            </p>
-<!--             <a href="solvertransformer.pdf" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                PDF
-            </a> -->
-        </div>
+<!-- 
 
 
-        <!-- IEEE MCSI Paper -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <h4 class="text-lg sm:text-xl font-semibold">AICodeDetect: A Pipeline for Systematic Detection and Analysis of AI-Generated Code</h4>
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">IEEE MCSI 2025</span>
-            </div>
-            <p class="text-gray-600 mb-4">
-                 <span class="font-medium">Saranya Vijayakumar</span>, Philip Negrin, Christos Faloutsos
-            </p>
-            <p class="mb-4">
-                In this paper, we present CodeFusion, a multimodal framework for detecting AI-generated code that combines Vision Transformers with contrastive learning to align visual code structure with semantic content. The approach systematically evaluates detection across different programming paradigms (Python, Java, and OCaml) and AI model generations (GPT-3.5 Turbo and GPT-4o), progressing from traditional machine learning baselines through deep learning to the novel CodeFusion architecture that processes code through parallel pathways analyzing both spatial structure and semantic meaning.
-                
-                The findings reveal that GPT-4o generated code is consistently more detectable than GPT-3.5 Turbo code, with CodeFusion achieving near-perfect detection (F1 scores of 0.99-1.00), challenging assumptions that advanced models converge toward indistinguishable human mimicry. Instead, newer models develop distinctive stylistic signatures in code density, comment distribution, and whitespace usage, with detection difficulty varying by language constraints and programming paradigm.
-            </p>
-<!--             <a href="solvertransformer.pdf" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                PDF
-            </a> -->
-        </div>
-
-
-
-        <!-- AISTATS Paper -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <h4 class="text-lg sm:text-xl font-semibold">Mechanistically Interpreting a Transformer-based 2-SAT Solver</h4>
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">ICML 2025</span>
-            </div>
-            <p class="text-gray-600 mb-4">
-                Nils Palumbo, Ravi Mangal, Zifan Wang, <span class="font-medium">Saranya Vijayakumar</span>, Corina Pasareanau, Somesh Jha
-            </p>
-            <p class="mb-4">
-                In this work we present a formal framework for mechanistically interpreting neural networks, motivated by abstract interpretation from program analysis. We apply this framework to analyze a Transformer model trained to solve the 2-SAT problem. Through our analysis, we uncover that the model learns a systematic algorithm - first parsing input formulas into clause-level representations in initial layers, then evaluating satisfiability by enumerating possible Boolean variable valuations. Our work provides evidence that the extracted mechanistic interpretation satisfies our proposed formal axioms, demonstrating how the model systematically solves 2-SAT problems.
-            </p>
-            <a href="solvertransformer.pdf" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                PDF
-            </a>
-        </div>
-
-
-        <!-- ICLR Paper -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <h4 class="text-lg sm:text-xl font-semibold">Aligned LLMs Are Not Aligned Browser Agents</h4>
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">ICLR 2025</span>
-            </div>
-            <p class="text-gray-600 mb-4">
-                Priyanshu Kumar, <span class="font-medium">Saranya Vijayakumar</span>, Elaine Lau, Tu Trinh, Zifan Wang, Matt Fredrikson
-            </p>
-            <p class="mb-4">
-                Our work investigates whether LLMs' safety training, which makes them refuse harmful instructions in chat contexts, extends to non-chat agent scenarios, particularly browser agents. We show that while LLMs may refuse harmful requests in chat form, the same LLMs when used as browser agents often fail to maintain these safety refusals. Through extensive testing with BrowserART (Browser Agent Red teaming Toolkit) on 100 browser-based harmful behaviors, we demonstrate that browser agents pursue many harmful behaviors that would be refused in chat contexts. We find that GPT-4o and o1-preview based browser agents pursued 98 and 63 harmful behaviors respectively (out of 100) under certain attack conditions, indicating that chat-based safety training does not sufficiently transfer to agent contexts.
-            </p>
-            <a href="scaleredteaming.pdf" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                PDF
-            </a>
-        </div>
-
-        <!-- NeurIPS Paper -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <h4 class="text-lg sm:text-xl font-semibold">Grounding Neural Inference with Satisfiability Modulo Theories</h4>
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">NeurIPS 2023 Spotlight</span>
-            </div>
-            <p class="text-gray-600 mb-4">
-                Zifan Wang*, <span class="font-medium">Saranya Vijayakumar*</span>, Kaiji Lu, Vijay Ganesh, Somesh Jha, Matt Fredrikson
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-                <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/47167991e38c65a72914763c11cd8d23-Paper-Conference.pdf" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Paper</a>
-                <a href="https://github.com/cmu-transparency/smt-layer" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Code</a>
-                <a href="https://slideslive.com/39011080/" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Talk + Slides</a>
-            </div>
-            <div class="flex justify-center">
-                <img src="neuralsat.png" alt="Paper visualization" class="w-full rounded-lg mb-4"/>
-            </div>
-            <p class="mb-4">
-                A novel framework combining neural networks with SMT solvers for enhanced reasoning capabilities while maintaining computational efficiency. Achieved 15% improvement in accuracy on complex reasoning tasks.
-            </p>
-            <div class="flex flex-wrap gap-2">
-                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Neural-Symbolic AI</span>
-                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Formal Methods</span>
-                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Machine Learning</span>
+<div id="research" class="mb-16">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Research</h2> -->
+    
+    <!-- Paper 1 -->
+    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
+        <div class="flex items-start gap-4">
+            <span class="text-gray-500 font-medium">[1]</span>
+            <div class="flex-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                    <h4 class="text-lg font-semibold">Prototype-Integrated Representation Learning for Novelty Detection</h4>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">IEEE TrustCom 2025</span>
+                </div>
+                <p class="text-gray-600">
+                    <span class="font-medium">Saranya Vijayakumar</span>, Matt Fredrikson, Christos Faloutsos
+                </p>
             </div>
         </div>
+    </div>
 
-        <!-- CIKM Paper -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 research-card">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <h4 class="text-lg sm:text-xl font-semibold">CallMine: Fraud Detection and Visualization of Million-Scale Call Graphs</h4>
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block">CIKM 2023</span>
-            </div>
-            <p class="text-gray-600 mb-4">
-                Mirela Cazzolato, <span class="font-medium">Saranya Vijayakumar</span>, Meng-Chieh Lee, Namyong Park, Catalina Vajiac, Christos Faloutsos
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-                <a href="https://namyongpark.github.io/assets/pdf/CallMine-CIKM2023.pdf" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Paper</a>
-                <a href="https://github.com/mtcazzolato/callmine" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Code</a>
-            </div>
-            <div class="flex justify-center">
-                <img src="callmine.png" alt="CallMine visualization" class="w-full rounded-lg mb-4"/>
-            </div>
-            <p class="mb-4">
-                A system for detecting and visualizing fraud patterns in large-scale telecommunication networks, combining advanced graph mining with interactive visualizations. Successfully deployed with a Portuguese telecom provider.
-            </p>
-            <div class="flex flex-wrap gap-2">
-                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Graph Mining</span>
-                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Fraud Detection</span>
-                <span class="bg-gray-100 px-2 py-1 rounded text-sm">Visualization</span>
+    <!-- Paper 2 -->
+    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
+        <div class="flex items-start gap-4">
+            <span class="text-gray-500 font-medium">[2]</span>
+            <div class="flex-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                    <h4 class="text-lg font-semibold">AICodeDetect: A Pipeline for Systematic Detection and Analysis of AI-Generated Code</h4>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">IEEE MCSI 2025</span>
+                </div>
+                <p class="text-gray-600">
+                    <span class="font-medium">Saranya Vijayakumar</span>, Philip Negrin, Christos Faloutsos
+                </p>
             </div>
         </div>
+    </div>
+
+    <!-- Paper 3 -->
+    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
+        <div class="flex items-start gap-4">
+            <span class="text-gray-500 font-medium">[3]</span>
+            <div class="flex-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                    <h4 class="text-lg font-semibold">Mechanistically Interpreting a Transformer-based 2-SAT Solver</h4>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">ICML 2025</span>
+                </div>
+                <p class="text-gray-600 mb-2">
+                    Nils Palumbo, Ravi Mangal, Zifan Wang, <span class="font-medium">Saranya Vijayakumar</span>, Corina Pasareanau, Somesh Jha
+                </p>
+                <a href="solvertransformer.pdf" class="text-blue-600 hover:underline text-sm">PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paper 4 -->
+    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
+        <div class="flex items-start gap-4">
+            <span class="text-gray-500 font-medium">[4]</span>
+            <div class="flex-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                    <h4 class="text-lg font-semibold">Aligned LLMs Are Not Aligned Browser Agents</h4>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">ICLR 2025</span>
+                </div>
+                <p class="text-gray-600 mb-2">
+                    Priyanshu Kumar, <span class="font-medium">Saranya Vijayakumar</span>, Elaine Lau, Tu Trinh, Zifan Wang, Matt Fredrikson
+                </p>
+                <a href="scaleredteaming.pdf" class="text-blue-600 hover:underline text-sm">PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paper 5 -->
+    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
+        <div class="flex items-start gap-4">
+            <span class="text-gray-500 font-medium">[5]</span>
+            <div class="flex-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                    <h4 class="text-lg font-semibold">Grounding Neural Inference with Satisfiability Modulo Theories</h4>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">NeurIPS 2023 Spotlight</span>
+                </div>
+                <p class="text-gray-600 mb-2">
+                    Zifan Wang*, <span class="font-medium">Saranya Vijayakumar*</span>, Kaiji Lu, Vijay Ganesh, Somesh Jha, Matt Fredrikson
+                </p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/47167991e38c65a72914763c11cd8d23-Paper-Conference.pdf" class="text-blue-600 hover:underline text-sm">Paper</a>
+                    <a href="https://github.com/cmu-transparency/smt-layer" class="text-blue-600 hover:underline text-sm">Code</a>
+                    <a href="https://slideslive.com/39011080/" class="text-blue-600 hover:underline text-sm">Talk</a>
+                </div>
+                <img src="neuralsat.png" alt="Paper visualization" class="w-full rounded-lg mt-2"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paper 6 -->
+    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
+        <div class="flex items-start gap-4">
+            <span class="text-gray-500 font-medium">[6]</span>
+            <div class="flex-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                    <h4 class="text-lg font-semibold">CallMine: Fraud Detection and Visualization of Million-Scale Call Graphs</h4>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">CIKM 2023</span>
+                </div>
+                <p class="text-gray-600 mb-2">
+                    Mirela Cazzolato, <span class="font-medium">Saranya Vijayakumar</span>, Meng-Chieh Lee, Namyong Park, Catalina Vajiac, Christos Faloutsos
+                </p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <a href="https://namyongpark.github.io/assets/pdf/CallMine-CIKM2023.pdf" class="text-blue-600 hover:underline text-sm">Paper</a>
+                    <a href="https://github.com/mtcazzolato/callmine" class="text-blue-600 hover:underline text-sm">Code</a>
+                </div>
+                <img src="callmine.png" alt="CallMine visualization" class="w-full rounded-lg mt-2"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paper 7 -->
+    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
+        <div class="flex items-start gap-4">
+            <span class="text-gray-500 font-medium">[7]</span>
+            <div class="flex-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                    <h4 class="text-lg font-semibold">Leveraging Large Language Models for Enhanced Membership Inference</h4>
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">Under Review PoPETS 2026</span>
+                </div>
+                <p class="text-gray-600">
+                    <span class="font-medium">Saranya Vijayakumar</span>, Matt Fredrikson, Norman Sadeh
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
