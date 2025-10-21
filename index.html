@@ -452,37 +452,77 @@
     <div id="projects" class="mb-16">
         <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Research Projects & Impact</h2>
 
-        <!-- Fraud Detection & Analysis -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
-            <h3 class="text-xl sm:text-2xl font-semibold mb-4">Large-Scale Fraud Detection Systems</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                    <img src="tgrapp.png" alt="TgrApp System Demo" class="rounded-lg mb-4 w-full"/>
-                    <p class="text-gray-600">TgrApp system visualization interface</p>
-                </div>
-                <div class="space-y-4">
-                    <div class="bg-blue-50 p-4 rounded-lg">
-                        <h4 class="font-semibold mb-2">Publications & Demonstrations</h4>
-                        <div class="space-y-1">
-                            <p>
-                                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/27062" class="text-blue-600 hover:underline">
-                                    Interactive Demo at AAAI-23
-                                </a>
-                            </p>
-                            <p>
-                                <a href="https://ieeexplore.ieee.org/abstract/document/10020898" class="text-blue-600 hover:underline">
-                                    IEEE Big Data 2022 Publication
-                                </a>
-                            </p>
-                        </div>
-                    </div>
+<!-- Fraud Detection & Analysis -->
+<div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+    <h3 class="text-xl sm:text-2xl font-semibold mb-4">Large-Scale Fraud Detection Systems</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+            <img src="tgrapp.png" alt="TgrApp System Demo" class="rounded-lg mb-4 w-full"/>
+            <p class="text-gray-600">TgrApp system visualization interface</p>
+        </div>
+        <div class="space-y-4">
+            <div class="bg-blue-50 p-4 rounded-lg">
+                <h4 class="font-semibold mb-2">Publications & Demonstrations</h4>
+                <div class="space-y-1">
                     <p>
-                        Developed novel visualization and detection methods for analyzing million-scale fraud patterns
-                        in telecommunication networks, leading to deployed solutions with real-world impact.
+                        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/27062" class="text-blue-600 hover:underline">
+                            Interactive Demo at AAAI-23
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10020898" class="text-blue-600 hover:underline">
+                            IEEE Big Data 2022 Publication
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://cmuportugal.org/media/webinar-5-aida-webinar-series-i-anomaly-detection-in-large-graphs/" class="text-blue-600 hover:underline">
+                            AIDA Webinar on Anomaly Detection
+                        </a>
                     </p>
                 </div>
             </div>
+            <p>
+                Developed novel visualization and detection methods for analyzing million-scale fraud patterns
+                in telecommunication networks, leading to deployed solutions with real-world impact.
+            </p>
         </div>
+    </div>
+</div>
+
+
+<!-- Agentic AI Security -->
+<div class="bg-white rounded-lg shadow-md p-6 mb-8">
+    <h3 class="text-2xl font-semibold mb-4">Agentic AI Security</h3>
+    <div class="space-y-6">
+        <p>
+            Investigating security vulnerabilities that emerge when LLMs are deployed as autonomous agents, 
+            including browser agents and other agentic systems that interact with real-world environments.
+        </p>
+        
+        <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2">Browser Agent Alignment Failures</h4>
+            <p class="mb-2">
+                <a href="scaleredteaming.pdf" class="text-blue-600 hover:underline">Aligned LLMs Are Not Aligned Browser Agents</a> (ICLR 2025)
+            </p>
+            <p class="text-sm text-gray-600 mb-3">Demonstrated that refusal-trained LLMs can be easily jailbroken when deployed as browser agents, revealing fundamental gaps in current alignment techniques for agentic systems.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2">Workshop Contributions</h4>
+            <p class="mb-2">Refusal-trained LLMs Are Easy Jailbroken as Browser Agents</p>
+            <p class="text-sm text-gray-600 mb-2">Priyanshu Kumar, Elaine Lau, Saranya Vijayakumar, Tu (Alina) Trinh, Scale Red Team, Elaine Chang, Vaughn Robinson, Sean Hendryx, Shuyan Zhou, Matt Fredrikson, Summer Yue, Zifan (Sail) Wang</p>
+            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-sm">Workshop Paper</span>
+        </div>
+        
+        <div class="bg-blue-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2">Current Research Focus</h4>
+            <p>Exploring improving interpretability of agentic AI.</p>
+        </div>
+    </div>
+</div>
+
+
+
 
         <!-- Formal Methods & Security -->
         <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
@@ -518,13 +558,15 @@
                                 <li>CSET Review: "Cybersecurity Risks of AI-Generated Code" for Georgetown University</li>
                                 <li>
                                     <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2731160" class="text-blue-600 hover:underline">
-                                        Encryption Projects Research
-                                    </a>
+                                        International Encryption Research
+                                    </a> - Featured in <a href="https://www.nbcnews.com/tech/security/trying-stop-encryption-it-s-everywhere-harvard-study-says-n516761" class="text-blue-600 hover:underline">NBC News</a>, <a href="https://www.forbes.com/sites/ygrauer/2016/02/11/strong-crypto-is-widely-available-outside-the-us-according-to-bruce-schneiers-international-survey/" class="text-blue-600 hover:underline">Forbes</a>, <a href="https://theintercept.com/2016/02/11/new-survey-suggests-u-s-encryption-ban-would-just-send-market-overseas/" class="text-blue-600 hover:underline">The Intercept</a>
                                 </li>
                                 <li>Upcoming work on AI-generated code detection (Under Review at PAKDD 2025)</li>
                             </ul>
                         </div>
-
+                </div>
+            </div>
+        </div>
 
         <!-- Algorithmic Fairness -->
         <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
@@ -549,7 +591,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 
             <!-- Privacy Technologies -->
             <div class="bg-white rounded-lg shadow-md p-6 mb-8">
@@ -578,14 +620,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-blue-50 p-4 rounded-lg">
+<!--                     <div class="bg-blue-50 p-4 rounded-lg">
                         <h4 class="font-semibold mb-2">Research Impact</h4>
                         <ul class="list-disc pl-6">
                             <li>Development of new privacy attack vectors using large language models</li>
                             <li>Practical implications for web privacy infrastructure</li>
                             <li>Contributions to privacy-preserving advertising technologies</li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
