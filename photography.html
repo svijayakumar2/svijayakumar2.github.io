@@ -60,20 +60,21 @@
 
         /* Section */
         .section {
-            margin-bottom: 100px;
+            margin-bottom: 50px;
         }
 
         .section + .section {
             border-top: 1px solid #e8e8e8;
-            padding-top: 60px;
+            padding-top: 35px;
         }
 
         .section-title {
-            font-size: 28px;
-            font-weight: 300;
-            letter-spacing: -0.01em;
-            color: #222;
-            margin-bottom: 30px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #aaa;
+            margin-bottom: 16px;
         }
 
         /* Masonry grid */
@@ -164,6 +165,30 @@
             opacity: 0.7;
         }
 
+        .modal-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 32px;
+            font-weight: 200;
+            cursor: pointer;
+            padding: 20px 24px;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+            z-index: 1001;
+            line-height: 1;
+        }
+
+        .modal-nav:hover {
+            opacity: 1;
+        }
+
+        .modal-prev { left: 12px; }
+        .modal-next { right: 12px; }
+
         /* Location overlay */
         .location {
             position: absolute;
@@ -202,15 +227,11 @@
             }
 
             .section {
-                margin-bottom: 60px;
+                margin-bottom: 35px;
             }
 
             .section + .section {
-                padding-top: 40px;
-            }
-
-            .section-title {
-                font-size: 22px;
+                padding-top: 25px;
             }
         }
     </style>
@@ -410,11 +431,27 @@
 
         <!-- Architecture -->
         <div class="section">
-            <h2 class="section-title">Architecture</h2>
+            <h2 class="section-title">Art and Architecture</h2>
             <div class="grid">
                 <div class="grid-item" onclick="openModal(this)">
                     <img src="imgs_site/converted/spain-0.jpg" alt="Spain">
                     <div class="location">Alhambra, Spain</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/lapep.jpg" alt="Nancy">
+                    <div class="location">Nancy, France</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_6743.png" alt="Forbach">
+                    <div class="location">Forbach, France</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/leuven.jpg" alt="Leuven">
+                    <div class="location">Leuven, Belgium</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_1714.jpg" alt="Luxembourg">
+                    <div class="location">Luxembourg</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
                     <img src="imgs_site/converted/alhambra-0.jpg" alt="Spain">
@@ -427,10 +464,6 @@
                 <div class="grid-item" onclick="openModal(this)">
                     <img src="imgs_site/converted/IMG_3091.jpg" alt="Granada">
                     <div class="location">Carmen de los Mártires, Spain</div>
-                </div>
-                <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_2889-0.jpg" alt="Spain">
-                    <div class="location">Granada, Spain</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
                     <img src="imgs_site/converted/sintra-0.jpg" alt="Sintra">
@@ -531,20 +564,8 @@
                     <div class="location">Strasbourg, France</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/lapep.jpg" alt="Nancy">
-                    <div class="location">Nancy, France</div>
-                </div>
-                <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_6743.png" alt="Forbach">
-                    <div class="location">Forbach, France</div>
-                </div>
-                <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/leuven.jpg" alt="Leuven">
-                    <div class="location">Leuven, Belgium</div>
-                </div>
-                <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_1714.jpg" alt="Luxembourg">
-                    <div class="location">Luxembourg</div>
+                    <img src="imgs_site/converted/IMG_2889-0.jpg" alt="Spain">
+                    <div class="location">Granada, Spain</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
                     <img src="imgs_site/converted/pittsburgh-0.jpg" alt="Pittsburgh">
@@ -557,37 +578,47 @@
 
     <!-- Modal -->
     <div id="modal" class="modal" onclick="closeModal(event)">
+        <button class="modal-nav modal-prev" onclick="navigateModal(-1)">&#8592;</button>
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal()">&times;</span>
             <img id="modal-img" src="" alt="">
         </div>
+        <button class="modal-nav modal-next" onclick="navigateModal(1)">&#8594;</button>
     </div>
 
     <script>
-        function openModal(element) {
-            const img = element.querySelector('img');
-            const modal = document.getElementById('modal');
-            const modalImg = document.getElementById('modal-img');
+        let allItems = [];
+        let currentIndex = 0;
 
-            modalImg.src = img.src;
-            modalImg.alt = img.alt;
-            modal.classList.add('active');
+        function openModal(element) {
+            allItems = Array.from(document.querySelectorAll('.grid-item'));
+            currentIndex = allItems.indexOf(element);
+            showModalImage(currentIndex);
+            document.getElementById('modal').classList.add('active');
             document.body.style.overflow = 'hidden';
+        }
+
+        function showModalImage(index) {
+            const img = allItems[index].querySelector('img');
+            document.getElementById('modal-img').src = img.src;
+            document.getElementById('modal-img').alt = img.alt;
+        }
+
+        function navigateModal(direction) {
+            currentIndex = (currentIndex + direction + allItems.length) % allItems.length;
+            showModalImage(currentIndex);
         }
 
         function closeModal(event) {
             if (event && event.target !== event.currentTarget) return;
-
-            const modal = document.getElementById('modal');
-            modal.classList.remove('active');
+            document.getElementById('modal').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
 
-        // Close with escape key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowLeft') navigateModal(-1);
+            if (e.key === 'ArrowRight') navigateModal(1);
         });
     </script>
 </body>
