@@ -10,13 +10,13 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body { 
+
+        body {
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             background: #fff;
             color: #222;
         }
-        
+
         /* Simple top nav */
         .nav {
             position: fixed;
@@ -31,7 +31,7 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .nav a {
             color: #222;
             text-decoration: none;
@@ -39,16 +39,16 @@
             font-size: 14px;
             transition: opacity 0.2s;
         }
-        
+
         .nav a:hover {
             opacity: 0.6;
         }
-        
+
         .logo {
             font-weight: 500;
             font-size: 16px;
         }
-        
+
         /* Gallery container */
         .gallery {
             margin-top: 80px;
@@ -57,31 +57,45 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
+        /* Section */
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
         /* Masonry grid */
         .grid {
             columns: 1;
             column-gap: 15px;
         }
-        
+
         @media (min-width: 600px) {
             .grid {
                 columns: 2;
             }
         }
-        
+
         @media (min-width: 900px) {
             .grid {
                 columns: 3;
             }
         }
-        
+
         @media (min-width: 1200px) {
             .grid {
                 columns: 4;
             }
         }
-        
+
         .grid-item {
             break-inside: avoid;
             margin-bottom: 15px;
@@ -89,18 +103,18 @@
             cursor: pointer;
             overflow: hidden;
         }
-        
+
         .grid-item img {
             width: 100%;
             height: auto;
             display: block;
             transition: transform 0.3s ease;
         }
-        
+
         .grid-item:hover img {
             transform: scale(1.02);
         }
-        
+
         /* Modal */
         .modal {
             display: none;
@@ -112,26 +126,26 @@
             height: 100%;
             background: rgba(0,0,0,0.95);
         }
-        
+
         .modal.active {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
         }
-        
+
         .modal-content {
             max-width: 90vw;
             max-height: 90vh;
             position: relative;
         }
-        
+
         .modal-content img {
             max-width: 100%;
             max-height: 90vh;
             object-fit: contain;
         }
-        
+
         .modal-close {
             position: absolute;
             top: -50px;
@@ -141,11 +155,11 @@
             cursor: pointer;
             font-weight: 300;
         }
-        
+
         .modal-close:hover {
             opacity: 0.7;
         }
-        
+
         /* Location overlay */
         .location {
             position: absolute;
@@ -160,27 +174,31 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .grid-item:hover .location {
             opacity: 1;
         }
-        
+
         @media (max-width: 600px) {
             .nav {
                 padding: 15px 20px;
             }
-            
+
             .gallery {
                 margin-top: 60px;
                 padding: 20px 15px;
             }
-            
+
             .grid {
                 column-gap: 10px;
             }
-            
+
             .grid-item {
                 margin-bottom: 10px;
+            }
+
+            .section {
+                margin-bottom: 50px;
             }
         }
     </style>
@@ -194,368 +212,336 @@
     </nav>
 
     <div class="gallery">
-        <div class="grid">
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_6339-0.jpg" alt="Peru Dunes">
-                <div class="location">Huacachina, Peru</div>
-            </div>
 
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/ouzelfalls.png" alt="Ouzel Falls">
-                <div class="location">Ouzel Falls, Colorado</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_3091.jpg" alt="Granada">
-                <div class="location">Carmen de los Mártires, Spain</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/ica-0.jpg" alt="Paracas">
-                <div class="location">Paracas, Peru</div>
-            </div>
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/rioascencio.jpg" alt="Chile">
-                <div class="location">Rio Ascencio, Chile</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_3085-0.jpg" alt="Spain">
-                <div class="location">Generalife, Granada</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_0014.jpg" alt="Mexico City, Mexico">
-                <div class="location">Mexico City, Mexico</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/theloch_birdseye.png" alt="The Loch (View from Sky Pond)">
-                <div class="location">The Loch (View from Sky Pond)</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/endlesswall.jpg" alt="Endless Wall">
-                <div class="location">New River Gorge, West Virginia</div>
-            </div>
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/wtrek.jpg" alt="W Trek">
-                <div class="location">W Trek, Chile</div>
-            </div>
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/skopelos.jpg" alt="Utah">
-                <div class="location">Skopelos</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_7699-0.jpg" alt="Moab">
-                <div class="location">Moab, Utah</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/stanley.jpg" alt="Moab">
-                <div class="location">Repulse Bay, Hong Kong</div>
-            </div>
-
-<!--             <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/osaka-0.jpg" alt="Osaka">
-                <div class="location">Osaka, Japan</div>
-            </div> -->
-            
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/sintra-0.jpg" alt="Sintra">
-                <div class="location">Sintra, Portugal</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_6868-2.jpg" alt="Rome">
-                <div class="location">Rome, Italy</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_6527-0.jpg" alt="Col de Balme">
-                <div class="location">Swiss Alps</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/dunes.png" alt="Great Sand Dunes">
-                <div class="location">Great Sand Dunes</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/swiss_tmb-0.jpg" alt="Swiss Alps">
-                <div class="location">La Fouly, Switzerland</div>
-            </div>
-            
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/tmb_italy-0.jpg" alt="Italian Alps">
-                <div class="location">Lago Di Combal, Italy</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/mexico-0.jpg" alt="Mexico">
-                <div class="location">Tulum, Mexico</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/peritomoreno.jpg" alt="Argentina">
-                <div class="location">Perito Moreno, Argentina</div>
-            </div>
-
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/rockiesfog.png" alt="The Rocky Mountains">
-                <div class="location">The Rocky Mountains</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_7619-0.jpg" alt="Utah">
-                <div class="location">Bryce Canyon</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/kyoto-0.jpg" alt="Kyoto">
-                <div class="location">Kyoto, Japan</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/rhodes.jpg" alt="Utah">
-                <div class="location">Rhodes</div>
-            </div>
-            
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/tmb-0.jpg" alt="Mont Blanc">
-                <div class="location">Tour du Mont Blanc</div>
-            </div>
-            
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/portugal-0.jpg" alt="Portugal">
-                <div class="location">Sintra, Portugal</div>
-            </div>
-        
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/skyros.jpg" alt="Skyros">
-                <div class="location">Skyros, Greece</div>
-            </div>
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/greylake.jpg" alt="kayaking">
-                <div class="location">Grey Lake, Chile</div>
-            </div>
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/hermitsvista.png" alt="Hermit's Rest, Black Canyon">
-                <div class="location">Hermit's Rest, Black Canyon</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/malaysia-0.jpg" alt="Malaysia">
-                <div class="location">Batu Caves, Malaysia</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/buddha.png" alt="Buddha">
-                <div class="location">Lantau, Hong Kong</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/strasbourg2.jpg" alt="Strasbourg">
-                <div class="location">Strasbourg, France</div>
-            </div>
-
-<!--             <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_5593-2.jpg" alt="Machu Picchu">
-                <div class="location">Machu Picchu, Peru</div>
-            </div>
- -->
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_6645.jpg" alt="Budapest">
-                <div class="location">Budapest, Hungary</div>
-            </div>
-            
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/peru-0.jpg" alt="Peru Mountains">
-                <div class="location">Salkantay, Peru</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_5849.jpg" alt="Grand Canyon">
-                <div class="location">Grand Canyon, Arizona</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_7191-2.jpg" alt="Duomo">
-                <div class="location">Florence, Italy</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_2889-0.jpg" alt="Spain">
-                <div class="location">Granada, Spain</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/switzerland.jpg" alt="Switzerland Lake">
-                <div class="location">Champex-Lac, Switzerland</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/spain-0.jpg" alt="Spain">
-                <div class="location">Alhambra, Spain</div>
-            </div>
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/lastorres.jpg" alt="W trek">
-                <div class="location">Las Torres</div>
-            </div>
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/taio.png" alt="Tai O">
-                <div class="location">Tai O, Hong Kong</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/lisbon.jpg" alt="Lisbon">
-                <div class="location">Lisbon, Portugal</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/dreamlake.png" alt="Dream Lake, Colorado">
-                <div class="location">Dream Lake, Colorado</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/arch.png" alt="Arches">
-                <div class="location">Arches, Utah</div>
-            </div>
-
-<!--             <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_1740.jpg" alt="Catskills">
-                <div class="location">Catskills, NY</div>
-            </div>
- -->
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/japan_osaka-0.jpg" alt="Japan Street">
-                <div class="location">Osaka, Japan</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/leuven.jpg" alt="Leuven">
-                <div class="location">Leuven, Belgium</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/paris.jpg" alt="Paris">
-                <div class="location">Paris, France</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/lapep.jpg" alt="Nancy">
-                <div class="location">Nancy, France</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/chasmview_blackcanyon.png" alt="Chasm View, Black Canyon">
-                <div class="location">Chasm View, Black Canyon</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/utah-0.jpg" alt="Utah">
-                <div class="location">Bryce Canyon</div>
-            </div>
-
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_1402.jpg" alt="Machu Picchu">
-                <div class="location">Machu Picchu, Peru</div>
-            </div>
-
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_0998.jpg" alt="Chichen Itza">
-                <div class="location">Chichen Itza, Mexico</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/salkantay2.png" alt="Salkantay">
-                <div class="location">Salktantay, Peru</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/amsterdam2.png" alt="Amsterdam">
-                <div class="location">Amsterdam, Netherlands</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/symi.png" alt="Utah">
-                <div class="location">Symi</div>
-            </div>
-
-<!--             <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_6817.png" alt="Ludwigskirche">
-                <div class="location">Saarbrucken, Germany</div>
-            </div> -->
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_1714.jpg" alt="Luxembourg">
-                <div class="location">Luxembourg</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/pittsburgh-0.jpg" alt="Pittsburgh">
-                <div class="location">Pittsburgh, PA</div>
-            </div>
-
-<!--             <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/india.jpg" alt="Chennai">
-                <div class="location">Chennai, India</div>
-            </div> -->
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/mangrove.jpg" alt="Cartagena">
-                <div class="location">Cartagena, Colombia</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/narrows.jpg" alt="Zion">
-                <div class="location">Zion, Utah</div>
-            </div>
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/alonissos.jpg" alt="Greece">
-                <div class="location">Alonissos, Greece</div>
-            </div>
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/mountsalkantay.png" alt="Mount Salkantay">
-                <div class="location">Mount Salkantay</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/tavira-0.jpg" alt="Tavira">
-                <div class="location">Tavira, Portugal</div>
-            </div>
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/IMG_6743.png" alt="Forbach">
-                <div class="location">Forbach, France</div>
-            </div>
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/chasmlake.jpg" alt="Colorado">
-                <div class="location">Chasm Lake</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/alhambra-0.jpg" alt="Spain">
-                <div class="location">Alhambra, Spain</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/hk.jpg" alt="Moab">
-                <div class="location">Hong Kong</div>
-            </div>
-
-            <div class="grid-item" onclick="openModal(this)">
-                <img src="imgs_site/converted/skopelos_port.jpg" alt="Sporadic Islands">
-                <div class="location">Sporadic Islands, Greece</div>
+        <!-- Patagonia -->
+        <div class="section">
+            <h2 class="section-title">Patagonia</h2>
+            <div class="grid">
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/wtrek.jpg" alt="W Trek">
+                    <div class="location">W Trek, Chile</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/rioascencio.jpg" alt="Chile">
+                    <div class="location">Rio Ascencio, Chile</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/lastorres.jpg" alt="W trek">
+                    <div class="location">Las Torres</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/greylake.jpg" alt="kayaking">
+                    <div class="location">Grey Lake, Chile</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/peritomoreno.jpg" alt="Argentina">
+                    <div class="location">Perito Moreno, Argentina</div>
+                </div>
             </div>
         </div>
+
+        <!-- Tour du Mont Blanc -->
+        <div class="section">
+            <h2 class="section-title">Tour du Mont Blanc</h2>
+            <div class="grid">
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/tmb-0.jpg" alt="Mont Blanc">
+                    <div class="location">Tour du Mont Blanc</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_6527-0.jpg" alt="Col de Balme">
+                    <div class="location">Swiss Alps</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/swiss_tmb-0.jpg" alt="Swiss Alps">
+                    <div class="location">La Fouly, Switzerland</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/tmb_italy-0.jpg" alt="Italian Alps">
+                    <div class="location">Lago Di Combal, Italy</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/switzerland.jpg" alt="Switzerland Lake">
+                    <div class="location">Champex-Lac, Switzerland</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- US National Parks -->
+        <div class="section">
+            <h2 class="section-title">US National Parks</h2>
+            <div class="grid">
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/ouzelfalls.png" alt="Ouzel Falls">
+                    <div class="location">Ouzel Falls, Colorado</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/theloch_birdseye.png" alt="The Loch (View from Sky Pond)">
+                    <div class="location">The Loch (View from Sky Pond)</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/dreamlake.png" alt="Dream Lake, Colorado">
+                    <div class="location">Dream Lake, Colorado</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/rockiesfog.png" alt="The Rocky Mountains">
+                    <div class="location">The Rocky Mountains</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/chasmlake.jpg" alt="Colorado">
+                    <div class="location">Chasm Lake</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/chasmview_blackcanyon.png" alt="Chasm View, Black Canyon">
+                    <div class="location">Chasm View, Black Canyon</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/hermitsvista.png" alt="Hermit's Rest, Black Canyon">
+                    <div class="location">Hermit's Rest, Black Canyon</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/arch.png" alt="Arches">
+                    <div class="location">Arches, Utah</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_5849.jpg" alt="Grand Canyon">
+                    <div class="location">Grand Canyon, Arizona</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/narrows.jpg" alt="Zion">
+                    <div class="location">Zion, Utah</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/dunes.png" alt="Great Sand Dunes">
+                    <div class="location">Great Sand Dunes</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/endlesswall.jpg" alt="Endless Wall">
+                    <div class="location">New River Gorge, West Virginia</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_7619-0.jpg" alt="Utah">
+                    <div class="location">Bryce Canyon</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/utah-0.jpg" alt="Utah">
+                    <div class="location">Bryce Canyon</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_7699-0.jpg" alt="Moab">
+                    <div class="location">Moab, Utah</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Peru -->
+        <div class="section">
+            <h2 class="section-title">Peru</h2>
+            <div class="grid">
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/peru-0.jpg" alt="Peru Mountains">
+                    <div class="location">Salkantay, Peru</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/salkantay2.png" alt="Salkantay">
+                    <div class="location">Salkantay, Peru</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/mountsalkantay.png" alt="Mount Salkantay">
+                    <div class="location">Mount Salkantay</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_1402.jpg" alt="Machu Picchu">
+                    <div class="location">Machu Picchu, Peru</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_6339-0.jpg" alt="Peru Dunes">
+                    <div class="location">Huacachina, Peru</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/ica-0.jpg" alt="Paracas">
+                    <div class="location">Paracas, Peru</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Greek Islands -->
+        <div class="section">
+            <h2 class="section-title">Greek Islands</h2>
+            <div class="grid">
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/skopelos.jpg" alt="Skopelos">
+                    <div class="location">Skopelos</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/rhodes.jpg" alt="Rhodes">
+                    <div class="location">Rhodes</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/symi.png" alt="Symi">
+                    <div class="location">Symi</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/skyros.jpg" alt="Skyros">
+                    <div class="location">Skyros, Greece</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/alonissos.jpg" alt="Greece">
+                    <div class="location">Alonissos, Greece</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/skopelos_port.jpg" alt="Sporadic Islands">
+                    <div class="location">Sporadic Islands, Greece</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Architecture -->
+        <div class="section">
+            <h2 class="section-title">Architecture</h2>
+            <div class="grid">
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/spain-0.jpg" alt="Spain">
+                    <div class="location">Alhambra, Spain</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/alhambra-0.jpg" alt="Spain">
+                    <div class="location">Alhambra, Spain</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_3085-0.jpg" alt="Spain">
+                    <div class="location">Generalife, Granada</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_3091.jpg" alt="Granada">
+                    <div class="location">Carmen de los Mártires, Spain</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_2889-0.jpg" alt="Spain">
+                    <div class="location">Granada, Spain</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/sintra-0.jpg" alt="Sintra">
+                    <div class="location">Sintra, Portugal</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/portugal-0.jpg" alt="Portugal">
+                    <div class="location">Sintra, Portugal</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_6868-2.jpg" alt="Rome">
+                    <div class="location">Rome, Italy</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_7191-2.jpg" alt="Duomo">
+                    <div class="location">Florence, Italy</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_6645.jpg" alt="Budapest">
+                    <div class="location">Budapest, Hungary</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_0998.jpg" alt="Chichen Itza">
+                    <div class="location">Chichen Itza, Mexico</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/malaysia-0.jpg" alt="Malaysia">
+                    <div class="location">Batu Caves, Malaysia</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/kyoto-0.jpg" alt="Kyoto">
+                    <div class="location">Kyoto, Japan</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/buddha.png" alt="Buddha">
+                    <div class="location">Lantau, Hong Kong</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asia -->
+        <div class="section">
+            <h2 class="section-title">Asia</h2>
+            <div class="grid">
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/japan_osaka-0.jpg" alt="Japan Street">
+                    <div class="location">Osaka, Japan</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/taio.png" alt="Tai O">
+                    <div class="location">Tai O, Hong Kong</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/stanley.jpg" alt="Moab">
+                    <div class="location">Repulse Bay, Hong Kong</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/hk.jpg" alt="Moab">
+                    <div class="location">Hong Kong</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cities -->
+        <div class="section">
+            <h2 class="section-title">Cities</h2>
+            <div class="grid">
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_0014.jpg" alt="Mexico City, Mexico">
+                    <div class="location">Mexico City, Mexico</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/mexico-0.jpg" alt="Mexico">
+                    <div class="location">Tulum, Mexico</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/mangrove.jpg" alt="Cartagena">
+                    <div class="location">Cartagena, Colombia</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/paris.jpg" alt="Paris">
+                    <div class="location">Paris, France</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/lisbon.jpg" alt="Lisbon">
+                    <div class="location">Lisbon, Portugal</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/tavira-0.jpg" alt="Tavira">
+                    <div class="location">Tavira, Portugal</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/amsterdam2.png" alt="Amsterdam">
+                    <div class="location">Amsterdam, Netherlands</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/strasbourg2.jpg" alt="Strasbourg">
+                    <div class="location">Strasbourg, France</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/lapep.jpg" alt="Nancy">
+                    <div class="location">Nancy, France</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_6743.png" alt="Forbach">
+                    <div class="location">Forbach, France</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/leuven.jpg" alt="Leuven">
+                    <div class="location">Leuven, Belgium</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/IMG_1714.jpg" alt="Luxembourg">
+                    <div class="location">Luxembourg</div>
+                </div>
+                <div class="grid-item" onclick="openModal(this)">
+                    <img src="imgs_site/converted/pittsburgh-0.jpg" alt="Pittsburgh">
+                    <div class="location">Pittsburgh, PA</div>
+                </div>
+            </div>
+        </div>
+
     </div>
-
-
-
 
     <!-- Modal -->
     <div id="modal" class="modal" onclick="closeModal(event)">
@@ -570,7 +556,7 @@
             const img = element.querySelector('img');
             const modal = document.getElementById('modal');
             const modalImg = document.getElementById('modal-img');
-            
+
             modalImg.src = img.src;
             modalImg.alt = img.alt;
             modal.classList.add('active');
@@ -579,7 +565,7 @@
 
         function closeModal(event) {
             if (event && event.target !== event.currentTarget) return;
-            
+
             const modal = document.getElementById('modal');
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
