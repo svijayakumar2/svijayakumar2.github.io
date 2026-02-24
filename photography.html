@@ -60,16 +60,20 @@
 
         /* Section */
         .section {
-            margin-bottom: 80px;
+            margin-bottom: 100px;
+        }
+
+        .section + .section {
+            border-top: 1px solid #e8e8e8;
+            padding-top: 60px;
         }
 
         .section-title {
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: #aaa;
-            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            color: #222;
+            margin-bottom: 30px;
         }
 
         /* Masonry grid */
@@ -198,7 +202,15 @@
             }
 
             .section {
-                margin-bottom: 50px;
+                margin-bottom: 60px;
+            }
+
+            .section + .section {
+                padding-top: 40px;
+            }
+
+            .section-title {
+                font-size: 22px;
             }
         }
     </style>
