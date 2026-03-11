@@ -107,6 +107,14 @@
             position: relative;
             cursor: pointer;
             overflow: hidden;
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+
+        .grid-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .grid-item img {
@@ -251,23 +259,23 @@
             <h2 class="section-title">Patagonia</h2>
             <div class="grid">
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/wtrek.jpg" alt="W Trek">
+                    <img src="imgs_site/converted/wtrek.jpg" alt="W Trek" loading="lazy">
                     <div class="location">W Trek, Chile</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/rioascencio.jpg" alt="Chile">
+                    <img src="imgs_site/converted/rioascencio.jpg" alt="Chile" loading="lazy">
                     <div class="location">Rio Ascencio, Chile</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/lastorres.jpg" alt="W trek">
+                    <img src="imgs_site/converted/lastorres.jpg" alt="W trek" loading="lazy">
                     <div class="location">Las Torres</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/greylake.jpg" alt="kayaking">
+                    <img src="imgs_site/converted/greylake.jpg" alt="kayaking" loading="lazy">
                     <div class="location">Grey Lake, Chile</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/peritomoreno.jpg" alt="Argentina">
+                    <img src="imgs_site/converted/peritomoreno.jpg" alt="Argentina" loading="lazy">
                     <div class="location">Perito Moreno, Argentina</div>
                 </div>
             </div>
@@ -278,23 +286,23 @@
             <h2 class="section-title">Tour du Mont Blanc</h2>
             <div class="grid">
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/tmb-0.jpg" alt="Mont Blanc">
+                    <img src="imgs_site/converted/tmb-0.jpg" alt="Mont Blanc" loading="lazy">
                     <div class="location">Tour du Mont Blanc</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_6527-0.jpg" alt="Col de Balme">
+                    <img src="imgs_site/converted/IMG_6527-0.jpg" alt="Col de Balme" loading="lazy">
                     <div class="location">Swiss Alps</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/swiss_tmb-0.jpg" alt="Swiss Alps">
+                    <img src="imgs_site/converted/swiss_tmb-0.jpg" alt="Swiss Alps" loading="lazy">
                     <div class="location">La Fouly, Switzerland</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/tmb_italy-0.jpg" alt="Italian Alps">
+                    <img src="imgs_site/converted/tmb_italy-0.jpg" alt="Italian Alps" loading="lazy">
                     <div class="location">Lago Di Combal, Italy</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/switzerland.jpg" alt="Switzerland Lake">
+                    <img src="imgs_site/converted/switzerland.jpg" alt="Switzerland Lake" loading="lazy">
                     <div class="location">Champex-Lac, Switzerland</div>
                 </div>
             </div>
@@ -305,63 +313,63 @@
             <h2 class="section-title">US National Parks</h2>
             <div class="grid">
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/ouzelfalls.png" alt="Ouzel Falls">
+                    <img src="imgs_site/converted/ouzelfalls.png" alt="Ouzel Falls" loading="lazy">
                     <div class="location">Ouzel Falls, Colorado</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/theloch_birdseye.png" alt="The Loch (View from Sky Pond)">
+                    <img src="imgs_site/converted/theloch_birdseye.png" alt="The Loch (View from Sky Pond)" loading="lazy">
                     <div class="location">The Loch (View from Sky Pond)</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/dreamlake.png" alt="Dream Lake, Colorado">
+                    <img src="imgs_site/converted/dreamlake.png" alt="Dream Lake, Colorado" loading="lazy">
                     <div class="location">Dream Lake, Colorado</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/rockiesfog.png" alt="The Rocky Mountains">
+                    <img src="imgs_site/converted/rockiesfog.png" alt="The Rocky Mountains" loading="lazy">
                     <div class="location">The Rocky Mountains</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/chasmlake.jpg" alt="Colorado">
+                    <img src="imgs_site/converted/chasmlake.jpg" alt="Colorado" loading="lazy">
                     <div class="location">Chasm Lake</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/chasmview_blackcanyon.png" alt="Chasm View, Black Canyon">
+                    <img src="imgs_site/converted/chasmview_blackcanyon.png" alt="Chasm View, Black Canyon" loading="lazy">
                     <div class="location">Chasm View, Black Canyon</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/hermitsvista.png" alt="Hermit's Rest, Black Canyon">
+                    <img src="imgs_site/converted/hermitsvista.png" alt="Hermit's Rest, Black Canyon" loading="lazy">
                     <div class="location">Hermit's Rest, Black Canyon</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/arch.png" alt="Arches">
+                    <img src="imgs_site/converted/arch.png" alt="Arches" loading="lazy">
                     <div class="location">Arches, Utah</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_5849.jpg" alt="Grand Canyon">
+                    <img src="imgs_site/converted/IMG_5849.jpg" alt="Grand Canyon" loading="lazy">
                     <div class="location">Grand Canyon, Arizona</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/narrows.jpg" alt="Zion">
+                    <img src="imgs_site/converted/narrows.jpg" alt="Zion" loading="lazy">
                     <div class="location">Zion, Utah</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/dunes.png" alt="Great Sand Dunes">
+                    <img src="imgs_site/converted/dunes.png" alt="Great Sand Dunes" loading="lazy">
                     <div class="location">Great Sand Dunes</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/endlesswall.jpg" alt="Endless Wall">
+                    <img src="imgs_site/converted/endlesswall.jpg" alt="Endless Wall" loading="lazy">
                     <div class="location">New River Gorge, West Virginia</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_7619-0.jpg" alt="Utah">
+                    <img src="imgs_site/converted/IMG_7619-0.jpg" alt="Utah" loading="lazy">
                     <div class="location">Bryce Canyon</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/utah-0.jpg" alt="Utah">
+                    <img src="imgs_site/converted/utah-0.jpg" alt="Utah" loading="lazy">
                     <div class="location">Bryce Canyon</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_7699-0.jpg" alt="Moab">
+                    <img src="imgs_site/converted/IMG_7699-0.jpg" alt="Moab" loading="lazy">
                     <div class="location">Moab, Utah</div>
                 </div>
             </div>
@@ -372,32 +380,28 @@
             <h2 class="section-title">Peru</h2>
             <div class="grid">
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/peru-0.jpg" alt="Peru Mountains">
+                    <img src="imgs_site/converted/peru-0.jpg" alt="Peru Mountains" loading="lazy">
                     <div class="location">Salkantay, Peru</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/salkantay2.png" alt="Salkantay">
+                    <img src="imgs_site/converted/salkantay2.png" alt="Salkantay" loading="lazy">
                     <div class="location">Salkantay, Peru</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/mountsalkantay.png" alt="Mount Salkantay">
+                    <img src="imgs_site/converted/mountsalkantay.png" alt="Mount Salkantay" loading="lazy">
                     <div class="location">Mount Salkantay</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_1402.jpg" alt="Machu Picchu">
+                    <img src="imgs_site/converted/IMG_1402.jpg" alt="Machu Picchu" loading="lazy">
                     <div class="location">Machu Picchu, Peru</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_6339-0.jpg" alt="Peru Dunes">
+                    <img src="imgs_site/converted/IMG_6339-0.jpg" alt="Peru Dunes" loading="lazy">
                     <div class="location">Huacachina, Peru</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/ica-0.jpg" alt="Paracas">
+                    <img src="imgs_site/converted/ica-0.jpg" alt="Paracas" loading="lazy">
                     <div class="location">Paracas, Peru</div>
-                </div>
-                <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/ayacucho.png" alt="Ayacucho">
-                    <div class="location">Ayacucho, Peru</div>
                 </div>
             </div>
         </div>
@@ -407,27 +411,27 @@
             <h2 class="section-title">Greek Islands</h2>
             <div class="grid">
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/skopelos.jpg" alt="Skopelos">
+                    <img src="imgs_site/converted/skopelos.jpg" alt="Skopelos" loading="lazy">
                     <div class="location">Skopelos</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/rhodes.jpg" alt="Rhodes">
+                    <img src="imgs_site/converted/rhodes.jpg" alt="Rhodes" loading="lazy">
                     <div class="location">Rhodes</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/symi.png" alt="Symi">
+                    <img src="imgs_site/converted/symi.png" alt="Symi" loading="lazy">
                     <div class="location">Symi</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/skyros.jpg" alt="Skyros">
+                    <img src="imgs_site/converted/skyros.jpg" alt="Skyros" loading="lazy">
                     <div class="location">Skyros, Greece</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/alonissos.jpg" alt="Greece">
+                    <img src="imgs_site/converted/alonissos.jpg" alt="Greece" loading="lazy">
                     <div class="location">Alonissos, Greece</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/skopelos_port.jpg" alt="Sporadic Islands">
+                    <img src="imgs_site/converted/skopelos_port.jpg" alt="Sporadic Islands" loading="lazy">
                     <div class="location">Sporadic Islands, Greece</div>
                 </div>
             </div>
@@ -438,39 +442,39 @@
             <h2 class="section-title">Spain</h2>
             <div class="grid">
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/spain-0.jpg" alt="Spain">
+                    <img src="imgs_site/converted/spain-0.jpg" alt="Spain" loading="lazy">
                     <div class="location">Alhambra, Spain</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/alhambra-0.jpg" alt="Spain">
+                    <img src="imgs_site/converted/alhambra-0.jpg" alt="Spain" loading="lazy">
                     <div class="location">Alhambra, Spain</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/cordoba.png" alt="Cordoba">
+                    <img src="imgs_site/converted/cordoba.png" alt="Cordoba" loading="lazy">
                     <div class="location">Cordoba, Spain</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_3085-0.jpg" alt="Spain">
+                    <img src="imgs_site/converted/IMG_3085-0.jpg" alt="Spain" loading="lazy">
                     <div class="location">Generalife, Granada</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_3091.jpg" alt="Granada">
+                    <img src="imgs_site/converted/IMG_3091.jpg" alt="Granada" loading="lazy">
                     <div class="location">Carmen de los Mártires, Spain</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/pico2.png" alt="Marella">
+                    <img src="imgs_site/converted/pico2.png" alt="Marella" loading="lazy">
                     <div class="location">Pico de la Concha, Spain</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/malaga2.png" alt="Malaga">
+                    <img src="imgs_site/converted/malaga2.png" alt="Malaga" loading="lazy">
                     <div class="location">Malaga, Spain</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/malaga.png" alt="Malaga">
+                    <img src="imgs_site/converted/malaga.png" alt="Malaga" loading="lazy">
                     <div class="location">Malaga, Spain</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_2889-0.jpg" alt="Spain">
+                    <img src="imgs_site/converted/IMG_2889-0.jpg" alt="Spain" loading="lazy">
                     <div class="location">Granada, Spain</div>
                 </div>
             </div>
@@ -481,98 +485,98 @@
             <h2 class="section-title">Africa</h2>
             <div class="grid">
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/capspartel.png" alt="Cap Spartel">
+                    <img src="imgs_site/converted/capspartel.png" alt="Cap Spartel" loading="lazy">
                     <div class="location">Cap Spartel, Morocco</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/chobe_botswana.png" alt="Botswana">
+                    <img src="imgs_site/converted/chobe_botswana.png" alt="Botswana" loading="lazy">
                     <div class="location">Chobe, Botswana</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/phoenician_tombs.png" alt="Tangier">
+                    <img src="imgs_site/converted/phoenician_tombs.png" alt="Tangier" loading="lazy">
                     <div class="location">Phoenician Tombs, Tangier</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/tangier.png" alt="Tangier">
+                    <img src="imgs_site/converted/tangier.png" alt="Tangier" loading="lazy">
                     <div class="location">Tangier, Morocco</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/hercules_cave.png" alt="Tangier">
+                    <img src="imgs_site/converted/hercules_cave.png" alt="Tangier" loading="lazy">
                     <div class="location">Hercules Cave, Morocco</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/vicfalls.png" alt="Victoria Falls">
+                    <img src="imgs_site/converted/vicfalls.png" alt="Victoria Falls" loading="lazy">
                     <div class="location">Victoria Falls, Zimbabwe</div>
                 </div>
             </div>
         </div>
 
-        <!-- Architecture -->
+        <!-- Europe -->
         <div class="section">
             <h2 class="section-title">Europe</h2>
             <div class="grid">
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/lapep.jpg" alt="Nancy">
+                    <img src="imgs_site/converted/lapep.jpg" alt="Nancy" loading="lazy">
                     <div class="location">Nancy, France</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_6743.png" alt="Forbach">
+                    <img src="imgs_site/converted/IMG_6743.png" alt="Forbach" loading="lazy">
                     <div class="location">Forbach, France</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/leuven.jpg" alt="Leuven">
+                    <img src="imgs_site/converted/leuven.jpg" alt="Leuven" loading="lazy">
                     <div class="location">Leuven, Belgium</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_1714.jpg" alt="Luxembourg">
+                    <img src="imgs_site/converted/IMG_1714.jpg" alt="Luxembourg" loading="lazy">
                     <div class="location">Luxembourg</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/sintra-0.jpg" alt="Sintra">
+                    <img src="imgs_site/converted/sintra-0.jpg" alt="Sintra" loading="lazy">
                     <div class="location">Sintra, Portugal</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/portugal-0.jpg" alt="Portugal">
+                    <img src="imgs_site/converted/portugal-0.jpg" alt="Portugal" loading="lazy">
                     <div class="location">Sintra, Portugal</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_6868-2.jpg" alt="Rome">
+                    <img src="imgs_site/converted/IMG_6868-2.jpg" alt="Rome" loading="lazy">
                     <div class="location">Rome, Italy</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_7191-2.jpg" alt="Duomo">
+                    <img src="imgs_site/converted/IMG_7191-2.jpg" alt="Duomo" loading="lazy">
                     <div class="location">Florence, Italy</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_6645.jpg" alt="Budapest">
+                    <img src="imgs_site/converted/IMG_6645.jpg" alt="Budapest" loading="lazy">
                     <div class="location">Budapest, Hungary</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/matosinhos.png" alt="Matosinhos">
+                    <img src="imgs_site/converted/matosinhos.png" alt="Matosinhos" loading="lazy">
                     <div class="location">Matosinhos, Portugal</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/paris.jpg" alt="Paris">
+                    <img src="imgs_site/converted/paris.jpg" alt="Paris" loading="lazy">
                     <div class="location">Paris, France</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/lisbon.jpg" alt="Lisbon">
+                    <img src="imgs_site/converted/lisbon.jpg" alt="Lisbon" loading="lazy">
                     <div class="location">Lisbon, Portugal</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/tavira-0.jpg" alt="Tavira">
+                    <img src="imgs_site/converted/tavira-0.jpg" alt="Tavira" loading="lazy">
                     <div class="location">Tavira, Portugal</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/amsterdam2.png" alt="Amsterdam">
+                    <img src="imgs_site/converted/amsterdam2.png" alt="Amsterdam" loading="lazy">
                     <div class="location">Amsterdam, Netherlands</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/lisbon.png" alt="Lisbon">
+                    <img src="imgs_site/converted/lisbon.png" alt="Lisbon" loading="lazy">
                     <div class="location">Lisbon, Portugal</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/strasbourg2.jpg" alt="Strasbourg">
+                    <img src="imgs_site/converted/strasbourg2.jpg" alt="Strasbourg" loading="lazy">
                     <div class="location">Strasbourg, France</div>
                 </div>
             </div>
@@ -583,122 +587,122 @@
             <h2 class="section-title">Asia</h2>
             <div class="grid">
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/japan_osaka-0.jpg" alt="Japan Street">
+                    <img src="imgs_site/converted/japan_osaka-0.jpg" alt="Japan Street" loading="lazy">
                     <div class="location">Osaka, Japan</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/malaysia-0.jpg" alt="Malaysia">
+                    <img src="imgs_site/converted/malaysia-0.jpg" alt="Malaysia" loading="lazy">
                     <div class="location">Batu Caves, Malaysia</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/kyoto-0.jpg" alt="Kyoto">
+                    <img src="imgs_site/converted/kyoto-0.jpg" alt="Kyoto" loading="lazy">
                     <div class="location">Kyoto, Japan</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/buddha.png" alt="Buddha">
+                    <img src="imgs_site/converted/buddha.png" alt="Buddha" loading="lazy">
                     <div class="location">Lantau, Hong Kong</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/taio.png" alt="Tai O">
+                    <img src="imgs_site/converted/taio.png" alt="Tai O" loading="lazy">
                     <div class="location">Tai O, Hong Kong</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/stanley.jpg" alt="HK">
+                    <img src="imgs_site/converted/stanley.jpg" alt="HK" loading="lazy">
                     <div class="location">Repulse Bay, Hong Kong</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/hk.jpg" alt="HK">
+                    <img src="imgs_site/converted/hk.jpg" alt="HK" loading="lazy">
                     <div class="location">Hong Kong</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/tokyo1.png" alt="Tokyo">
+                    <img src="imgs_site/converted/tokyo1.png" alt="Tokyo" loading="lazy">
                     <div class="location">Tokyo, Japan</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/tokyo2.png" alt="Tokyo">
+                    <img src="imgs_site/converted/tokyo2.png" alt="Tokyo" loading="lazy">
                     <div class="location">Tokyo, Japan</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/tokyo3.png" alt="Tokyo">
+                    <img src="imgs_site/converted/tokyo3.png" alt="Tokyo" loading="lazy">
                     <div class="location">Tokyo, Japan</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/tokyo4.png" alt="Tokyo">
+                    <img src="imgs_site/converted/tokyo4.png" alt="Tokyo" loading="lazy">
                     <div class="location">Tokyo, Japan</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/tokyo5.png" alt="Tokyo">
+                    <img src="imgs_site/converted/tokyo5.png" alt="Tokyo" loading="lazy">
                     <div class="location">Tokyo, Japan</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/hokkaido.png" alt="Hokkaido">
+                    <img src="imgs_site/converted/hokkaido.png" alt="Hokkaido" loading="lazy">
                     <div class="location">Hokkaido, Japan</div>
                 </div>
             </div>
         </div>
 
-        <!-- Cities -->
+        <!-- Americas -->
         <div class="section">
             <h2 class="section-title">Americas</h2>
             <div class="grid">
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_0014.jpg" alt="Mexico City, Mexico">
+                    <img src="imgs_site/converted/IMG_0014.jpg" alt="Mexico City, Mexico" loading="lazy">
                     <div class="location">Mexico City, Mexico</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/mexico-0.jpg" alt="Mexico">
+                    <img src="imgs_site/converted/mexico-0.jpg" alt="Mexico" loading="lazy">
                     <div class="location">Tulum, Mexico</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/tulum.png" alt="Mexico">
+                    <img src="imgs_site/converted/tulum.png" alt="Mexico" loading="lazy">
                     <div class="location">Tulum, Mexico</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/IMG_0998.jpg" alt="Chichen Itza">
+                    <img src="imgs_site/converted/IMG_0998.jpg" alt="Chichen Itza" loading="lazy">
                     <div class="location">Chichen Itza, Mexico</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/sanantonio.png" alt="Alamo">
+                    <img src="imgs_site/converted/sanantonio.png" alt="Alamo" loading="lazy">
                     <div class="location">San Antonio, Texas</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/mangrove.jpg" alt="Cartagena">
+                    <img src="imgs_site/converted/mangrove.jpg" alt="Cartagena" loading="lazy">
                     <div class="location">Cartagena, Colombia</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/austin.png" alt="Austin">
+                    <img src="imgs_site/converted/austin.png" alt="Austin" loading="lazy">
                     <div class="location">Austin, Texas</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/buenosaires.png" alt="Argentina">
+                    <img src="imgs_site/converted/buenosaires.png" alt="Argentina" loading="lazy">
                     <div class="location">Buenos Aires, Argentina</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/fredericksburg_texas.png" alt="Fredericksburg">
+                    <img src="imgs_site/converted/fredericksburg_texas.png" alt="Fredericksburg" loading="lazy">
                     <div class="location">Fredericksburg, Texas</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/pittsburgh-0.jpg" alt="Pittsburgh">
+                    <img src="imgs_site/converted/pittsburgh-0.jpg" alt="Pittsburgh" loading="lazy">
                     <div class="location">Pittsburgh, PA</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/santiago.png" alt="Santiago">
+                    <img src="imgs_site/converted/santiago.png" alt="Santiago" loading="lazy">
                     <div class="location">Santiago, Chile</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/santiago2.png" alt="Santiago">
+                    <img src="imgs_site/converted/santiago2.png" alt="Santiago" loading="lazy">
                     <div class="location">Santiago, Chile</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/montevideo.png" alt="Montevideo">
+                    <img src="imgs_site/converted/montevideo.png" alt="Montevideo" loading="lazy">
                     <div class="location">Montevideo, Uruguay</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/colonia.png" alt="Colonia">
+                    <img src="imgs_site/converted/colonia.png" alt="Colonia" loading="lazy">
                     <div class="location">Colonia del Sacramento, Uruguay</div>
                 </div>
                 <div class="grid-item" onclick="openModal(this)">
-                    <img src="imgs_site/converted/boston.png" alt="Boston">
+                    <img src="imgs_site/converted/boston.png" alt="Boston" loading="lazy">
                     <div class="location">Boston, MA</div>
                 </div>
             </div>
@@ -750,6 +754,17 @@
             if (e.key === 'ArrowLeft') navigateModal(-1);
             if (e.key === 'ArrowRight') navigateModal(1);
         });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.grid-item').forEach(item => observer.observe(item));
     </script>
 </body>
 </html>
