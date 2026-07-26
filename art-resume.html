@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saranya Vijayakumar — Art Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fff;
+            color: #222;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav a {
+            color: #222;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+
+        .nav a:hover {
+            opacity: 0.6;
+        }
+
+        .logo {
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .nav div a + a {
+            margin-left: 20px;
+        }
+
+        .resume {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 130px 30px 80px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .pdf-link {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .pdf-link a {
+            font-size: 13px;
+            color: #888;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .pdf-link a:hover {
+            color: #222;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #aaa;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 8px;
+        }
+
+        .entry {
+            margin-bottom: 22px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .entry-title {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .entry-meta {
+            font-size: 13px;
+            color: #888;
+            font-style: italic;
+        }
+
+        .entry-sub {
+            font-size: 14px;
+            color: #444;
+            margin-top: 2px;
+        }
+
+        ul {
+            margin-top: 6px;
+            padding-left: 20px;
+        }
+
+        li {
+            font-size: 14px;
+            line-height: 1.55;
+            color: #444;
+            margin-bottom: 3px;
+        }
+
+        .resume a {
+            color: #222;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .resume a:hover {
+            opacity: 0.6;
+        }
+
+        @media (max-width: 600px) {
+            .entry-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="logo">Saranya Vijayakumar</a>
+        <div>
+            <a href="index.html">Research</a>
+            <a href="photography.html">Photography</a>
+        </div>
+    </nav>
+
+    <div class="resume">
+        <h1>Saranya Vijayakumar</h1>
+        <p class="pdf-link"><a href="saranya_art_resume.pdf">Download PDF</a></p>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Carnegie Mellon University</span>
+                    <span class="entry-meta">Pittsburgh, Pennsylvania</span>
+                </div>
+                <div class="entry-sub"><strong>Ph.D., Computer Science</strong> — Expected graduation 2026</div>
+                <div class="entry-sub">Advised by Professors Christos Faloutsos &amp; Matt Fredrikson</div>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Harvard University</span>
+                    <span class="entry-meta">Cambridge, Massachusetts</span>
+                </div>
+                <div class="entry-sub"><strong>A.B., Joint Concentration in Computer Science &amp; Government</strong> — 2018</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Museum Leadership and Experience</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Docent, Carnegie Museum of Art</span>
+                    <span class="entry-meta">Pittsburgh, 2023 – Present</span>
+                </div>
+                <ul>
+                    <li>Completed an 18-week art history series, writing assignments, and mentoring sessions.</li>
+                    <li>Attend learning sessions and give tours weekly.</li>
+                    <li>Appointed Member of Steering Committee (2025–2026); Tech Committee member.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Committee Member, American Folk Art Museum</span>
+                    <span class="entry-meta">New York, 2020 – 2022</span>
+                </div>
+                <ul>
+                    <li>Engaged with board members to increase the diversity of the board, and help fundraise for the museum.</li>
+                    <li>Helped organize Pittsburgh trip for members of the AFAM, featuring curator-led museum tours and visits to exclusive private collections.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Student Board Member, Harvard Art Museums</span>
+                    <span class="entry-meta">Cambridge, Massachusetts, 2015 – 2018</span>
+                </div>
+                <ul>
+                    <li>Member of group of 12 students acting as liaisons between the student body and Harvard Art Museums.</li>
+                    <li>Introduced speakers Mel Bochner and Fernando Bryce; met with Museums director and curators.</li>
+                    <li>Ran events including study breaks at the Museums and tours for students.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Intern, The Jewish Museum</span>
+                    <span class="entry-meta">New York, 2010 – 2014</span>
+                </div>
+                <ul>
+                    <li>1 of 15 interns selected through application and interview process.</li>
+                    <li>Assisted in art studio and galleries, focusing on family activities and programs including Storybooks and Art program and weekly concerts.</li>
+                    <li>Completed monthly training sessions and gave tours; co-founded intern blog.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Member, Museum Teen Summit</span>
+                    <span class="entry-meta">New York, 2012 – 2014</span>
+                </div>
+                <ul>
+                    <li>1 of 10 members selected through nomination process to participate in a collective of youth leaders representing different museums in New York City dedicated to improving and promoting the role of youth in museums.</li>
+                    <li>Organized events at partnering museums, including the New Museum, Whitney, and the Jewish Museum.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Selected Fellowships and Awards</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">NDSEG Fellowship Program</span>
+                    <span class="entry-meta">Army Research Office, 2022 – 2024</span>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">The Ernst Kitzinger Prize</span>
+                    <span class="entry-meta">Harvard University, 2018</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Industry Experience</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Goldman Sachs / Algorithmic Trading</span>
+                    <span class="entry-meta">New York, NY</span>
+                </div>
+                <div class="entry-sub"><strong>Data Scientist, Electronic Trading</strong> — 2018 – 2021</div>
+                <ul>
+                    <li>Covered quantitative hedge funds and asset managers in a client-facing data science role; performed trade cost analyses and communicated algorithmic recommendations to stakeholders.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Selected Collection Pieces</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Emma Kohlmann</span>
+                    <span class="entry-meta">Untitled (Woodshed Series), 2019</span>
+                </div>
+                <div class="entry-sub">Watercolor and sumi ink on paper, 14 × 11 in (35.6 × 27.9 cm)</div>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Pedro Covo</span>
+                    <span class="entry-meta">Amanecer en la Ciénaga de la Virgen (1), 2023</span>
+                </div>
+                <div class="entry-sub">Oil on canvas, 280 × 140 cm (110 × 55 in)</div>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Forest Wong</span>
+                    <span class="entry-meta">Worship at the Altar, 2024</span>
+                </div>
+                <div class="entry-sub">Oil on canvas, 5 × 3 ft</div>
+            </div>
+            <div class="entry">
+                <a href="photography.html">Personal Photography</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
