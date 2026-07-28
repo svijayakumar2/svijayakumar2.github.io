@@ -46,23 +46,42 @@
   .tip .src { font-size:12px; color:var(--muted); margin-bottom:6px; }
   code { background:var(--bg); padding:1px 5px; border-radius:4px; font-size:12px; }
   .answer { font-size:15px; line-height:2.1; }
+  .scope { display:inline-block; padding:2px 10px; border-radius:999px; font-size:12px;
+    border:1px solid var(--accent); color:var(--accent); margin-left:10px; }
+  .note { border-left:3px solid var(--accent); background:rgba(91,157,255,.07);
+    padding:12px 16px; border-radius:0 8px 8px 0; font-size:13px; line-height:1.55; }
+  .prov { margin-top:12px; padding-top:10px; border-top:1px solid var(--line);
+    font-size:12px; color:var(--muted); }
+  .prov b { color:var(--ink); }
 </style>
 </head>
 <body>
 <header>
   <span class="brand">MAI · Medical Affairs Intelligence</span>
-  <span class="tag">static demo · real pipeline output · no login</span>
+  <span class="tag">governed depth demo · real pipeline output · no login</span>
 </header>
 <main>
-  <h1>Ask a MedInfo question</h1>
+  <h1>Rheumatology<span class="scope">one therapy area · deep, not general</span></h1>
   <p class="lede">
-    This is a frozen click-through of the live product. Each answer below is
-    real output from the drafting pipeline, captured verbatim. Every sentence
-    traces to a stored source span, an isolated checker verifies it, and a
-    person would release it. <b>Hover any sentence</b> to see the exact source
-    text it came from and the checker's verdict. Where the system cannot ground
-    an answer, it refuses rather than guess.
+    This is not a general medical search engine. MAI goes deep in one therapy
+    area at a time, answers with governed evidence, and refuses what it cannot
+    ground. Each answer below is real, frozen output from the drafting pipeline.
+    Every sentence traces to a stored source span, an isolated checker verifies
+    it, and a person would release it. <b>Hover any sentence</b> to see the exact
+    source it came from and the checker's verdict.
   </p>
+
+  <div class="card">
+    <div class="note">
+      <b>What this demo shows, and what it does not.</b> This runs on public,
+      open-access rheumatology literature, so you can see the governance and the
+      refuse-rather-than-fabricate behavior for yourself. The full product goes
+      deeper: the pre-publication phase 1 / phase 2 trial context that drug
+      companies hold but never publish, brought in through a standardized,
+      medical-officer-attested intake. That depth is the moat a general engine
+      cannot reach; this demo shows the engine that governs it.
+    </div>
+  </div>
 
   <div class="card">
     <label>Pick a question (these ran through the real system)</label>
@@ -127,6 +146,19 @@ function render(i){
     body = '<p class="answer">'+sents+'</p>';
     const gap = r.claim_map && r.claim_map.gap;
     if (gap) body += '<p class="muted" style="font-size:13px"><b>Noted gap:</b> <em>'+esc(gap)+'</em></p>';
+
+    // provenance strip: distinct sources this answer actually drew from
+    const used = new Set();
+    (v.sentences||[]).forEach(sent => (sent.span_ids||[]).forEach(sid => {
+      const sp = spanmap[sid];
+      if (sp) used.add((sp.doc_type||'')+' · '+(sp.source_ref||''));
+    }));
+    if (used.size) {
+      body += '<div class="prov"><b>Provenance</b> · every claim above traces to '
+        + used.size + ' attested source' + (used.size>1?'s':'') + ' in this area: '
+        + Array.from(used).map(esc).join('  ·  ')
+        + '. In the full product each source also carries a medical-officer attestation.</div>';
+    }
   }
 
   const foot = '<div style="margin-top:14px" class="muted">generation_id <code>'
