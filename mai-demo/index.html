@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAI · Medical Affairs Intelligence · Live demo</title>
+<style>
+  :root { --bg:#0f1216; --panel:#171c23; --line:#28303a; --ink:#e6eaef;
+          --muted:#8b97a6; --accent:#5b9dff; --ok:#3fb984; --warn:#e0a53f;
+          --bad:#e0605f; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:14px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;
+         background:var(--bg); color:var(--ink); }
+  header { display:flex; align-items:center; gap:20px; padding:12px 20px;
+           background:var(--panel); border-bottom:1px solid var(--line); }
+  header .brand { font-weight:700; letter-spacing:.3px; }
+  header .tag { margin-left:auto; color:var(--muted); font-size:12px; }
+  main { max-width:1000px; margin:24px auto; padding:0 20px; }
+  h1 { font-size:20px; } h2 { font-size:16px; margin-top:28px; }
+  p.lede { color:var(--muted); font-size:14px; line-height:1.6; }
+  .card { background:var(--panel); border:1px solid var(--line);
+          border-radius:10px; padding:16px 18px; margin:14px 0; }
+  label { display:block; color:var(--muted); font-size:12px; margin:10px 0 6px; }
+  .qbtns { display:flex; gap:10px; flex-wrap:wrap; }
+  .qbtn { background:var(--bg); color:var(--ink); border:1px solid var(--line);
+          border-radius:7px; padding:9px 14px; font:inherit; cursor:pointer;
+          text-align:left; flex:1; min-width:200px; }
+  .qbtn.active { border-color:var(--accent); color:var(--accent); }
+  table { width:100%; border-collapse:collapse; }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line);
+           font-size:13px; vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  a { color:var(--accent); }
+  .pill { display:inline-block; padding:1px 8px; border-radius:999px; font-size:11px;
+          border:1px solid var(--line); color:var(--muted); }
+  .pill.ok { color:var(--ok); border-color:var(--ok); }
+  .pill.bad { color:var(--bad); border-color:var(--bad); }
+  .muted { color:var(--muted); }
+  .sentence { position:relative; cursor:help; border-bottom:1px dotted var(--muted); }
+  .sentence.flagged { background:rgba(224,96,95,.12); border-bottom:1px dashed var(--bad); }
+  .sentence .tip { display:none; position:absolute; left:0; top:1.6em; z-index:10;
+    width:520px; max-width:80vw; background:#0b0e12; border:1px solid var(--line);
+    border-radius:8px; padding:10px 12px; box-shadow:0 8px 30px rgba(0,0,0,.5);
+    font-size:13px; line-height:1.45; }
+  .sentence:hover .tip { display:block; }
+  .tip .src { font-size:12px; color:var(--muted); margin-bottom:6px; }
+  code { background:var(--bg); padding:1px 5px; border-radius:4px; font-size:12px; }
+  .answer { font-size:15px; line-height:2.1; }
+</style>
+</head>
+<body>
+<header>
+  <span class="brand">MAI · Medical Affairs Intelligence</span>
+  <span class="tag">static demo · real pipeline output · no login</span>
+</header>
+<main>
+  <h1>Ask a MedInfo question</h1>
+  <p class="lede">
+    This is a frozen click-through of the live product. Each answer below is
+    real output from the drafting pipeline, captured verbatim. Every sentence
+    traces to a stored source span, an isolated checker verifies it, and a
+    person would release it. <b>Hover any sentence</b> to see the exact source
+    text it came from and the checker's verdict. Where the system cannot ground
+    an answer, it refuses rather than guess.
+  </p>
+
+  <div class="card">
+    <label>Pick a question (these ran through the real system)</label>
+    <div class="qbtns" id="qbtns"></div>
+  </div>
+
+  <div id="result"></div>
+</main>
+
+<script>
+let DATA = [];
+
+function esc(s){ return (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function renderButtons(){
+  const box = document.getElementById('qbtns');
+  box.innerHTML = '';
+  DATA.forEach((item,i)=>{
+    const b = document.createElement('button');
+    b.className = 'qbtn' + (i===0?' active':'');
+    b.textContent = item.question;
+    b.onclick = ()=>{ document.querySelectorAll('.qbtn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); render(i); };
+    box.appendChild(b);
+  });
+}
+
+function render(i){
+  const item = DATA[i];
+  const r = item.result;
+  const v = r.verifier || {};
+  const spanmap = {};
+  (r.spans||[]).forEach(s=>spanmap[s.span_id]=s);
+
+  let head = '<h2 style="margin-top:0">Draft answer '
+    + '<span class="pill">route: '+esc(r.route)+'</span> '
+    + (v.passed ? '<span class="pill ok">verifier: clean pass</span>'
+                : '<span class="pill bad">verifier: '+(r.route==='gap'?'declined':'flagged')+'</span>')
+    + '</h2>';
+
+  let body;
+  if (r.route === 'gap'){
+    body = '<p class="muted">The system declined to answer (no fabrication):</p>'
+         + '<p><em>'+esc(r.claim_map && r.claim_map.gap)+'</em></p>';
+  } else {
+    let sents = (v.sentences||[]).map((sent,idx)=>{
+      let tip = '<span class="tip"><div class="src">entailment: <b>'+esc(sent.entailment)+'</b>'
+        + (sent.flags && sent.flags.length ? ' · flags: '+esc(sent.flags.join(', ')) : '')
+        + '</div>';
+      (sent.span_ids||[]).forEach(sid=>{
+        const sp = spanmap[sid];
+        if(sp){
+          const t = sp.text.length>400 ? sp.text.slice(0,400)+'…' : sp.text;
+          tip += '<div style="margin-bottom:8px"><div class="src">'
+            + esc(sp.doc_type)+' · '+esc(sp.source_ref)+' · '+esc(sp.section_path||'')
+            + '</div>'+esc(t)+'</div>';
+        }
+      });
+      tip += '</span>';
+      return '<span class="sentence'+(sent.passed?'':' flagged')+'">'+esc(sent.sentence)
+        + '<sup class="muted">['+(idx+1)+']</sup>'+tip+'</span>';
+    }).join(' ');
+    body = '<p class="answer">'+sents+'</p>';
+    const gap = r.claim_map && r.claim_map.gap;
+    if (gap) body += '<p class="muted" style="font-size:13px"><b>Noted gap:</b> <em>'+esc(gap)+'</em></p>';
+  }
+
+  const foot = '<div style="margin-top:14px" class="muted">generation_id <code>'
+    + esc(r.generation_id)+'</code> · audited &amp; pending human release</div>';
+
+  // evidence table
+  let ev = '<div class="card"><h2 style="margin-top:0">Retrieved evidence ('+(r.spans||[]).length+')</h2>'
+    + '<table><tr><th>#</th><th>Type</th><th>Source</th><th>Section</th><th>Score</th><th>Text</th></tr>';
+  (r.spans||[]).forEach((s,idx)=>{
+    ev += '<tr><td>'+(idx+1)+'</td><td>'+esc(s.doc_type)+'</td><td>'+esc(s.source_ref)
+      + '</td><td class="muted">'+esc(s.section_path||'')+'</td><td>'+(s.score!=null?Number(s.score).toFixed(3):'')
+      + '</td><td>'+esc((s.text||'').slice(0,160))+'…</td></tr>';
+  });
+  ev += '</table></div>';
+
+  document.getElementById('result').innerHTML = '<div class="card">'+head+body+foot+'</div>'+ev;
+}
+
+fetch('demo_data.json').then(r=>r.json()).then(d=>{ DATA=d; renderButtons(); render(0); })
+  .catch(e=>{ document.getElementById('result').innerHTML='<div class="card">Could not load demo data: '+esc(e)+'</div>'; });
+</script>
+</body>
+</html>

@@ -1,0 +1,481 @@
+[
+  {
+    "question": "What is the efficacy of dapirolizumab pegol in SLE?",
+    "result": {
+      "generation_id": "8840da95-5bd7-4c3b-bbc5-101b38947589",
+      "output_text": "Dapirolizumab pegol is a novel CD40 ligand inhibitor evaluated for efficacy and safety in patients with systemic lupus erythematosus (SLE) in a phase 3 trial. PHOENYCS GO was a 48-week, randomised, double-blind, placebo-controlled, phase 3 trial in which patients aged 16 years or older with moderate-to-severe, active SLE despite standard-of-care medication were randomly assigned (2:1) to intravenous dapirolizumab pegol 24 mg/kg or placebo every 4 weeks in addition to standard of care. The primary outcome was British Isles Lupus Assessment Group-based Composite Lupus Assessment (BICLA) response at week 48, with efficacy analyses conducted on a modified intention-to-treat population. Dapirolizumab pegol was associated with significant improvement in disease activity in patients with SLE, and these findings support further investigation of dapirolizumab pegol as a treatment option for SLE.",
+      "claim_map": {
+        "sentences": [
+          {
+            "sentence": "Dapirolizumab pegol is a novel CD40 ligand inhibitor evaluated for efficacy and safety in patients with systemic lupus erythematosus (SLE) in a phase 3 trial.",
+            "span_ids": [
+              "a0448585-5277-48b9-8cd1-cd11c35e67f2"
+            ]
+          },
+          {
+            "sentence": "PHOENYCS GO was a 48-week, randomised, double-blind, placebo-controlled, phase 3 trial in which patients aged 16 years or older with moderate-to-severe, active SLE despite standard-of-care medication were randomly assigned (2:1) to intravenous dapirolizumab pegol 24 mg/kg or placebo every 4 weeks in addition to standard of care.",
+            "span_ids": [
+              "03c756c6-42bf-426f-bc3d-b6b0469c7281"
+            ]
+          },
+          {
+            "sentence": "The primary outcome was British Isles Lupus Assessment Group-based Composite Lupus Assessment (BICLA) response at week 48, with efficacy analyses conducted on a modified intention-to-treat population.",
+            "span_ids": [
+              "03c756c6-42bf-426f-bc3d-b6b0469c7281"
+            ]
+          },
+          {
+            "sentence": "Dapirolizumab pegol was associated with significant improvement in disease activity in patients with SLE, and these findings support further investigation of dapirolizumab pegol as a treatment option for SLE.",
+            "span_ids": [
+              "f330922c-9f63-4112-a1ca-9ca4be4961f9"
+            ]
+          }
+        ],
+        "gap": "The provided spans do not report the specific numeric BICLA response rates for dapirolizumab pegol versus placebo at week 48 or the associated effect sizes, confidence intervals, or p-values."
+      },
+      "route": "composed",
+      "verifier": {
+        "passed": true,
+        "sentences": [
+          {
+            "sentence_idx": 0,
+            "sentence": "Dapirolizumab pegol is a novel CD40 ligand inhibitor evaluated for efficacy and safety in patients with systemic lupus erythematosus (SLE) in a phase 3 trial.",
+            "span_ids": [
+              "a0448585-5277-48b9-8cd1-cd11c35e67f2"
+            ],
+            "entailment": "ENTAILED",
+            "entail_reason": "The support states dapirolizumab pegol is a novel CD40 ligand inhibitor and that the phase 3 trial aimed to evaluate its efficacy and safety in SLE patients, covering all parts of the claim.",
+            "numeric_ok": true,
+            "scope_ok": true,
+            "permitted_ref_ok": true,
+            "passed": true,
+            "flags": []
+          },
+          {
+            "sentence_idx": 1,
+            "sentence": "PHOENYCS GO was a 48-week, randomised, double-blind, placebo-controlled, phase 3 trial in which patients aged 16 years or older with moderate-to-severe, active SLE despite standard-of-care medication were randomly assigned (2:1) to intravenous dapirolizumab pegol 24 mg/kg or placebo every 4 weeks in addition to standard of care.",
+            "span_ids": [
+              "03c756c6-42bf-426f-bc3d-b6b0469c7281"
+            ],
+            "entailment": "ENTAILED",
+            "entail_reason": "All elements of the claim (trial design, patient population, randomisation ratio, and treatment arms) are directly stated in the support.",
+            "numeric_ok": true,
+            "scope_ok": true,
+            "permitted_ref_ok": true,
+            "passed": true,
+            "flags": []
+          },
+          {
+            "sentence_idx": 2,
+            "sentence": "The primary outcome was British Isles Lupus Assessment Group-based Composite Lupus Assessment (BICLA) response at week 48, with efficacy analyses conducted on a modified intention-to-treat population.",
+            "span_ids": [
+              "03c756c6-42bf-426f-bc3d-b6b0469c7281"
+            ],
+            "entailment": "ENTAILED",
+            "entail_reason": "The support explicitly states the primary outcome was BICLA response at week 48 and that efficacy analyses were conducted on a modified intention-to-treat population.",
+            "numeric_ok": true,
+            "scope_ok": true,
+            "permitted_ref_ok": true,
+            "passed": true,
+            "flags": []
+          },
+          {
+            "sentence_idx": 3,
+            "sentence": "Dapirolizumab pegol was associated with significant improvement in disease activity in patients with SLE, and these findings support further investigation of dapirolizumab pegol as a treatment option for SLE.",
+            "span_ids": [
+              "f330922c-9f63-4112-a1ca-9ca4be4961f9"
+            ],
+            "entailment": "ENTAILED",
+            "entail_reason": "The support directly states both that dapirolizumab pegol was associated with significant improvement in disease activity in SLE patients and that findings support further investigation as a treatment option, matching the claim fully.",
+            "numeric_ok": true,
+            "scope_ok": true,
+            "permitted_ref_ok": true,
+            "passed": true,
+            "flags": []
+          }
+        ]
+      },
+      "spans": [
+        {
+          "span_id": "f330922c-9f63-4112-a1ca-9ca4be4961f9",
+          "text": "Dapirolizumab pegol was associated with significant improvement in disease activity in patients with SLE. These findings support the further investigation of dapirolizumab pegol as a treatment option for SLE.",
+          "doc_type": "literature",
+          "source_ref": "10.1016/S0140-6736(26)00691-4",
+          "title": "Efficacy and safety of the CD40 ligand inhibitor dapirolizumab pegol in systemic lupus erythematosus (PHOENYCS GO): a randomised, double-blind, placebo-controlled, phase 3 trial.",
+          "section_path": "Abstract > INTERPRETATION",
+          "score": 0.979670524597168
+        },
+        {
+          "span_id": "a0448585-5277-48b9-8cd1-cd11c35e67f2",
+          "text": "Dapirolizumab pegol is a novel CD40 ligand inhibitor. In this phase 3 trial, we aimed to evaluate the efficacy and safety of dapirolizumab pegol in patients with systemic lupus erythematosus (SLE).",
+          "doc_type": "literature",
+          "source_ref": "10.1016/S0140-6736(26)00691-4",
+          "title": "Efficacy and safety of the CD40 ligand inhibitor dapirolizumab pegol in systemic lupus erythematosus (PHOENYCS GO): a randomised, double-blind, placebo-controlled, phase 3 trial.",
+          "section_path": "Abstract > BACKGROUND",
+          "score": 0.9734371304512024
+        },
+        {
+          "span_id": "03c756c6-42bf-426f-bc3d-b6b0469c7281",
+          "text": "PHOENYCS GO was a 48-week, randomised, double-blind, placebo-controlled, phase 3 trial conducted in 177 centres (hospitals, private practices, and trial centres) in 25 countries. Patients aged 16 years or older with moderate-to-severe, active SLE despite standard-of-care medication were randomly assigned (2:1), via an interactive web response system, to intravenous dapirolizumab pegol 24 mg/kg or placebo every 4 weeks in addition to standard of care. Patients, investigators, and funders were blinded to treatment assignments. The primary outcome was British Isles Lupus Assessment Group-based Composite Lupus Assessment (BICLA) response at week 48. Efficacy analyses were conducted on a modified intention-to-treat population. Safety analyses included all randomly assigned patients who received at least one study medication dose. This trial is registered with ClinicalTrials.gov (NCT04294667) and is completed.",
+          "doc_type": "literature",
+          "source_ref": "10.1016/S0140-6736(26)00691-4",
+          "title": "Efficacy and safety of the CD40 ligand inhibitor dapirolizumab pegol in systemic lupus erythematosus (PHOENYCS GO): a randomised, double-blind, placebo-controlled, phase 3 trial.",
+          "section_path": "Abstract > METHODS",
+          "score": 0.6886292099952698
+        },
+        {
+          "span_id": "d83f4a32-a558-4332-bfdf-d1226b795afa",
+          "text": "ObjectivesTo define the current evidence for CAR-based cellular therapy in relapsed or refractory systemic lupus erythematosus (SLE) by resolving overlapping reports and synthesising patient-level phenotype, safety and efficacy data. The primary purpose was evidence mapping with duplicate-count control; mechanistic immune-reset interpretation and platform differences were treated as secondary, hypothesis-generating questions rather than formal comparative-effectiveness analyses.MethodsPubMed, Embase and Web of Science were searched for reports published from January 2020 to March 2026. Eligible records described CAR-based cellular therapy in relapsed, refractory or organ-threatening SLE. Overlapping publication streams were collapsed into independent study units, and a deduplicated patient-level master dataset was constructed. Outcomes were summarised descriptively using conservative exact patient-level attribution, with endpoint evaluability reported separately from observed outcome proportions.ResultsTwenty-one independent study units comprising 114 counted patients were included. The cohort was predominantly female (100/114, 87.7%), young (median age 32.0 years) and heavily pretreated, with renal involvement in 89 patients (78.1%). Autologous CD19 CAR-T and BCMA-containing platforms accounted for most treated patients, with additional allogeneic CAR-T and CAR-NK experience. Among exactly evaluable rows, clinical response was documented in 45 of 45 patients, DORIS remission in 13 of 15, SLE Responder Index-4 response in 20 of 20, renal improvement in five of five and drug-free remission in 28 of 58. These proportions should not be read as pooled response rates because exact endpoint denominators were small or incomplete for several outcomes. Cytokine release syndrome was usually low grade, and immune effector cell-associated neurotoxicity syndrome was uncommon. Severe inflammatory toxicities occurred in selected paediatric or highly inflammatory settings. Endpoint evaluability varied substantially across studies.ConclusionCAR-based cellular therapy shows substantial promise as an immune-reset strategy for refractory SLE, particularly in renal-dominant disease. However, current evidence remains early, uncontrolled and incompletely reported. Sparse exactly evaluable denominators, publication bias, selective outcome reporting and short follow-up preclude definitive platform comparisons, supporting standardised prospective studies with harmonised efficacy, immune-reconstitution and toxicity endpoints.Systematic review registrationhttps://www.crd.york.ac.uk/prospero/, identifier CRD420261330006.",
+          "doc_type": "guideline",
+          "source_ref": "10.3389/fimmu.2026.1879668",
+          "title": "CAR-based cellular therapy for refractory systemic lupus erythematosus: an overlap-controlled systematic review",
+          "section_path": "Abstract",
+          "score": 0.211849644780159
+        },
+        {
+          "span_id": "16ad75ac-fb01-441b-8d68-dee5450494e6",
+          "text": "Systemic lupus erythematosus (SLE) is a prototypic systemic autoimmune disease characterised by loss of immune tolerance, pathogenic autoantibody production, immune-complex deposition, and heterogeneous multi-organ injury (1\u20136). Although outcomes have improved substantially over the past two decades, a clinically important subgroup of patients remains difficult to control, particularly those with lupus nephritis, haematological disease, neuropsychiatric involvement, or repeated relapses despite conventional immunosuppression and biologic therapy (2, 7, 8). Contemporary management is increasingly framed by treat-to-target principles, with remission and low disease activity recognised as preferred therapeutic goals; however, durable drug-free remission remains uncommon in routine practice (7\u201312). This gap between disease suppression and true immune reset has provided the rationale for cellular immunotherapy (3, 13\u201315). Compared with antibody-based B-cell depletion, chimeric antigen receptor (CAR)-based therapy offers the possibility of deeper and potentially more durable elimination of autoreactive B-lineage cells, and in some platforms broader targeting of plasma-cell compartments through BCMA-directed or dual-target constructs (13\u201315). Early reports of anti-CD19 CAR-T therapy in refractory SLE, followed by expanding case series and phase 1 studies, have generated substantial interest by showing rapid clinical improvement, serological normalisation, and in some patients sustained remission after withdrawal of background immunosuppression (16\u201325).",
+          "doc_type": "guideline",
+          "source_ref": "10.3389/fimmu.2026.1879668",
+          "title": "CAR-based cellular therapy for refractory systemic lupus erythematosus: an overlap-controlled systematic review",
+          "section_path": "Introduction",
+          "score": 0.07146598398685455
+        },
+        {
+          "span_id": "75f1fc55-7dde-4ea2-8e44-fc7c9e303335",
+          "text": "Between July 9, 2020 and September 29, 2021, 60 patients were randomised, with 55 patients who completed 12 weeks of treatment. Adverse events (AEs) were mostly mild or moderate. In all evaluable patients, the SLE Response Index (SRI)-4 rates at week 12 were 50%, 62%, and 64% for orelabrutinib at 50 mg, 80 mg, and 100 mg, respectively, compared with 36% for placebo, indicating dose-dependent improvement. Among patients with baseline SLEDAI-2K > 8, significantly higher SRI-4 responses were noted with orelabrutinib at 50 mg (80%, p = 0\u00b7048), 80 mg (83%, p = 0\u00b7048), and 100 mg (100%, p = 0\u00b7029) compared to placebo (0%). SRI-6 responses at week 12 were 36%, 39%, and 21% for orelabrutinib at 50 mg, 80 mg, and 100 mg, respectively, compared with 7% for placebo. Reduced proteinuria, anti-dsDNA, IgG, and IgM and increased C4 were observed with orelabrutinib treatment.",
+          "doc_type": "literature",
+          "source_ref": "10.1016/j.jaut.2026.103578",
+          "title": "Orelabrutinib for systemic lupus erythematosus: A randomised, double-blind, placebo-controlled study.",
+          "section_path": "Abstract > RESULTS",
+          "score": 0.036189451813697815
+        },
+        {
+          "span_id": "574b79be-14cc-4974-9795-4ca4e49184ad",
+          "text": "Orelabrutinib was well tolerated and potentially efficacious in patients with SLE.",
+          "doc_type": "literature",
+          "source_ref": "10.1016/j.jaut.2026.103578",
+          "title": "Orelabrutinib for systemic lupus erythematosus: A randomised, double-blind, placebo-controlled study.",
+          "section_path": "Abstract > CONCLUSIONS",
+          "score": 0.016918791458010674
+        },
+        {
+          "span_id": "3f7670f4-2200-4c3f-ac6e-07224f611403",
+          "text": "Background:Immune dysregulation years prior to a clinical diagnosis of systemic lupus erythematosus (SLE) may include a range of asymptomatic autoantibody positivity to clinically evident disease. The effect of this spectrum of immune dysregulation on pregnancy outcomes, including pregnancies in women prior to a diagnosis of SLE, is poorly understood. We sought to identify associations of adverse pregnancy outcomes across groups along this spectrum.Methods:Utilizing a large longitudinal cohort at a single center, we evaluated pregnancy outcomes among the following four groups: antinuclear antibody (ANA) negative controls, ANA-positive controls, pregnancies before a diagnosis of SLE, and pregnancies after a diagnosis of SLE. The pregnancy outcomes considered were live birth rate, preeclampsia, low birth weight, premature birth, spontaneous abortion, and stillbirth. Generalized estimating equation models were used to evaluate key associations and confounders.Results:We included 811 participants and 2,209 pregnancies. Of these, 198 participants were ANA-positive controls and 369 were diagnosed with SLE, with their first pregnancy occurring before diagnosis. Overall, 81.5% self-identified as Black and 31% had resided in areas with high social vulnerability. The median number of pregnancies between the groups was similar, with the majority of participants having at least one live birth. The lowest median number of pregnancies occurred in the pregnancy after SLE diagnosis group. The adverse outcome rate did not differ between the ANA-positive and ANA-negative controls. The risk of any adverse outcome was greatest in those with pregnancies after an SLE diagnosis [OR (95% CI): 3.33 (2.35, 4.71)], but was also increased in those with pregnancies before a diagnosis of SLE as compared to the ANA-positive controls [OR (95% CI): 1.78 (1.28, 2.47)]. When grouped by time prior to diagnosis, the risk of any adverse outcome remained increased in pregnancies occurring both 2\u20135 years or greater than 5 years prior to SLE diagnosis as compared to the ANA-positive controls [OR (95% CI): 1.64 (1.01, 2.67) and OR (95% CI): 1.65 (1.17, 2.32), respectively].Conclusion:The risk of adverse pregnancy outcomes appears to increase along the SLE spectrum, with the highest risk occurring after diagnosis.",
+          "doc_type": "guideline",
+          "source_ref": "10.3389/flupu.2026.1806496",
+          "title": "Adverse pregnancy outcome associations among women prior to a diagnosis of systemic lupus erythematosus",
+          "section_path": "Abstract",
+          "score": 0.01273219846189022
+        }
+      ]
+    }
+  },
+  {
+    "question": "What does the evidence say about yoga as an adjunct therapy in ankylosing spondylitis?",
+    "result": {
+      "generation_id": "bfa2fbb5-5128-4123-ad31-02c50d16fa27",
+      "output_text": "A prospective, randomized, controlled study in 51 patients with ankylosing spondylitis (27 males, 24 females; mean age 40.7 \u00b1 9.1 years; range 24-57 years) compared aerobic exercise alone (group 1, n = 25) with a yoga-based exercise program combined with aerobic exercise (group 2, n = 26). In group 2, a yoga-based exercise consisting of spinal flexibility, relaxation, breathing and meditation exercises was administered for 30 min over 12 sessions in addition to the physician-supervised aerobic program. In pre- versus post-treatment delta comparisons between the two groups, statistically significant differences favoring group 2 were found in chest expansion (p = 0.002), BASMI (p = 0.025), right and left handgrip strength (p = 0.023, 0.044), BASFI (p = 0.03), 6-Minute Walk Test (p = 0.005), and resting systolic blood pressure (p = 0.012). In a Holm-Bonferroni-adjusted sensitivity analysis of between-group delta comparisons, chest expansion, BASMI, and 6-MWT remained statistically significant among clinical and functional secondary outcomes, whereas handgrip strength and BASFI no longer remained statistically significant. The authors concluded that a physician-supervised combined aerobic and yoga-based exercise program may provide additional benefits over aerobic exercise alone in selected clinical and functional outcomes, particularly chest expansion, spinal mobility, and functional capacity. The authors suggest that yoga-based exercises combined with aerobic exercise could be included in the treatment plans of patients with ankylosing spondylitis.",
+      "claim_map": {
+        "sentences": [
+          {
+            "sentence": "A prospective, randomized, controlled study in 51 patients with ankylosing spondylitis (27 males, 24 females; mean age 40.7 \u00b1 9.1 years; range 24-57 years) compared aerobic exercise alone (group 1, n = 25) with a yoga-based exercise program combined with aerobic exercise (group 2, n = 26).",
+            "span_ids": [
+              "e4a0af86-57cf-44e7-aa3e-8cc02e22f6ff"
+            ]
+          },
+          {
+            "sentence": "In group 2, a yoga-based exercise consisting of spinal flexibility, relaxation, breathing and meditation exercises was administered for 30 min over 12 sessions in addition to the physician-supervised aerobic program.",
+            "span_ids": [
+              "e4a0af86-57cf-44e7-aa3e-8cc02e22f6ff"
+            ]
+          },
+          {
+            "sentence": "In pre- versus post-treatment delta comparisons between the two groups, statistically significant differences favoring group 2 were found in chest expansion (p = 0.002), BASMI (p = 0.025), right and left handgrip strength (p = 0.023, 0.044), BASFI (p = 0.03), 6-Minute Walk Test (p = 0.005), and resting systolic blood pressure (p = 0.012).",
+            "span_ids": [
+              "e4a0af86-57cf-44e7-aa3e-8cc02e22f6ff"
+            ]
+          },
+          {
+            "sentence": "In a Holm-Bonferroni-adjusted sensitivity analysis of between-group delta comparisons, chest expansion, BASMI, and 6-MWT remained statistically significant among clinical and functional secondary outcomes, whereas handgrip strength and BASFI no longer remained statistically significant.",
+            "span_ids": [
+              "e4a0af86-57cf-44e7-aa3e-8cc02e22f6ff"
+            ]
+          },
+          {
+            "sentence": "The authors concluded that a physician-supervised combined aerobic and yoga-based exercise program may provide additional benefits over aerobic exercise alone in selected clinical and functional outcomes, particularly chest expansion, spinal mobility, and functional capacity.",
+            "span_ids": [
+              "e4a0af86-57cf-44e7-aa3e-8cc02e22f6ff"
+            ]
+          },
+          {
+            "sentence": "The authors suggest that yoga-based exercises combined with aerobic exercise could be included in the treatment plans of patients with ankylosing spondylitis.",
+            "span_ids": [
+              "bd5672ba-79bd-4938-b680-421a719e3625"
+            ]
+          }
+        ],
+        "gap": null
+      },
+      "route": "composed",
+      "verifier": {
+        "passed": true,
+        "sentences": [
+          {
+            "sentence_idx": 0,
+            "sentence": "A prospective, randomized, controlled study in 51 patients with ankylosing spondylitis (27 males, 24 females; mean age 40.7 \u00b1 9.1 years; range 24-57 years) compared aerobic exercise alone (group 1, n = 25) with a yoga-based exercise program combined with aerobic exercise (group 2, n = 26).",
+            "span_ids": [
+              "e4a0af86-57cf-44e7-aa3e-8cc02e22f6ff"
+            ],
+            "entailment": "ENTAILED",
+            "entail_reason": "All claim details\u2014study design, patient counts, demographics, and group assignments\u2014match the support text exactly.",
+            "numeric_ok": true,
+            "scope_ok": true,
+            "permitted_ref_ok": true,
+            "passed": true,
+            "flags": []
+          },
+          {
+            "sentence_idx": 1,
+            "sentence": "In group 2, a yoga-based exercise consisting of spinal flexibility, relaxation, breathing and meditation exercises was administered for 30 min over 12 sessions in addition to the physician-supervised aerobic program.",
+            "span_ids": [
+              "e4a0af86-57cf-44e7-aa3e-8cc02e22f6ff"
+            ],
+            "entailment": "ENTAILED",
+            "entail_reason": "The support states that in group 2, in addition to the physician-supervised aerobic program, a yoga-based exercise consisting of spinal flexibility, relaxation, breathing and meditation exercises was administered for 30 min over 12 sessions.",
+            "numeric_ok": true,
+            "scope_ok": true,
+            "permitted_ref_ok": true,
+            "passed": true,
+            "flags": []
+          },
+          {
+            "sentence_idx": 2,
+            "sentence": "In pre- versus post-treatment delta comparisons between the two groups, statistically significant differences favoring group 2 were found in chest expansion (p = 0.002), BASMI (p = 0.025), right and left handgrip strength (p = 0.023, 0.044), BASFI (p = 0.03), 6-Minute Walk Test (p = 0.005), and resting systolic blood pressure (p = 0.012).",
+            "span_ids": [
+              "e4a0af86-57cf-44e7-aa3e-8cc02e22f6ff"
+            ],
+            "entailment": "ENTAILED",
+            "entail_reason": "All listed measures and p-values match the support text exactly, favoring group 2 in pre- vs post-treatment delta comparisons.",
+            "numeric_ok": true,
+            "scope_ok": true,
+            "permitted_ref_ok": true,
+            "passed": true,
+            "flags": []
+          },
+          {
+            "sentence_idx": 3,
+            "sentence": "In a Holm-Bonferroni-adjusted sensitivity analysis of between-group delta comparisons, chest expansion, BASMI, and 6-MWT remained statistically significant among clinical and functional secondary outcomes, whereas handgrip strength and BASFI no longer remained statistically significant.",
+            "span_ids": [
+              "e4a0af86-57cf-44e7-aa3e-8cc02e22f6ff"
+            ],
+            "entailment": "ENTAILED",
+            "entail_reason": "The support text directly states that chest expansion, BASMI, and 6-MWT remained statistically significant while handgrip strength and BASFI no longer remained significant in the Holm-Bonferroni-adjusted sensitivity analysis.",
+            "numeric_ok": true,
+            "scope_ok": true,
+            "permitted_ref_ok": true,
+            "passed": true,
+            "flags": []
+          },
+          {
+            "sentence_idx": 4,
+            "sentence": "The authors concluded that a physician-supervised combined aerobic and yoga-based exercise program may provide additional benefits over aerobic exercise alone in selected clinical and functional outcomes, particularly chest expansion, spinal mobility, and functional capacity.",
+            "span_ids": [
+              "e4a0af86-57cf-44e7-aa3e-8cc02e22f6ff"
+            ],
+            "entailment": "ENTAILED",
+            "entail_reason": "The conclusion in the support directly states the physician-supervised combined program may provide additional benefits over aerobic exercise alone in selected outcomes, particularly chest expansion, spinal mobility, and functional capacity, matching the claim verbatim.",
+            "numeric_ok": true,
+            "scope_ok": true,
+            "permitted_ref_ok": true,
+            "passed": true,
+            "flags": []
+          },
+          {
+            "sentence_idx": 5,
+            "sentence": "The authors suggest that yoga-based exercises combined with aerobic exercise could be included in the treatment plans of patients with ankylosing spondylitis.",
+            "span_ids": [
+              "bd5672ba-79bd-4938-b680-421a719e3625"
+            ],
+            "entailment": "ENTAILED",
+            "entail_reason": "The support directly states the authors suggest yoga-based exercises combined with aerobic exercise could be included in treatment plans of patients with AS (ankylosing spondylitis).",
+            "numeric_ok": true,
+            "scope_ok": true,
+            "permitted_ref_ok": true,
+            "passed": true,
+            "flags": []
+          }
+        ]
+      },
+      "spans": [
+        {
+          "span_id": "e4a0af86-57cf-44e7-aa3e-8cc02e22f6ff",
+          "text": "Objective This study aimed to investigate the effects of yoga-based exercises, combined with aerobic exercises, on spinal mobility, disease activity and functional capacity in Ankylosing spondylitis (AS). Methods A total of 51 patients with AS (27 males, 24 females; mean age: 40.7 \u00b1 9.1 years; range 24-57 years) completed in this prospective, randomized, controlled study. Group 1 (n = 25) received only aerobic exercise therapy, while group 2 (n = 26) received yoga therapy in combination with aerobic exercises. The intensity of the aerobic exercise program were determined using Cardiopulmonary Exercise Testing (CPET). The aerobic program was administered for 30 min over 12 sessions, under physician supervision with monitoring using a lower extremity ergometer. In group 2, in addition to the aerobic program, a yoga-based exercise consisting of spinal flexibility, relaxation, breathing and meditation exercises was administered for 30 min over 12 sessions. Spinal mobility (chest expansion(CE) and BASMI), peripheral muscle strength and laboratory measures (ESR and CRP), were recorded pre- and post-treatment. SpA-specific clinical measures included the ASDAS-CRP, BASFI, ASQoL scale, fibromyalgia scores. Functional capacity was evaluated using the 6-Minute Walk Test (6-MWT). Respiratory parameters and aerobic capacity levels, recorded using Pulmonary Function Tests (PFT) and CPET. Results In the analysis comparing pre- and post-treatment delta gain values between the two groups, statistically significant differences favoring group 2 were found in CE (p = 0.002), BASMI (p = 0.025), right and left handgrip strength (p = 0.023, 0.044), BASFI (p = 0.03), 6-MWT (p = 0.005) and resting systolic blood pressure (p = 0.012). In the Holm-Bonferroni-adjusted sensitivity analysis of between-group delta comparisons, chest expansion, BASMI, and 6-MWT remained statistically significant among clinical and functional secondary outcomes, whereas handgrip strength and BASFI no longer remained statistically significant Conclusion This study showed that a physician-supervised combined aerobic and yoga-based exercise program may provide additional benefits over aerobic exercise alone in selected clinical and functional outcomes, particularly chest expansion, spinal mobility, functional capacity.",
+          "doc_type": "literature",
+          "source_ref": "10.1111/1756-185X.14315",
+          "title": "Enhancing spinal mobility and functional capacity through aerobic exercise and yoga in ankylosing spondylitis: a randomized controlled trial.",
+          "section_path": "Abstract > Abstract",
+          "score": 0.06891615688800812
+        },
+        {
+          "span_id": "cfb492a6-a40d-41d8-b9e4-4a98b301de1d",
+          "text": "The analgesic efficacy of TENS is further supported by the findings of Fern\u00e1ndez-P\u00e9rez et al. [29], whose systematic review, focusing on women with dyspareunia, reported similar outcomes. However, it should be noted that the studies included in their analysis predate the present review period and exhibit substantial methodological heterogeneity. Furthermore, there is evidence to suggest that the use of TENS has been associated with a decreased use of medications, particularly NSAID, as shown by McLagan et al. [24]. However, a comprehensive systematic review by Johnson et al. [30], which encompassed 381 studies across a wide range of clinical conditions, reported only low-certainty evidence that lends support to the conclusion that TENS is superior to pharmacological analgesia.",
+          "doc_type": "literature",
+          "source_ref": "10.5114/pm.2026.161669",
+          "title": "Effectiveness of transcutaneous electrical nerve stimulation for pelvic pain in women: a systematic review",
+          "section_path": "Discussion",
+          "score": 0.04858112707734108
+        },
+        {
+          "span_id": "60b9535a-aba8-40a7-8ce2-476b5a8fa554",
+          "text": "The included RCTs, published between 2021 and 2024, involved a total of 281 participants (154 in the intervention groups and 127 in the control groups). All studies enrolled female populations, with mean ages ranging from 17 to 31 years. The most frequently investigated condition was PD, addressed in three trials [23\u201325], while only one study focused on vestibulodynia [20]. Although all studies used TENS as the main intervention, substantial heterogeneity was observed in terms of devices, stimulation parameters, administration modalities, and treatment duration. Murina et al. [20] adopted an intravaginal, self-administered home-based protocol combining high- and low-frequency stimulation for 30 minutes, three times per week, over a 120-et al. day period. In contrast, the PD trials exclusively employed transcutaneous approaches: Guy et al. [23] used adhesive patches with variable frequencies (60\u2013100 Hz), McLagan et al. [24] applied a commercial wearable device delivering stimulation (50\u2013100 Hz), and Manisha and Anuradha [25] administered high-frequency stimulation (100 Hz) for 20 minutes on the first day of menstruation. All included studies reported a significant reduction in pain in study groups. Murina et al. [20] observed significant improvements in burning pain and dyspareunia, but no statistically significant changes in secondary outcomes (female sexual functioning index \u2013 FSFI, vulvar pain functional questionnaire, pelvic floor muscle strength), suggesting a predominantly analgesic effect of moderate clinical relevance. In the PD trials, Guy et al. [23] reported a mean pain reduction of 53%, associated with a rapid onset of action and a marked decrease in analgesic consumption, indicating a large and clinically meaningful effect. Similarly, McLagan et al. [24] demonstrated a significant reduction in pain across all cycles and a lower use of non-steroidal anti-inflammatory drugs (NSAID), suggesting at least a moderate treatment effect. Manisha and Anuradha [25] found significant intra- and intergroup differences for all assessed outcomes, consistent with a robust analgesic response. Only two studies documented a significant reduction in analgesic consumption [23, 24], whereas Murina et al. [20] did not observe significant improvements in sexual function or muscle performance.",
+          "doc_type": "literature",
+          "source_ref": "10.5114/pm.2026.161669",
+          "title": "Effectiveness of transcutaneous electrical nerve stimulation for pelvic pain in women: a systematic review",
+          "section_path": "Results",
+          "score": 0.021395500749349594
+        },
+        {
+          "span_id": "a5f92572-95ee-458a-bc68-c50bb22dc871",
+          "text": "The present review provides an updated synthesis of RCTs published in 2020\u20132025 on the use of TENS for the management of pelvic pain in women. The review focuses on secondary functional and rehabilitative outcomes in addition to pain reduction, in comparison with previous systematic reviews, including the recent one by Han et al. [26]. The collective evidence from these four studies suggests potential efficacy of TENS in reducing pelvic pain in women, particularly in conditions such as PD and vestibulodynia, with benefits primarily observed in analgesic outcomes, as pain intensity was the main endpoint assessed across all included trials. These findings are consistent with those reported in previous systematic reviews. For instance, the analysis conducted by Igwea et al. [27], published in 2016, demonstrated significant reductions in dysmenorrheic pain following TENS application. Similarly, Proctor et al. [28] reported that high-frequency TENS was superior to both placebo and low-frequency TENS in alleviating pain in women with primary dysmenorrhea.",
+          "doc_type": "literature",
+          "source_ref": "10.5114/pm.2026.161669",
+          "title": "Effectiveness of transcutaneous electrical nerve stimulation for pelvic pain in women: a systematic review",
+          "section_path": "Discussion",
+          "score": 0.007855703122913837
+        },
+        {
+          "span_id": "bd5672ba-79bd-4938-b680-421a719e3625",
+          "text": "We suggest that yoga-based exercises combined with aerobic exercise, could be included in the treatment plans of patients with AS.",
+          "doc_type": "literature",
+          "source_ref": "10.1111/1756-185X.14315",
+          "title": "Enhancing spinal mobility and functional capacity through aerobic exercise and yoga in ankylosing spondylitis: a randomized controlled trial.",
+          "section_path": "Abstract > Abstract",
+          "score": 0.003484786720946431
+        },
+        {
+          "span_id": "fba8e235-4d2d-4a99-b8af-7e009d255131",
+          "text": "In contrast to the relatively consistent evidence supporting the analgesic effects of TENS, findings related to functional and rehabilitative outcomes remain limited and less conclusive. Outcomes, such as sexual function, pelvic muscle strength, and overall functional performance were assessed in only a small number of studies and were not consistently included as primary endpoints, thereby limiting the strength of the conclusion that can be drawn regarding the rehabilitative effects of TENS. While evidence from other clinical populations suggests potential benefits of TENS on quality of life and functional capacity, such findings cannot be directly extrapolated to women with pelvic pain and should be interpreted with caution. For instance, Katirci Kirmaci et al. [31] examined the impact of different electrical stimulation modalities on pain, functional capacity, and quality of life in patients with multiple sclerosis, employing the multiple sclerosis international quality of life scale. While both interferential current therapy and TENS demonstrated significant improvements in pain and functional capacity, TENS was found to be more efficacious in enhancing quality of life. The findings are derived from a non-pelvic pain population and therefore provide only indirect support for potential functional benefits of TENS in pelvic pain conditions.",
+          "doc_type": "literature",
+          "source_ref": "10.5114/pm.2026.161669",
+          "title": "Effectiveness of transcutaneous electrical nerve stimulation for pelvic pain in women: a systematic review",
+          "section_path": "Discussion",
+          "score": 0.0033842751290649176
+        },
+        {
+          "span_id": "0e8b428c-6bcc-463f-8b12-4b04b7190f73",
+          "text": "Patients with active ankylosing spondylitis (AS) exhibit substantial heterogeneity in their clinical responses to tumor necrosis factor alpha inhibitors (TNFi). Consensus clustering, an unsupervised cluster discovery method, may identify AS subgroups with more homogeneous treatment response patterns to adalimumab (ADA), a widely prescribed TNFi.",
+          "doc_type": "literature",
+          "source_ref": "10.1007/s00296-009-1313-9",
+          "title": "Early divergence of treatment response trajectories to adalimumab or its biosimilar in active ankylosing spondylitis: consensus clustering analysis of a randomized controlled trial.",
+          "section_path": "Abstract > BACKGROUND",
+          "score": 0.0007609359454363585
+        },
+        {
+          "span_id": "e631a2a4-1d73-498a-92b7-655af1f85cff",
+          "text": "The methodological quality of the included studies was assessed using the Cochrane risk of bias tool available through the RevMan software (https://revman.cochrane.org/info) (Figure 3). The risk of bias assessment revealed substantial concerns in several domains, particularly regarding detection bias, incomplete outcome data, and selective reporting. Only one study [20] was judged to be at low risk of detection bias, while two [24, 25] were rated as high risk. Small sample sizes, heterogeneous follow-up durations (ranging from immediate post-treatment assessments to 120 days), and non-standardized protocols further reduce the robustness of the findings. Consequently, although the available evidence suggests a potentially clinically meaningful benefit of TENS in the management of pelvic pain, the heterogeneity of protocols, the lack of standardized effect size reporting, and the overall methodological limitations prevent definitive conclusions. Larger, well-designed RCTs with standardized protocols and complete outcome reporting are required to enable a precise quantification of treatment effects and to improve the comparability of future findings (Table 1).",
+          "doc_type": "literature",
+          "source_ref": "10.5114/pm.2026.161669",
+          "title": "Effectiveness of transcutaneous electrical nerve stimulation for pelvic pain in women: a systematic review",
+          "section_path": "Results",
+          "score": 0.000573403958696872
+        }
+      ]
+    }
+  },
+  {
+    "question": "What is the recommended dose of amoxicillin for a child with otitis media?",
+    "result": {
+      "generation_id": "b0c1bc91-9cec-4bc8-bdd7-6bb1da5406c9",
+      "output_text": "",
+      "claim_map": {
+        "sentences": [],
+        "gap": "No span addresses amoxicillin dosing or otitis media; evidence concerns vitamins in NEC, lupus/orelabrutinib, and lymphoma therapies.",
+        "answerability": {
+          "verdict": "no_evidence",
+          "reason": "No span addresses amoxicillin dosing or otitis media; evidence concerns vitamins in NEC, lupus/orelabrutinib, and lymphoma therapies."
+        }
+      },
+      "route": "gap",
+      "verifier": {
+        "passed": false,
+        "sentences": [],
+        "gap": "No span addresses amoxicillin dosing or otitis media; evidence concerns vitamins in NEC, lupus/orelabrutinib, and lymphoma therapies."
+      },
+      "spans": [
+        {
+          "span_id": "2a7d9fc0-aa97-41a5-bc9f-ca412d33ebbd",
+          "text": "Clinical practice among preterm infants supports the necessity of adequate vitamin K prophylaxis at birth. Low and comparable NEC rates were observed in all groups in a randomized trial comparing intramuscular doses of 1.0 mg, 0.5 mg, and 0.3 mg of vitamin K1 in very preterm or VLBW neonates, proving that adequate vitamin K can be achieved through varying dosing regimens (154). Experimental evidence also suggests that vitamin K controls inflammatory signaling by suppressing TLR2 and TLR4, the central integration point of innate immune activation and gut inflammation (155). Beyond vascular and immunomodulatory actions, vitamin K also influences metabolic processes containing glutathione and \u03b2-alanine, possibly further controlling intestinal oxidative stress and inflammatory responses (156).",
+          "doc_type": "literature",
+          "source_ref": "10.3389/fnut.2026.1860890",
+          "title": "Vitamins as modulators of neonatal intestinal injury",
+          "section_path": "Vitamins and TLR4 signaling in intestinal homeostasis and inflammation > Vitamin K",
+          "score": 0.9755896925926208
+        },
+        {
+          "span_id": "9c1f7059-0932-4e44-9b49-99b7ae8e1ee7",
+          "text": "ACTIVE_COMPARATOR: 25 mg",
+          "doc_type": "literature",
+          "source_ref": "NCT00695188",
+          "title": "Methotrexate Polyglutamate Levels as a Marker for the Clinical Outcome in the Treatment of Rheumatoid Arthritis A Multicenter, Randomized, Double-blind, Controlled Phase IV Trial",
+          "section_path": "Arms > High dose",
+          "score": 0.22599707543849945
+        },
+        {
+          "span_id": "c34ac742-6192-46b4-a998-28ba47c4013b",
+          "text": "Vitamin D also exerts positive effects on intestinal microbiota composition of which in NEC pathogenesis is of utmost relevance (139, 141, 142). Preterm gut dysbiosis accounts for increased LPS exposure and TLR4 activation. Preclinical studies show that 1,25(OH)\u2082D\u2083 increases the growth of commensal gut bacteria like Muribaculaceae and Lachnospiraceae, restores microbial diversity, and decreases systemic endotoxemia (139, 141). Vitamin D insufficiency is common in preterm and very low body weight (VLBW) infants and is associated with higher NEC, sepsis, and other morbidities (143\u2013145). Although direct proof for vitamin D in the prevention of NEC in humans is scarce, preclinical research strongly supports its protective effect through modulation of TLR4 signaling, preservation of epithelial barrier function, and regulation of intestinal microbiota (134, 135, 137, 138). Future randomized clinical trials are warranted to determine the optimal dose, timing, and formulation of vitamin D in high-risk neonates.",
+          "doc_type": "literature",
+          "source_ref": "10.3389/fnut.2026.1860890",
+          "title": "Vitamins as modulators of neonatal intestinal injury",
+          "section_path": "Vitamins and TLR4 signaling in intestinal homeostasis and inflammation > Vitamin D",
+          "score": 0.0823388621211052
+        },
+        {
+          "span_id": "75f1fc55-7dde-4ea2-8e44-fc7c9e303335",
+          "text": "Between July 9, 2020 and September 29, 2021, 60 patients were randomised, with 55 patients who completed 12 weeks of treatment. Adverse events (AEs) were mostly mild or moderate. In all evaluable patients, the SLE Response Index (SRI)-4 rates at week 12 were 50%, 62%, and 64% for orelabrutinib at 50 mg, 80 mg, and 100 mg, respectively, compared with 36% for placebo, indicating dose-dependent improvement. Among patients with baseline SLEDAI-2K > 8, significantly higher SRI-4 responses were noted with orelabrutinib at 50 mg (80%, p = 0\u00b7048), 80 mg (83%, p = 0\u00b7048), and 100 mg (100%, p = 0\u00b7029) compared to placebo (0%). SRI-6 responses at week 12 were 36%, 39%, and 21% for orelabrutinib at 50 mg, 80 mg, and 100 mg, respectively, compared with 7% for placebo. Reduced proteinuria, anti-dsDNA, IgG, and IgM and increased C4 were observed with orelabrutinib treatment.",
+          "doc_type": "literature",
+          "source_ref": "10.1016/j.jaut.2026.103578",
+          "title": "Orelabrutinib for systemic lupus erythematosus: A randomised, double-blind, placebo-controlled study.",
+          "section_path": "Abstract > RESULTS",
+          "score": 0.031142523512244225
+        },
+        {
+          "span_id": "b1721efd-d271-43bb-9e7e-71d999aa9ddb",
+          "text": "Necrotizing enterocolitis (NEC) is a severe gastrointestinal disease that primarily affects premature infants. It is characterized by intestinal injury and tissue necrosis involving both small and large intestines. Loss of epithelial barrier integrity allows enteric bacteria to translocate into the bloodstream, frequently leading to severe sepsis and high mortality, with reported rates ranging from 15 to 45%. Infants who survive often experience long-term complications, including neurodevelopmental impairment, growth restriction, and short-bowel syndrome. Vitamins help maintain intestinal barrier integrity and regulate immune and inflammatory responses, suggesting an important role in the development and progression of NEC. Vitamins are important modulators of NEC pathophysiology and may serve as adjunctive therapeutic agents through multiple molecular mechanisms. Vitamins A and D promote epithelial barrier maturation and immune homeostasis by limiting excessive Toll-like receptor 4 (TLR4) activation, a major contributor to epithelial injury and inflammation in the immature intestine. Vitamins E and C reduce oxidative stress, a key feature of NEC, while supporting regulatory T-cell function and IgA-mediated mucosal immunity. However, their use in preterm infants requires careful consideration of dosage and route of administration. Vitamin K contributes to both immune regulation and hemostasis by maintaining protein S-dependent anticoagulant activity and suppressing TLR-mediated inflammatory signaling, thereby reducing intestinal microvascular injury. Folate attenuates lipopolysaccharide-induced inflammatory responses and may strengthen host defenses against Gram-negative bacterial stimuli implicated in NEC pathogenesis. Collectively, these vitamins target key pathways involved in NEC, including TLR4 signaling, oxidative stress, epithelial barrier dysfunction, and dysregulated mucosal immunity. These findings highlight their potential roles in the prevention and attenuation of NEC. Future therapeutic strategies should focus on appropriate dosing, developmental considerations, and combination approaches to maximize efficacy while minimizing risk in preterm infants.",
+          "doc_type": "literature",
+          "source_ref": "10.3389/fnut.2026.1860890",
+          "title": "Vitamins as modulators of neonatal intestinal injury",
+          "section_path": "Abstract",
+          "score": 0.019015928730368614
+        },
+        {
+          "span_id": "6ec91a7f-d292-40d0-a58a-23dc60397a83",
+          "text": "Vitamins influence several key processes involved in NEC pathogenesis and may serve as adjunctive therapeutic agents through multiple molecular pathways. Vitamins A, C, D, E, K, and folate influence several key processes involved in NEC, including TLR4 signaling, oxidative stress, epithelial barrier dysfunction, and impaired mucosal immunity. Collectively, current evidence suggests that these vitamins may contribute to the prevention and attenuation of intestinal injury in NEC (Table 1). However, most mechanistic evidence is derived from experimental studies, and clinical data remain limited. Future studies should focus on defining optimal dosing regimens, timing of administration, and developmental considerations in preterm infants. In addition, combination approaches targeting multiple pathways may offer greater therapeutic benefit than individual vitamin supplementation alone. Further clinical studies are needed to determine the safety and efficacy of vitamin-based interventions for the prevention and treatment of NEC.",
+          "doc_type": "literature",
+          "source_ref": "10.3389/fnut.2026.1860890",
+          "title": "Vitamins as modulators of neonatal intestinal injury",
+          "section_path": "Conclusion",
+          "score": 0.011519691906869411
+        },
+        {
+          "span_id": "18441c36-6119-4ceb-a47d-d04d95e8882c",
+          "text": "Trial | Study population | n | Schedule | ORR % | CR % | Median PFS months | Median OS months\nSG035-0003 (phase 2) [30,91] | R/R cHL after ASCT | 102 | BV 1.8 mg/kg every 3 weeks up to 16 cycles | 75 | 34 | 5.6 | 22.4\nAETHERA (randomized, double-blind, placebo-controlled, phase 3) [92,93] | Maintenance after ASCT in high risk R/R cHL | 165164 | BV 1.8 mg/kg every 3 weeksPlacebo every 3 weeks | / | / | Not reached 15.8HR, 0.5295% CI 0.38\u20130.72 | NR\nCheckMate205 (phase 2) [31] | R/R cHL after ASCT | 243 | Nivo 3 mg/kg every 2 weeks up to PD or unacceptable toxiciy | 71.2 | 21.4 | 15.1 | not reached\nKeynote-087 (phase 2) [32] | R/R cHL after ASCT and/or BV | 210 | Pembro 200 mg every 3 weeks up to 24 months, or PD, or unacceptable toxiciy | 69 | 22.4 | 13.7 | not reached\nKeynote-204 (randomized, open-label, phase 3) [112] | R/R cHL ineligible or relapsed after ASCT | 151153 | Pembro 200 mg every 3 weeksBV 1.8 mg/kg every 3 week (all up to 35 cycles or PD) | 65.654.2 | 2524 | 13.28.3HR 0.6595% CI 0.48\u20130.88 | NR",
+          "doc_type": "literature",
+          "source_ref": "10.4084/MJHID.2026.055",
+          "title": "Classical Hodgkin Lymphoma Today",
+          "section_path": "Table 7",
+          "score": 0.009900999255478382
+        },
+        {
+          "span_id": "9535afa2-4969-454a-a27c-118ad13e9e00",
+          "text": "Current treatment strategies for NEC are largely supportive. In the early stages of disease, management includes cessation of enteral feeding, broad-spectrum antibiotics, and fluid and inotropic support. In advanced cases, surgical intervention, including resection of necrotic bowel and abdominal drainage, may be required. Several emerging therapeutic approaches, including TLR4 inhibitors (19, 20), aryl hydrocarbon receptor agonists (21, 22), stem cell therapies (23), synthetic amniotic fluid (24), breast milk exosomes (25, 26), anti-cytokine therapy, growth factor therapy (27) etc. have been considered as drug candidate compounds, but those are still in development. Vitamins play important roles in maintaining intestinal health by supporting epithelial barrier function, regulating immune responses, and influencing the composition of the gut microbiota. Deficiencies in several vitamins have been associated with increased inflammation, whereas adequate vitamin intake, particularly of vitamins A, C, and D, has been linked to reduced inflammatory responses and improved microbial balance (28, 29). These observations suggest that vitamins may have therapeutic relevance in NEC, a disease in which dysbiosis, inflammation, and epithelial barrier dysfunction are central features (30). Intestinal dysbiosis is increasingly recognized as a central contributor to NEC pathogenesis. In addition to influencing immune maturation and epithelial barrier function, the gut microbiota participates in vitamin metabolism and biosynthesis, while vitamin status can shape microbial composition and function. These bidirectional interactions suggest that vitamins may influence NEC not only through direct effects on host tissues but also through microbiota-mediated mechanisms.",
+          "doc_type": "literature",
+          "source_ref": "10.3389/fnut.2026.1860890",
+          "title": "Vitamins as modulators of neonatal intestinal injury",
+          "section_path": "Introduction",
+          "score": 0.005243520252406597
+        }
+      ]
+    }
+  }
+]
