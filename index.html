@@ -6,11 +6,15 @@
     <title>Saranya Vijayakumar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { 
-            font-family: system-ui, -apple-system, sans-serif;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #1f2937;
         }
+        h1, h2, h3, h4 { letter-spacing: -0.01em; }
         .paper-link {
             color: #2563eb;
             text-decoration: underline;
@@ -27,12 +31,6 @@
             z-index: 1000;
             padding: 1rem 0;
             border-bottom: 1px solid #e5e7eb;
-        }
-        .research-card {
-            transition: transform 0.2s;
-        }
-        .research-card:hover {
-            transform: translateY(-5px);
         }
         /* Mobile navigation menu */
         .mobile-menu {
@@ -102,7 +100,7 @@
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <!-- Header with Research Vision -->
-        <div id="top" class="mb-16">
+        <div id="top" class="mb-10">
             <div class="flex flex-col md:flex-row md:items-start gap-8">
                 <div class="flex-1">
                     <h1 class="text-3xl sm:text-4xl font-bold mb-4">Saranya Vijayakumar</h1>
@@ -120,377 +118,301 @@
                 </div>
             </div>
             
-            <div class="bg-gray-50 p-4 sm:p-6 rounded-lg mb-8">
-                <h2 class="text-xl sm:text-2xl font-bold mb-4">Research Vision</h2>
-                <p class="mb-4">
-                I study the safety and security of AI systems under adversarial conditions, from single-model robustness to multi-agent coordination. My thesis develops structured, verifiable ways for increasingly autonomous AI systems to check claims and enforce consistency, spanning red-teaming, prover-verifier oversight, and neurosymbolic reasoning.
-                </p>
-                <p class="mb-4">
-                    I am a PhD candidate in Computer Science at Carnegie Mellon University, advised by Christos Faloutsos and Matt Fredrikson, and an Anthropic Security Fellow. Before my PhD, I earned my A.B. at Harvard, writing my thesis with Cynthia Dwork and Jim Waldo, and spent three years as an associate at Goldman Sachs. My research spans formal methods, LLM alignment, and large-scale fraud detection, with collaborations at Inria, IBM Research, and Fujitsu. My work has been honored with Best Paper Awards, a NeurIPS Spotlight, and the 2026 ML and Systems Rising Star Award, and supported by the <a href="https://ndseg.org" class="text-blue-600 hover:underline">DoD NDSEG Fellowship</a>.
+            <div class="mt-8 max-w-3xl">
+                <p class="text-gray-700 leading-relaxed">
+                    I am a PhD candidate in Computer Science at Carnegie Mellon University, advised by Christos Faloutsos and Matt Fredrikson, and an Anthropic Security Fellow. I study the safety and security of AI systems under adversarial conditions, developing structured, verifiable ways for increasingly autonomous systems to check claims and enforce consistency, spanning red-teaming, prover-verifier oversight, and neurosymbolic reasoning. Before CMU, I earned my A.B. at Harvard and spent three years as a data scientist at Goldman Sachs. I am a 2026 ML and Systems Rising Star and a <a href="https://ndseg.org" class="text-blue-600 hover:underline">DoD NDSEG Fellow</a>.
                </p>
             </div>
         </div>
 
-    <div id="research" class="mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Research</h2>
-<!-- 
+    <div id="research" class="mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6">Research</h2>
 
-
-<div id="research" class="mb-16">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Research</h2> -->
-    
-    <!-- Paper 1 -->
-    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
-        <div class="flex items-start gap-4">
-            <span class="text-gray-500 font-medium">[1]</span>
+    <ol class="divide-y divide-gray-100">
+        <!-- Paper 1 -->
+        <li class="py-4 flex gap-4">
+            <span class="text-gray-400 text-sm mt-0.5 w-6 shrink-0">[1]</span>
             <div class="flex-1">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                    <h4 class="text-lg font-semibold">Sequential Pattern Recognition Attacks against Deployed Topic-Based Mechanisms</h4>
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">ICISSP 2026 (Best Student Paper Award)</span>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h4 class="font-semibold">Sequential Pattern Recognition Attacks against Deployed Topic-Based Mechanisms</h4>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">ICISSP 2026 &middot; Best Student Paper</span>
                 </div>
-                <p class="text-gray-600">
-                    <span class="font-medium">Saranya Vijayakumar</span>, Matt Fredrikson, Norman Sadeh
-                </p>
+                <p class="text-gray-600 text-sm mt-1"><span class="font-medium text-gray-800">Saranya Vijayakumar</span>, Matt Fredrikson, Norman Sadeh</p>
             </div>
-        </div>
-    </div>
+        </li>
 
-    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
-        <div class="flex items-start gap-4">
-            <span class="text-gray-500 font-medium">[2]</span>
+        <!-- Paper 2 -->
+        <li class="py-4 flex gap-4">
+            <span class="text-gray-400 text-sm mt-0.5 w-6 shrink-0">[2]</span>
             <div class="flex-1">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                    <h4 class="text-lg font-semibold">Prototype-Integrated Representation Learning for Novelty Detection</h4>
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">IEEE TrustCom 2025</span>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h4 class="font-semibold">Prototype-Integrated Representation Learning for Novelty Detection</h4>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">IEEE TrustCom 2025</span>
                 </div>
-                <p class="text-gray-600">
-                    <span class="font-medium">Saranya Vijayakumar</span>, Matt Fredrikson, Christos Faloutsos
-                </p>
+                <p class="text-gray-600 text-sm mt-1"><span class="font-medium text-gray-800">Saranya Vijayakumar</span>, Matt Fredrikson, Christos Faloutsos</p>
                 <a href="MalCentroid-3.pdf" class="text-blue-600 hover:underline text-sm">PDF</a>
-
             </div>
-        </div>
-    </div>
+        </li>
 
-    <!-- Paper 2 -->
-    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
-        <div class="flex items-start gap-4">
-            <span class="text-gray-500 font-medium">[3]</span>
+        <!-- Paper 3 -->
+        <li class="py-4 flex gap-4">
+            <span class="text-gray-400 text-sm mt-0.5 w-6 shrink-0">[3]</span>
             <div class="flex-1">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                    <h4 class="text-lg font-semibold">AICodeDetect: A Pipeline for Systematic Detection and Analysis of AI-Generated Code</h4>
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">IEEE MCSI 2025</span>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h4 class="font-semibold">AICodeDetect: A Pipeline for Systematic Detection and Analysis of AI-Generated Code</h4>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">IEEE MCSI 2025</span>
                 </div>
-                <p class="text-gray-600">
-                    <span class="font-medium">Saranya Vijayakumar</span>, Philip Negrin, Christos Faloutsos
-                </p>
+                <p class="text-gray-600 text-sm mt-1"><span class="font-medium text-gray-800">Saranya Vijayakumar</span>, Philip Negrin, Christos Faloutsos</p>
                 <a href="aicodegen.pdf" class="text-blue-600 hover:underline text-sm">PDF</a>
-
             </div>
-        </div>
-    </div>
+        </li>
 
-    <!-- Paper 3 -->
-    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
-        <div class="flex items-start gap-4">
-            <span class="text-gray-500 font-medium">[4]</span>
+        <!-- Paper 4 -->
+        <li class="py-4 flex gap-4">
+            <span class="text-gray-400 text-sm mt-0.5 w-6 shrink-0">[4]</span>
             <div class="flex-1">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                    <h4 class="text-lg font-semibold">Mechanistically Interpreting a Transformer-based 2-SAT Solver</h4>
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">ICML 2025</span>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h4 class="font-semibold">Mechanistically Interpreting a Transformer-based 2-SAT Solver</h4>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">ICML 2025</span>
                 </div>
-                <p class="text-gray-600 mb-2">
-                    Nils Palumbo, Ravi Mangal, Zifan Wang, <span class="font-medium">Saranya Vijayakumar</span>, Corina Pasareanau, Somesh Jha
-                </p>
+                <p class="text-gray-600 text-sm mt-1">Nils Palumbo, Ravi Mangal, Zifan Wang, <span class="font-medium text-gray-800">Saranya Vijayakumar</span>, Corina Pasareanau, Somesh Jha</p>
                 <a href="solvertransformer.pdf" class="text-blue-600 hover:underline text-sm">PDF</a>
             </div>
-        </div>
-    </div>
+        </li>
 
-    <!-- Paper 4 -->
-    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
-        <div class="flex items-start gap-4">
-            <span class="text-gray-500 font-medium">[5]</span>
+        <!-- Paper 5 -->
+        <li class="py-4 flex gap-4">
+            <span class="text-gray-400 text-sm mt-0.5 w-6 shrink-0">[5]</span>
             <div class="flex-1">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                    <h4 class="text-lg font-semibold">Aligned LLMs Are Not Aligned Browser Agents</h4>
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">ICLR 2025</span>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h4 class="font-semibold">Aligned LLMs Are Not Aligned Browser Agents</h4>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">ICLR 2025</span>
                 </div>
-                <p class="text-gray-600 mb-2">
-                    Priyanshu Kumar, <span class="font-medium">Saranya Vijayakumar</span>, Elaine Lau, Tu Trinh, Zifan Wang, Matt Fredrikson
-                </p>
+                <p class="text-gray-600 text-sm mt-1">Priyanshu Kumar, <span class="font-medium text-gray-800">Saranya Vijayakumar</span>, Elaine Lau, Tu Trinh, Zifan Wang, Matt Fredrikson</p>
                 <a href="scaleredteaming.pdf" class="text-blue-600 hover:underline text-sm">PDF</a>
             </div>
-        </div>
-    </div>
+        </li>
 
-    <!-- Paper 5 -->
-    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
-        <div class="flex items-start gap-4">
-            <span class="text-gray-500 font-medium">[6]</span>
+        <!-- Paper 6 -->
+        <li class="py-4 flex gap-4">
+            <span class="text-gray-400 text-sm mt-0.5 w-6 shrink-0">[6]</span>
             <div class="flex-1">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                    <h4 class="text-lg font-semibold">Grounding Neural Inference with Satisfiability Modulo Theories</h4>
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">NeurIPS 2023 Spotlight</span>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h4 class="font-semibold">Grounding Neural Inference with Satisfiability Modulo Theories</h4>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">NeurIPS 2023 Spotlight</span>
                 </div>
-                <p class="text-gray-600 mb-2">
-                    Zifan Wang*, <span class="font-medium">Saranya Vijayakumar*</span>, Kaiji Lu, Vijay Ganesh, Somesh Jha, Matt Fredrikson
-                </p>
-                <div class="flex flex-wrap gap-2 mb-2">
+                <p class="text-gray-600 text-sm mt-1">Zifan Wang*, <span class="font-medium text-gray-800">Saranya Vijayakumar*</span>, Kaiji Lu, Vijay Ganesh, Somesh Jha, Matt Fredrikson</p>
+                <div class="flex flex-wrap gap-3 mt-1">
                     <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/47167991e38c65a72914763c11cd8d23-Paper-Conference.pdf" class="text-blue-600 hover:underline text-sm">Paper</a>
                     <a href="https://github.com/cmu-transparency/smt-layer" class="text-blue-600 hover:underline text-sm">Code</a>
                     <a href="https://slideslive.com/39011080/" class="text-blue-600 hover:underline text-sm">Talk</a>
                 </div>
-                <img src="neuralsat.png" alt="Paper visualization" class="w-full rounded-lg mt-2"/>
+                <img src="neuralsat.png" alt="Paper visualization" class="rounded-lg mt-3 max-w-md w-full"/>
             </div>
-        </div>
-    </div>
+        </li>
 
-    <!-- Paper 6 -->
-    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 research-card">
-        <div class="flex items-start gap-4">
-            <span class="text-gray-500 font-medium">[7]</span>
+        <!-- Paper 7 -->
+        <li class="py-4 flex gap-4">
+            <span class="text-gray-400 text-sm mt-0.5 w-6 shrink-0">[7]</span>
             <div class="flex-1">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                    <h4 class="text-lg font-semibold">CallMine: Fraud Detection and Visualization of Million-Scale Call Graphs</h4>
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0 inline-block whitespace-nowrap">CIKM 2023</span>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h4 class="font-semibold">CallMine: Fraud Detection and Visualization of Million-Scale Call Graphs</h4>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">CIKM 2023</span>
                 </div>
-                <p class="text-gray-600 mb-2">
-                    Mirela Cazzolato, <span class="font-medium">Saranya Vijayakumar</span>, Meng-Chieh Lee, Namyong Park, Catalina Vajiac, Christos Faloutsos
-                </p>
-                <div class="flex flex-wrap gap-2 mb-2">
+                <p class="text-gray-600 text-sm mt-1">Mirela Cazzolato, <span class="font-medium text-gray-800">Saranya Vijayakumar</span>, Meng-Chieh Lee, Namyong Park, Catalina Vajiac, Christos Faloutsos</p>
+                <div class="flex flex-wrap gap-3 mt-1">
                     <a href="https://namyongpark.github.io/assets/pdf/CallMine-CIKM2023.pdf" class="text-blue-600 hover:underline text-sm">Paper</a>
                     <a href="https://github.com/mtcazzolato/callmine" class="text-blue-600 hover:underline text-sm">Code</a>
                 </div>
-                <img src="callmine.png" alt="CallMine visualization" class="w-full rounded-lg mt-2"/>
+                <img src="callmine.png" alt="CallMine visualization" class="rounded-lg mt-3 max-w-md w-full"/>
             </div>
-        </div>
-    </div>
-
-    <!-- Paper 7 -->
-
+        </li>
+    </ol>
 </div>
 
 
 
-    <div id="talks" class="mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Talks</h2>
+    <div id="talks" class="mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6">Talks</h2>
 
+        <div class="divide-y divide-gray-100">
             <!-- CMU Privacy Seminar -->
-            <div class="bg-white rounded-lg shadow-md p-4 mb-4">
-                <h3 class="text-lg font-semibold mb-1">Sequential Pattern Recognition Attacks Against Deployed Topic-Based Mechanisms</h3>
-                <p class="text-gray-600 text-sm mb-3"><a href="https://events.cmu.edu/event/30584-current-topics-in-privacy-seminar-saranya" class="text-blue-600 hover:underline">Current Topics in Privacy Seminar</a>, March 31, 2026</p>
-                <div class="bg-gray-50 p-3 rounded-lg text-sm">
-                    <ul class="list-disc pl-6">
-                        <li>Security vulnerabilities in topic-based mechanisms</li>
-                        <li>Sequential pattern recognition attack methodology</li>
-                    </ul>
+            <div class="py-4">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h3 class="font-semibold">Sequential Pattern Recognition Attacks Against Deployed Topic-Based Mechanisms</h3>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">Mar 2026</span>
                 </div>
+                <p class="text-gray-600 text-sm mt-1"><a href="https://events.cmu.edu/event/30584-current-topics-in-privacy-seminar-saranya" class="text-blue-600 hover:underline">Current Topics in Privacy Seminar</a></p>
             </div>
 
             <!-- LLM Security Talk -->
-            <div class="bg-white rounded-lg shadow-md p-4 mb-4">
-                <h3 class="text-lg font-semibold mb-1">LLM Security Vulnerabilities</h3>
-                <p class="text-gray-600 text-sm mb-3">AI Governance Course (17-416/17-716), March 31, 2025</p>
-                <!-- <a href="https://drive.google.com/file/d/14k74nfG8go7wY9WsjZR684caMNqqIZWD/view?usp=sharing" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100">Slides</a> -->
-                <div class="bg-gray-50 p-3 rounded-lg text-sm">
-                    <ul class="list-disc pl-6">
-                        <li>Applied security analysis techniques</li>
-                        <li>Real-world privacy challenges with LLMs</li>
-                        <li>Jailbreaking and watermarking</li>
-                    </ul>
+            <div class="py-4">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h3 class="font-semibold">LLM Security Vulnerabilities</h3>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">Mar 2025</span>
                 </div>
+                <p class="text-gray-600 text-sm mt-1">AI Governance Course (17-416/17-716)</p>
             </div>
 
-
             <!-- ISPP November Talk -->
-            <div class="bg-white rounded-lg shadow-md p-4 mb-4">
-                <h3 class="text-lg font-semibold mb-1">Security and Privacy in Practice</h3>
-                <p class="text-gray-600 text-sm mb-3">Information Security, Privacy & Policy (17-331/631), November 21, 2024</p>
-                <a href="https://drive.google.com/file/d/14k74nfG8go7wY9WsjZR684caMNqqIZWD/view?usp=sharing" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100 text-sm">Slides</a>
-                <div class="bg-gray-50 p-3 rounded-lg text-sm mt-3">
-                    <ul class="list-disc pl-6">
-                        <li>Applied security analysis techniques</li>
-                        <li>Real-world privacy challenges with LLMs</li>
-                        <li>Jailbreaking and watermarking</li>
-                    </ul>
+            <div class="py-4">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h3 class="font-semibold">Security and Privacy in Practice</h3>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">Nov 2024</span>
                 </div>
+                <p class="text-gray-600 text-sm mt-1">Information Security, Privacy &amp; Policy (17-331/631) &middot; <a href="https://drive.google.com/file/d/14k74nfG8go7wY9WsjZR684caMNqqIZWD/view?usp=sharing" class="text-blue-600 hover:underline">Slides</a></p>
             </div>
 
             <!-- AI Governance Talk -->
-            <div class="bg-white rounded-lg shadow-md p-4 mb-4">
-                <h3 class="text-lg font-semibold mb-1">AI Security and Governance</h3>
-                <p class="text-gray-600 text-sm mb-3">AI Governance Course (17-416/17-716), April 3, 2024</p>
-                <div class="bg-gray-50 p-3 rounded-lg text-sm">
-                    <ul class="list-disc pl-6">
-                        <li>Current landscape of AI security challenges</li>
-                        <li>Intersection of technical capabilities and governance frameworks</li>
-                        <li>Emerging threats and mitigation strategies</li>
-                    </ul>
+            <div class="py-4">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h3 class="font-semibold">AI Security and Governance</h3>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">Apr 2024</span>
                 </div>
+                <p class="text-gray-600 text-sm mt-1">AI Governance Course (17-416/17-716)</p>
             </div>
 
             <!-- ISPP Talk -->
-            <div class="bg-white rounded-lg shadow-md p-4 mb-4">
-                <h3 class="text-lg font-semibold mb-1">AI Security, Robustness, and Privacy</h3>
-                <p class="text-gray-600 text-sm mb-3">Information Security, Privacy & Policy (17-331/631), December 5, 2023</p>
-                <div class="flex flex-wrap gap-2 mb-3">
-                    <a href="https://scs.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4123a737-59e6-4068-b3a9-b0cf01043ef9" class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-100 text-sm">Recording (CMU Internal)</a>
+            <div class="py-4">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h3 class="font-semibold">AI Security, Robustness, and Privacy</h3>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">Dec 2023</span>
                 </div>
-                <div class="bg-gray-50 p-3 rounded-lg text-sm">
-                    <ul class="list-disc pl-6">
-                        <li>Overview of current challenges in AI security</li>
-                        <li>Discussion of robustness techniques and evaluation</li>
-                        <li>Privacy considerations in modern AI systems</li>
-                    </ul>
-                </div>
+                <p class="text-gray-600 text-sm mt-1">Information Security, Privacy &amp; Policy (17-331/631) &middot; <a href="https://scs.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4123a737-59e6-4068-b3a9-b0cf01043ef9" class="text-blue-600 hover:underline">Recording (CMU Internal)</a></p>
             </div>
 
-            <div class="bg-white rounded-lg shadow-md p-4">
-                <h3 class="text-lg font-semibold mb-1">Academic Service</h3>
-                <p class="text-gray-600 text-sm mb-3">Information Security, Privacy & Policy (17-331/631), Fall 2024</p>
-                <div class="bg-gray-50 p-3 rounded-lg text-sm">
-                    <h4 class="font-medium mb-2">Final Project Judge</h4>
-                    <ul class="list-disc pl-6">
-                        <li>Evaluated student projects on security and privacy implementations</li>
-                        <li>Provided technical feedback and industry-relevant insights</li>
-                        <li>Helped assess practical applicability of security solutions</li>
-                    </ul>
+            <!-- Academic Service -->
+            <div class="py-4">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h3 class="font-semibold">Final Project Judge</h3>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">Fall 2024</span>
                 </div>
+                <p class="text-gray-600 text-sm mt-1">Information Security, Privacy &amp; Policy (17-331/631)</p>
             </div>
         </div>
+    </div>
 
 <!-- Teaching -->
-        <div id="teaching" class="mb-16">
-            <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Teaching</h2>
-            
-            <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
-                <div class="flex flex-col sm:flex-row justify-between items-start mb-6">
-                    <h3 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-0">Teaching Philosophy</h3>
-                    <a href="teaching_statement.pdf" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                        Teaching Statement PDF
-                    </a>
-                </div>
-                <p class="mb-6">
-                    I believe in creating an inclusive learning environment that emphasizes practical understanding and critical thinking. 
-                    My teaching approach combines theoretical foundations with hands-on experience, preparing students for both academic 
-                    and industry challenges.
-                </p>
+        <div id="teaching" class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6">Teaching</h2>
 
-                <h4 class="text-lg sm:text-xl font-semibold mb-4">Teaching Experience</h4>
-                <div class="divide-y divide-gray-100 mb-8">
-                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-3 gap-1">
-                        <p class="text-gray-800"><span class="font-medium">TA, Information Security, Privacy &amp; Policy (17-331/631)</span> &mdash; with Norman Sadeh &amp; Hana Habib</p>
-                        <span class="text-sm text-gray-500 whitespace-nowrap">Fall 2023</span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-3 gap-1">
-                        <p class="text-gray-800"><span class="font-medium">TA, Rapid Prototyping (15-294 &amp; 15-394)</span> &mdash; with Dave Touretzky</p>
-                        <span class="text-sm text-gray-500 whitespace-nowrap">Spring 2023</span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-3 gap-1">
-                        <p class="text-gray-800"><span class="font-medium">Eberly Center Future Faculty Program</span> &mdash; teaching development</p>
-                        <span class="text-sm text-gray-500 whitespace-nowrap">2021 - 2023</span>
-                    </div>
-                </div>
-
-                <h4 class="text-lg sm:text-xl font-semibold mb-4">Mentorship</h4>
-                <ul class="list-disc pl-6 space-y-2 mb-2">
-                    <li>Mentored high school student Philip Negrin on AI code-detection research
-                        (<a href="https://vimeo.com/1058289107/fd82bcb611?ts=3897131&share=copy" class="text-blue-600 hover:underline" target="_blank">project video</a>)</li>
-                    <li>Guided a team of 4 CMU Masters students on privacy research analyzing Google's Topics API
-                        (<a href="https://www.usenix.org/conference/pepr24/presentation/priyanshu" class="text-blue-600 hover:underline" target="_blank">USENIX PEPR '24</a>)</li>
-                </ul>
+            <div class="flex items-baseline justify-between mb-3">
+                <h3 class="text-xl font-semibold">Teaching Philosophy</h3>
+                <a href="teaching_statement.pdf" class="text-blue-600 hover:underline text-sm">Teaching Statement PDF</a>
             </div>
+            <p class="text-gray-700 mb-8 max-w-3xl">
+                I believe in creating an inclusive learning environment that emphasizes practical understanding and critical thinking.
+                My teaching approach combines theoretical foundations with hands-on experience, preparing students for both academic
+                and industry challenges.
+            </p>
+
+            <h4 class="text-lg font-semibold mb-2">Teaching Experience</h4>
+            <div class="divide-y divide-gray-100 mb-8">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-3 gap-1">
+                    <p class="text-gray-800"><span class="font-medium">TA, Information Security, Privacy &amp; Policy (17-331/631)</span>, with Norman Sadeh &amp; Hana Habib</p>
+                    <span class="text-sm text-gray-500 whitespace-nowrap">Fall 2023</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-3 gap-1">
+                    <p class="text-gray-800"><span class="font-medium">TA, Rapid Prototyping (15-294 &amp; 15-394)</span>, with Dave Touretzky</p>
+                    <span class="text-sm text-gray-500 whitespace-nowrap">Spring 2023</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-3 gap-1">
+                    <p class="text-gray-800"><span class="font-medium">Eberly Center Future Faculty Program</span>, teaching development</p>
+                    <span class="text-sm text-gray-500 whitespace-nowrap">2021 - 2023</span>
+                </div>
+            </div>
+
+            <h4 class="text-lg font-semibold mb-2">Mentorship</h4>
+            <ul class="list-disc pl-6 space-y-2">
+                <li>Mentored high school student Philip Negrin on AI code-detection research
+                    (<a href="https://vimeo.com/1058289107/fd82bcb611?ts=3897131&share=copy" class="text-blue-600 hover:underline" target="_blank">project video</a>)</li>
+                <li>Guided a team of 4 CMU Masters students on privacy research analyzing Google's Topics API
+                    (<a href="https://www.usenix.org/conference/pepr24/presentation/priyanshu" class="text-blue-600 hover:underline" target="_blank">USENIX PEPR '24</a>)</li>
+            </ul>
         </div>
 
 <!-- Research Projects & Impact -->
-    <div id="projects" class="mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Research Projects & Impact</h2>
+    <div id="projects" class="mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6">Research Projects & Impact</h2>
 
-        <p class="text-gray-600 mb-8">A few themes that cut across my work. Full details are in my <a href="cv.pdf" class="text-blue-600 hover:underline">CV</a> and <a href="#research" class="text-blue-600 hover:underline">publications</a>.</p>
+        <p class="text-gray-600 mb-8 max-w-3xl">A few themes that cut across my work. Full details are in my <a href="cv.pdf" class="text-blue-600 hover:underline">CV</a> and <a href="#research" class="text-blue-600 hover:underline">publications</a>.</p>
 
-        <!-- Agentic AI Security & Alignment -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 border-l-4 border-blue-500">
-            <h3 class="text-xl sm:text-2xl font-semibold mb-3">Agentic AI Security & Alignment</h3>
-            <p class="text-gray-600">
-                Red-teaming and alignment of LLMs deployed as autonomous agents. Showed that refusal-trained LLMs are easily
-                jailbroken as browser agents (<a href="scaleredteaming.pdf" class="text-blue-600 hover:underline">ICLR 2025</a>),
-                and now work on prover-verifier oversight and interpretability of agentic systems.
-            </p>
-        </div>
+        <div class="space-y-8">
+            <!-- Agentic AI Security & Alignment -->
+            <div class="border-l-2 border-gray-200 pl-4">
+                <h3 class="text-lg font-semibold mb-2">Agentic AI Security &amp; Alignment</h3>
+                <p class="text-gray-600 max-w-3xl">
+                    Red-teaming and alignment of LLMs deployed as autonomous agents. Showed that refusal-trained LLMs are easily
+                    jailbroken as browser agents (<a href="scaleredteaming.pdf" class="text-blue-600 hover:underline">ICLR 2025</a>),
+                    and now work on prover-verifier oversight and interpretability of agentic systems.
+                </p>
+            </div>
 
-        <!-- Neurosymbolic & Formal Methods -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 border-l-4 border-blue-500">
-            <h3 class="text-xl sm:text-2xl font-semibold mb-3">Neurosymbolic & Formal Methods</h3>
-            <p class="text-gray-600">
-                Grounding neural inference with SMT solvers (NeurIPS 2023 Spotlight), mechanistically interpreting transformer-based
-                SAT solvers (ICML 2025), and formal verification of a secure messaging protocol used by the French government (Inria).
-            </p>
-        </div>
+            <!-- Neurosymbolic & Formal Methods -->
+            <div class="border-l-2 border-gray-200 pl-4">
+                <h3 class="text-lg font-semibold mb-2">Neurosymbolic &amp; Formal Methods</h3>
+                <p class="text-gray-600 max-w-3xl">
+                    Grounding neural inference with SMT solvers (NeurIPS 2023 Spotlight), mechanistically interpreting transformer-based
+                    SAT solvers (ICML 2025), and formal verification of a secure messaging protocol used by the French government (Inria).
+                </p>
+            </div>
 
-        <!-- Large-Scale Fraud Detection -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                <img src="tgrapp.png" alt="TgrApp fraud-detection visualization" class="rounded-lg w-full"/>
-                <div>
-                    <h3 class="text-xl sm:text-2xl font-semibold mb-3">Large-Scale Fraud Detection</h3>
-                    <p class="text-gray-600 mb-3">
+            <!-- Large-Scale Fraud Detection -->
+            <div class="border-l-2 border-gray-200 pl-4">
+                <h3 class="text-lg font-semibold mb-2">Large-Scale Fraud Detection</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <p class="text-gray-600">
                         Scalable visualization and anomaly-detection methods for million-scale telecom and credit-card graphs,
                         yielding deployment-ready systems with Mobileum (CIKM 2023, IEEE Big Data 2022,
                         <a href="https://ojs.aaai.org/index.php/AAAI/article/view/27062" class="text-blue-600 hover:underline">AAAI-23 demo</a>).
                     </p>
+                    <img src="tgrapp.png" alt="TgrApp fraud-detection visualization" class="rounded-lg w-full"/>
                 </div>
             </div>
-        </div>
 
-        <!-- Media coverage / earlier public-interest work -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
-            <h3 class="text-xl sm:text-2xl font-semibold mb-3">Public-Interest & Policy Research</h3>
-            <p class="text-gray-600">
-                Earlier work spanning algorithmic fairness (<a href="https://theharvardpoliticalreview.com/algorithmic-decision-making/" class="text-blue-600 hover:underline">Harvard Political Review</a>,
-                undergraduate thesis), a
-                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2731160" class="text-blue-600 hover:underline">worldwide encryption survey</a>
-                with Bruce Schneier (covered by <a href="https://www.nbcnews.com/tech/security/trying-stop-encryption-it-s-everywhere-harvard-study-says-n516761" class="text-blue-600 hover:underline">NBC News</a>,
-                <a href="https://theintercept.com/2016/02/11/new-survey-suggests-u-s-encryption-ban-would-just-send-market-overseas/" class="text-blue-600 hover:underline">The Intercept</a>),
-                and a CSET review on cybersecurity risks of AI-generated code for Georgetown.
-            </p>
+            <!-- Media coverage / earlier public-interest work -->
+            <div class="border-l-2 border-gray-200 pl-4">
+                <h3 class="text-lg font-semibold mb-2">Public-Interest &amp; Policy Research</h3>
+                <p class="text-gray-600 max-w-3xl">
+                    Earlier work spanning algorithmic fairness (<a href="https://theharvardpoliticalreview.com/algorithmic-decision-making/" class="text-blue-600 hover:underline">Harvard Political Review</a>,
+                    undergraduate thesis), a
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2731160" class="text-blue-600 hover:underline">worldwide encryption survey</a>
+                    with Bruce Schneier (covered by <a href="https://www.nbcnews.com/tech/security/trying-stop-encryption-it-s-everywhere-harvard-study-says-n516761" class="text-blue-600 hover:underline">NBC News</a>,
+                    <a href="https://theintercept.com/2016/02/11/new-survey-suggests-u-s-encryption-ban-would-just-send-market-overseas/" class="text-blue-600 hover:underline">The Intercept</a>),
+                    and a CSET review on cybersecurity risks of AI-generated code for Georgetown.
+                </p>
+            </div>
         </div>
     </div>
 
     <!-- Service & Leadership -->
-    <div id="service" class="mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Service & Leadership</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
-                <h3 class="text-lg sm:text-xl font-semibold mb-4">Academic Community Building</h3>
-                <div class="space-y-4">
-                    <div class="flex items-start">
-                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-3">90+</span>
-                        <span>student participants; Founded and lead weekly lunch program for women and non-binary PhDs in SCS</span>
-                    </div>
-                    <div class="flex items-start">
-                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-3">30+</span>
-                        <span>Papers reviewed for ICLR, ICML, KDD, and NeurIPS</span>
-                    </div>
-                </div>
+    <div id="service" class="mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6">Service & Leadership</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Academic Community Building</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li><span class="font-medium">90+</span> student participants; founded and lead a weekly lunch program for women and non-binary PhDs in SCS</li>
+                    <li><span class="font-medium">30+</span> papers reviewed for ICLR, ICML, KDD, and NeurIPS</li>
+                </ul>
             </div>
-            
-            <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
-                <h3 class="text-lg sm:text-xl font-semibold mb-4">Outreach & Impact</h3>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Outreach & Impact</h3>
                 <div class="space-y-4">
-                    <div class="flex flex-col sm:flex-row items-start gap-3">
-                        <img src="pih.png" alt="PIH" class="rounded" style="width: 80px; height: auto;"/>
+                    <div class="flex items-start gap-3">
+                        <img src="pih.png" alt="PIH" class="rounded shrink-0" style="width: 72px; height: auto;"/>
                         <div>
-                            <a href="https://seas.harvard.edu/news/2016/02/taking-tuberculosis" class="text-blue-600 hover:underline">Tech in the World Fellow</a>
-                            <p>Implemented healthcare technology solutions with Partners in Health, Lima, Peru</p>
+                            <a href="https://seas.harvard.edu/news/2016/02/taking-tuberculosis" class="text-blue-600 hover:underline font-medium">Tech in the World Fellow</a>
+                            <p class="text-gray-600 text-sm">Healthcare technology solutions with Partners in Health, Lima, Peru</p>
                         </div>
                     </div>
-                    <div class="flex flex-col sm:flex-row items-start gap-3">
-                        <img src="dlp.png" alt="Harvard" class="rounded" style="width: 100px; height: auto;"/>
+                    <div class="flex items-start gap-3">
+                        <img src="dlp.png" alt="Harvard" class="rounded shrink-0" style="width: 90px; height: auto;"/>
                         <div>
-                            <a href="https://news.harvard.edu/gazette/story/2015/07/bringing-computer-skills-to-classrooms/" class="text-blue-600 hover:underline">CS Education Initiative Lead</a>
-                            <p>Led computer science education programs in Boston public schools</p>
+                            <a href="https://news.harvard.edu/gazette/story/2015/07/bringing-computer-skills-to-classrooms/" class="text-blue-600 hover:underline font-medium">CS Education Initiative Lead</a>
+                            <p class="text-gray-600 text-sm">Led computer science education programs in Boston public schools</p>
                         </div>
                     </div>
                 </div>
@@ -498,169 +420,121 @@
         </div>
 
         <!-- Selected Media Coverage -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mt-6 sm:mt-8">
-            <h3 class="text-lg sm:text-xl font-semibold mb-4">Selected Media Coverage</h3>
-            <div class="space-y-3">
-                <div class="flex items-start gap-2">
-                    <span class="text-gray-400">&bull;</span>
-                    <p><a href="https://seas.harvard.edu/news/taking-tuberculosis" class="text-blue-600 hover:underline">Taking on Tuberculosis</a> &mdash; Harvard SEAS</p>
-                </div>
-                <div class="flex items-start gap-2">
-                    <span class="text-gray-400">&bull;</span>
-                    <p><a href="https://www.nbcnews.com/tech/security/trying-stop-encryption-it-s-everywhere-harvard-study-says-n516761" class="text-blue-600 hover:underline">Trying to Stop Encryption? It's Everywhere</a> &mdash; NBC News</p>
-                </div>
-                <div class="flex items-start gap-2">
-                    <span class="text-gray-400">&bull;</span>
-                    <p><a href="https://theintercept.com/2016/02/11/new-survey-suggests-u-s-encryption-ban-would-just-send-market-overseas/" class="text-blue-600 hover:underline">New Survey Suggests U.S. Encryption Ban Would Just Send Market Overseas</a> &mdash; The Intercept</p>
-                </div>
-                <div class="flex items-start gap-2">
-                    <span class="text-gray-400">&bull;</span>
-                    <p><a href="https://news.harvard.edu/gazette/story/2015/07/bringing-computer-skills-to-classrooms/" class="text-blue-600 hover:underline">Bringing Computer Skills to Classrooms</a> &mdash; Harvard Gazette</p>
-                </div>
-            </div>
+        <div class="mt-8">
+            <h3 class="text-lg font-semibold mb-3">Selected Media Coverage</h3>
+            <ul class="space-y-2 text-gray-700">
+                <li><a href="https://seas.harvard.edu/news/taking-tuberculosis" class="text-blue-600 hover:underline">Taking on Tuberculosis</a>, Harvard SEAS</li>
+                <li><a href="https://www.nbcnews.com/tech/security/trying-stop-encryption-it-s-everywhere-harvard-study-says-n516761" class="text-blue-600 hover:underline">Trying to Stop Encryption? It's Everywhere</a>, NBC News</li>
+                <li><a href="https://theintercept.com/2016/02/11/new-survey-suggests-u-s-encryption-ban-would-just-send-market-overseas/" class="text-blue-600 hover:underline">New Survey Suggests U.S. Encryption Ban Would Just Send Market Overseas</a>, The Intercept</li>
+                <li><a href="https://news.harvard.edu/gazette/story/2015/07/bringing-computer-skills-to-classrooms/" class="text-blue-600 hover:underline">Bringing Computer Skills to Classrooms</a>, Harvard Gazette</li>
+            </ul>
         </div>
     </div>
 
-    <!-- Awards Timeline -->
-    <div id="awards" class="mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Awards & Recognition</h2>
-        
-        <div class="relative">
-            <!-- Timeline line -->
-            <div class="hidden sm:block absolute left-4 top-0 bottom-0 w-0.5 bg-blue-200"></div>
-            
-            <!-- Timeline items -->
-            <div class="space-y-3 sm:space-y-4 sm:ml-12">
-                <!-- ML and Systems Rising Stars -->
-                <div class="relative">
-                    <div class="hidden sm:block absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
-                    <div class="bg-white rounded-lg shadow-md p-3 sm:p-4 border-l-4 border-blue-500">
-                        <span class="text-blue-600 font-medium">2026</span>
-                        <h3 class="text-lg sm:text-xl font-semibold">ML and Systems Rising Star Award</h3>
-                    </div>
-                </div>
+    <!-- Awards -->
+    <div id="awards" class="mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6">Awards & Recognition</h2>
 
-                <!-- Anthropic Security Fellows -->
-                <div class="relative">
-                    <div class="hidden sm:block absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
-                    <div class="bg-white rounded-lg shadow-md p-3 sm:p-4 border-l-4 border-blue-500">
-                        <span class="text-blue-600 font-medium">2026</span>
-                        <h3 class="text-lg sm:text-xl font-semibold">Anthropic Security Fellow</h3>
-                    </div>
+        <div class="divide-y divide-gray-100">
+            <div class="flex gap-4 py-3">
+                <span class="text-sm text-gray-500 w-24 shrink-0 pt-0.5">2026</span>
+                <div><span class="font-medium">ML and Systems Rising Star Award</span></div>
+            </div>
+            <div class="flex gap-4 py-3">
+                <span class="text-sm text-gray-500 w-24 shrink-0 pt-0.5">2026</span>
+                <div><span class="font-medium">Anthropic Security Fellow</span></div>
+            </div>
+            <div class="flex gap-4 py-3">
+                <span class="text-sm text-gray-500 w-24 shrink-0 pt-0.5">2024</span>
+                <div>
+                    <span class="font-medium">Best Poster Award</span>, NDSEG Annual Fellows Conference
+                    <a href="https://ndseg.org/2024-poster-winners" class="text-blue-600 hover:underline text-sm ml-1">announcement &rarr;</a>
                 </div>
-
-                <!-- NDSEG Poster Award -->
-                <div class="relative">
-                    <div class="hidden sm:block absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
-                    <div class="bg-white rounded-lg shadow-md p-3 sm:p-4 border-l-4 border-blue-500">
-                        <span class="text-blue-600 font-medium">2024</span>
-                        <h3 class="text-lg sm:text-xl font-semibold">Best Poster Award</h3>
-                        <p class="mb-2">NDSEG Annual Fellows Conference</p>
-                        <a href="https://ndseg.org/2024-poster-winners" class="text-blue-600 hover:underline text-sm">View Award Announcement →</a>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div class="hidden sm:block absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
-                    <div class="bg-white rounded-lg shadow-md p-3 sm:p-4">
-                        <span class="text-blue-600 font-medium">2023</span>
-                        <h3 class="text-lg sm:text-xl font-semibold">Graduate Fellowship for STEM Diversity (GFSD)</h3>
-                        <p>NSA (Declined)</p>
-                    </div>
-                </div>
-                
-                <div class="relative">
-                    <div class="hidden sm:block absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
-                    <div class="bg-white rounded-lg shadow-md p-3 sm:p-4">
-                        <span class="text-blue-600 font-medium">2022 - 2024</span>
-                        <h3 class="text-lg sm:text-xl font-semibold">National Defense Science & Engineering Graduate Fellowship</h3>
-                        <p>Army Research Office</p>
-                    </div>
-                </div>
-                
-                <div class="relative">
-                    <div class="hidden sm:block absolute -left-12 top-2 w-4 h-4 rounded-full bg-blue-500"></div>
-                    <div class="bg-white rounded-lg shadow-md p-3 sm:p-4">
-                        <span class="text-blue-600 font-medium">2021 - 2023</span>
-                        <h3 class="text-lg sm:text-xl font-semibold">Future Faculty Program</h3>
-                        <p>Carnegie Mellon University Eberly Center</p>
-                    </div>
-                </div>
+            </div>
+            <div class="flex gap-4 py-3">
+                <span class="text-sm text-gray-500 w-24 shrink-0 pt-0.5">2023</span>
+                <div><span class="font-medium">Graduate Fellowship for STEM Diversity (GFSD)</span>, NSA (Declined)</div>
+            </div>
+            <div class="flex gap-4 py-3">
+                <span class="text-sm text-gray-500 w-24 shrink-0 pt-0.5">2022 &ndash; 2024</span>
+                <div><span class="font-medium">National Defense Science & Engineering Graduate Fellowship</span>, Army Research Office</div>
+            </div>
+            <div class="flex gap-4 py-3">
+                <span class="text-sm text-gray-500 w-24 shrink-0 pt-0.5">2021 &ndash; 2023</span>
+                <div><span class="font-medium">Future Faculty Program</span>, CMU Eberly Center</div>
             </div>
         </div>
     </div>
 
     <!-- Industry Research Experience -->
-    <div id="experience" class="mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Research & Industry Experience</h2>
+    <div id="experience" class="mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6">Research & Industry Experience</h2>
 
-        <!-- Fujitsu -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <h3 class="text-lg sm:text-xl font-semibold">Research Intern, Agentic AI</h3>
-                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0">Jan - May 2026</span>
+        <div class="space-y-8">
+            <!-- Fujitsu -->
+            <div>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1 gap-1">
+                    <h3 class="text-lg font-semibold">Research Intern, Agentic AI <span class="font-normal text-gray-600">at Fujitsu Research, Pittsburgh, PA</span></h3>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">Jan &ndash; May 2026</span>
+                </div>
+                <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                    <li>Studying red-teaming of agentic AI with Koichi Onoue and Roshni Kaushik</li>
+                    <li>Architecting, building, and deploying LLM-powered and agent-based systems end-to-end</li>
+                </ul>
             </div>
-            <p class="text-gray-600 mb-4">Fujitsu Research - Pittsburgh, PA</p>
-            <ul class="list-disc pl-6 space-y-3">
-                <li>Studying red-teaming of agentic AI with Koichi Onoue and Roshni Kaushik</li>
-                <li>Architecting, building, and deploying LLM-powered and agent-based systems end-to-end</li>
-            </ul>
-        </div>
 
-        <!-- IBM -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <h3 class="text-lg sm:text-xl font-semibold">Research Intern, Trustworthy AI</h3>
-                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0">May - Aug 2025</span>
+            <!-- IBM -->
+            <div>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1 gap-1">
+                    <h3 class="text-lg font-semibold">Research Intern, Trustworthy AI <span class="font-normal text-gray-600">at IBM Research, Yorktown Heights, NY</span></h3>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">May &ndash; Aug 2025</span>
+                </div>
+                <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                    <li>Developed a game-theoretic extension of prover-verifier games for legibility using multiple specialized agentic verifiers</li>
+                    <li>Advised by Erik Miehling and Karthikeyan Ramamurthy; emphasis on foundational LLMs, agentic AI, and reinforcement learning (RLHF)</li>
+                </ul>
             </div>
-            <p class="text-gray-600 mb-4">IBM Research - Yorktown Heights, NY</p>
-            <ul class="list-disc pl-6 space-y-3">
-                <li>Developed a game-theoretic extension of prover-verifier games for legibility using multiple specialized agentic verifiers</li>
-                <li>Advised by Erik Miehling and Karthikeyan Ramamurthy; emphasis on foundational LLMs, agentic AI, and reinforcement learning (RLHF)</li>
-            </ul>
-        </div>
 
-        <!-- Inria -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <h3 class="text-lg sm:text-xl font-semibold">Visiting Scholar, PESTO (Security Protocols)</h3>
-                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0">Oct - Nov 2024</span>
+            <!-- Inria -->
+            <div>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1 gap-1">
+                    <h3 class="text-lg font-semibold">Visiting Scholar, PESTO <span class="font-normal text-gray-600">at Inria, Nancy, France</span></h3>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">Oct &ndash; Nov 2024</span>
+                </div>
+                <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                    <li>Formal verification of the security properties and transcript consistency of a secure messaging platform used by the French government</li>
+                    <li>Advised by Charlie Jacomme and Steve Kremer</li>
+                </ul>
             </div>
-            <p class="text-gray-600 mb-4">Inria - Nancy, France</p>
-            <ul class="list-disc pl-6 space-y-3">
-                <li>Formal verification of the security properties and transcript consistency of a secure messaging platform used by the French government</li>
-                <li>Advised by Charlie Jacomme and Steve Kremer</li>
-            </ul>
-        </div>
 
-        <!-- Mobileum -->
-        <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <h3 class="text-lg sm:text-xl font-semibold">Research Collaborator, AIDA Platform</h3>
-                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm mt-2 sm:mt-0">2021 - 2026</span>
+            <!-- Mobileum -->
+            <div>
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1 gap-1">
+                    <h3 class="text-lg font-semibold">Research Collaborator, AIDA Platform <span class="font-normal text-gray-600">at Mobileum, Braga, Portugal</span></h3>
+                    <span class="text-sm text-gray-500 whitespace-nowrap sm:ml-4">2021 &ndash; 2026</span>
+                </div>
+                <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                    <li>Collaborated with Mobileum, a global telecom analytics provider serving over 900 operators worldwide, on industry-scale fraud detection research</li>
+                    <li>Analyzed real-world call graph data to develop scalable anomaly detection techniques</li>
+                    <li>Published multiple peer-reviewed papers and demos, including deployment-ready systems for detecting telecom fraud on million-scale graphs</li>
+                </ul>
             </div>
-            <p class="text-gray-600 mb-4">Mobileum - Braga, Portugal</p>
-            <ul class="list-disc pl-6 space-y-3">
-                <li>Collaborated with Mobileum, a global telecom analytics provider serving over 900 operators worldwide, on industry-scale fraud detection research</li>
-                <li>Analyzed real-world call graph data to develop scalable anomaly detection techniques</li>
-                <li>Published multiple peer-reviewed papers and demos, including deployment-ready systems for detecting telecom fraud on million-scale graphs</li>
-            </ul>
         </div>
 
         <!-- Earlier experience (compact) -->
-        <div class="border-t pt-6">
+        <div class="border-t pt-6 mt-8">
             <h3 class="text-sm font-medium text-gray-500 mb-4">Earlier Experience</h3>
             <div class="divide-y divide-gray-100">
                 <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-3 gap-1">
-                    <p class="text-gray-800"><span class="font-medium">Data Scientist, Electronic Trading (GSET)</span> &mdash; Goldman Sachs</p>
+                    <p class="text-gray-800"><span class="font-medium">Data Scientist, Electronic Trading (GSET)</span>, Goldman Sachs</p>
                     <span class="text-sm text-gray-500 whitespace-nowrap">2018 - 2021</span>
                 </div>
                 <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-3 gap-1">
-                    <p class="text-gray-800"><span class="font-medium">Data Scientist, Distributed Organizing</span> &mdash; Beto O'Rourke for U.S. Senate</p>
+                    <p class="text-gray-800"><span class="font-medium">Data Scientist, Distributed Organizing</span>, Beto O'Rourke for U.S. Senate</p>
                     <span class="text-sm text-gray-500 whitespace-nowrap">Summer 2018</span>
                 </div>
                 <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-3 gap-1">
-                    <p class="text-gray-800"><span class="font-medium">Cybersecurity Intern</span> &mdash; Booz Allen Hamilton</p>
+                    <p class="text-gray-800"><span class="font-medium">Cybersecurity Intern</span>, Booz Allen Hamilton</p>
                     <span class="text-sm text-gray-500 whitespace-nowrap">Summer 2017</span>
                 </div>
             </div>
@@ -668,74 +542,30 @@
     </div>
 
     <!-- Technical Expertise -->
-    <div id="skills" class="mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Technical Expertise</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
-                <h3 class="text-lg sm:text-xl font-semibold mb-4">Core Technologies</h3>
-                <div class="space-y-4">
-                    <div>
-                        <h4 class="text-sm font-medium text-gray-500 mb-2">Languages & Frameworks</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 px-3 py-1 rounded-full text-sm">Python</span>
-                            <span class="bg-green-100 px-3 py-1 rounded-full text-sm">PyTorch</span>
-                            <span class="bg-green-100 px-3 py-1 rounded-full text-sm">Transformers</span>
-                            <span class="bg-green-100 px-3 py-1 rounded-full text-sm">TensorFlow</span>
-                            <span class="bg-green-100 px-3 py-1 rounded-full text-sm">Tinker</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="text-sm font-medium text-gray-500 mb-2">LLM Training & Alignment</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-purple-100 px-3 py-1 rounded-full text-sm">Pre-training</span>
-                            <span class="bg-purple-100 px-3 py-1 rounded-full text-sm">SFT</span>
-                            <span class="bg-purple-100 px-3 py-1 rounded-full text-sm">RLHF</span>
-                            <span class="bg-purple-100 px-3 py-1 rounded-full text-sm">DPO</span>
-                            <span class="bg-purple-100 px-3 py-1 rounded-full text-sm">Red-teaming</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="text-sm font-medium text-gray-500 mb-2">Other</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 px-3 py-1 rounded-full text-sm">Graph ML</span>
-                        </div>
-                    </div>
+    <div id="skills" class="mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6">Technical Expertise</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+                <div class="flex flex-col sm:flex-row sm:gap-4">
+                    <h4 class="text-sm font-medium text-gray-500 w-48 shrink-0">Languages & Frameworks</h4>
+                    <p class="text-gray-700">Python, PyTorch, Transformers, TensorFlow, Tinker</p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:gap-4">
+                    <h4 class="text-sm font-medium text-gray-500 w-48 shrink-0">LLM Training & Alignment</h4>
+                    <p class="text-gray-700">Pre-training, SFT, RLHF, DPO, Red-teaming</p>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:gap-4">
+                    <h4 class="text-sm font-medium text-gray-500 w-48 shrink-0">Other</h4>
+                    <p class="text-gray-700">Graph ML</p>
                 </div>
             </div>
-            
-            <div class="bg-white rounded-lg shadow-md p-4 sm:p-6">
-                <h3 class="text-lg sm:text-xl font-semibold mb-4">Languages</h3>
-                <div class="space-y-3">
-                    <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
-                        <span class="font-medium w-24">English</span>
-                        <div class="flex-1 bg-gray-200 rounded-full h-2 min-w-[100px]">
-                            <div class="bg-blue-600 rounded-full h-2 w-full"></div>
-                        </div>
-                        <span class="text-sm">Native</span>
-                    </div>
-                    <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
-                        <span class="font-medium w-24">Tamil</span>
-                        <div class="flex-1 bg-gray-200 rounded-full h-2 min-w-[100px]">
-                            <div class="bg-blue-600 rounded-full h-2 w-full"></div>
-                        </div>
-                        <span class="text-sm">Native</span>
-                    </div>
-                    <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
-                        <span class="font-medium w-24">Spanish</span>
-                        <div class="flex-1 bg-gray-200 rounded-full h-2 min-w-[100px]">
-                            <div class="bg-blue-600 rounded-full h-2 w-3/4"></div>
-                        </div>
-                        <span class="text-sm">Professional</span>
-                    </div>
-                    <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
-                        <span class="font-medium w-24">Japanese</span>
-                        <div class="flex-1 bg-gray-200 rounded-full h-2 min-w-[100px]">
-                            <div class="bg-blue-600 rounded-full h-2 w-1/2"></div>
-                        </div>
-                        <span class="text-sm">Limited</span>
-                    </div>
-                </div>
+
+            <div class="space-y-2">
+                <div class="flex justify-between"><span class="font-medium">English</span><span class="text-gray-500 text-sm">Native</span></div>
+                <div class="flex justify-between"><span class="font-medium">Tamil</span><span class="text-gray-500 text-sm">Native</span></div>
+                <div class="flex justify-between"><span class="font-medium">Spanish</span><span class="text-gray-500 text-sm">Professional</span></div>
+                <div class="flex justify-between"><span class="font-medium">Japanese</span><span class="text-gray-500 text-sm">Limited</span></div>
             </div>
         </div>
     </div>
